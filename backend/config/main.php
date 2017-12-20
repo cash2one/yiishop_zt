@@ -10,6 +10,7 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'language'=>'zh-CN',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
@@ -37,14 +38,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',	// 伪静态后缀
             'rules' => [
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
