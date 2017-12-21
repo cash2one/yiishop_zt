@@ -38,7 +38,7 @@ class Article_detailController extends Controller{
             $data[$val->id]=$val->name;
         }
         //将数据传入到添加页面
-        return $this->render("add",["model"=>$model,"data"=>$data]);
+        return $this->render("add",["model"=>$model]);
 
     }
 

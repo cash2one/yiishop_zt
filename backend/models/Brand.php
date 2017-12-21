@@ -12,6 +12,7 @@ class Brand extends ActiveRecord{
             [["name","status","intro"],"required","message"=>"必须填写"],
             ["imgFile",'file','extensions'=>['jpg','png','gif']/*,'skipOnEmpty'=>false*/],
             ["sort","safe"],
+            ["logo","safe"],
         ];
 
 

@@ -2,11 +2,13 @@
 namespace backend\controllers;
 
 use backend\models\Brand;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Request;
 use yii\web\UploadedFile;
 
 class BrandController extends Controller{
+    public $enableCsrfValidation = false;
      //显示列表首页
     public function actionIndex(){
         //获取表中所有数据
@@ -31,14 +33,14 @@ class BrandController extends Controller{
           //加载数据
             $model->load($request->post());
             //处理图片
-            $model->imgFile=UploadedFile::getInstance($model,"imgFile");
+            //$model->imgFile=UploadedFile::getInstance($model,"imgFile");
             if ($model->validate()){
-                //保存图片位置
+               /* //保存图片位置
                 $file = '/upload/' . uniqid() . '.' . $model->imgFile->extension;
                 if ($model->imgFile->saveAs(\Yii::getAlias('@webroot') . $file)) {
                     //文件上传成功
                     $model->logo = $file;
-                }
+                }*/
                 //保存数据
                 $model->save(false);
                 //提示成功信息
@@ -119,6 +121,24 @@ class BrandController extends Controller{
 
         //修改该记录
         $model::updateAll(["status"=>-1],["id"=>$id]);
+
+    }
+
+    /**
+     * 处理图片
+     *
+     */
+    public function actionUpload(){
+        //接收图片
+        $img=UploadedFile::getInstanceByName("file");
+        //保存图片
+        $file="/upload/".uniqid().$img->extension;
+        if ($img->saveAs(\Yii::getAlias("@webroot").$file,0)){
+            //上传成功返回图片地址
+            return Json::encode(["url"=>$file]);
+        }else{
+            return Json::encode(["errors"=>1]);
+        }
 
     }
 
