@@ -18,7 +18,7 @@
         </tr>
     <?php };?>
     <tr>
-        <td colspan="4"><a href="<?=\yii\helpers\Url::to(["brand/add"])?>">添加</a></td>
+        <th colspan="4"><a href="<?=\yii\helpers\Url::to(["brand/add"])?>">添加</a></th>
     </tr>
 
 </table>

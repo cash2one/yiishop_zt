@@ -2,8 +2,8 @@
 namespace backend\controllers;
 
 use backend\models\Article;
-use backend\models\Article_category;
-use backend\models\Article_detail;
+use backend\models\ArticleCategory;
+use backend\models\ArticleDetail;
 use yii\data\Pagination;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -22,7 +22,7 @@ class ArticleController extends Controller{
        ]);
        $rows=$query->limit($pager->limit)->offset($pager->offset)->all();
         //将文章分类的名和id传入进去
-        $all=Article_category::find()->all();
+        $all=ArticleCategory::find()->all();
 
         //定义一个数组保存id和name的对应关系
         $arr=[];
@@ -43,7 +43,7 @@ class ArticleController extends Controller{
         //实列化Article
         $model=new Article();
         //实列化Article_detail
-        $article=new Article_detail();
+        $article=new ArticleDetail();
 
         //判断是否是post提交
         if ($request->isPost){
@@ -71,7 +71,7 @@ class ArticleController extends Controller{
 
         }
         //将文章分类的名和id传入进去
-        $all=Article_category::find()->all();
+        $all=ArticleCategory::find()->all();
 
         //定义一个数组保存id和name的对应关系
         $arr=[];
@@ -95,7 +95,7 @@ class ArticleController extends Controller{
         //实列化Article
         $model=Article::findOne(["id"=>$id]);
         //实列化Article_category
-        $article=Article_detail::findOne(["article_id"=>$id]);
+        $article=ArticleDetail::findOne(["article_id"=>$id]);
         //判断是否是post提交
         if($request->isPost){
             //加载数据
@@ -120,7 +120,7 @@ class ArticleController extends Controller{
         //将文章详情的值赋值给article
 
         //将文章分类的名和id传入进去
-        $all=Article_category::find()->all();
+        $all=ArticleCategory::find()->all();
 
         //定义一个数组保存id和name的对应关系
         $arr=[];

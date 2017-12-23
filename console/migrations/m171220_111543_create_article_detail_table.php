@@ -3,7 +3,7 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `article_detail`.
+ * Handles the creation of table `article-detail`.
  */
 class m171220_111543_create_article_detail_table extends Migration
 {
@@ -12,7 +12,7 @@ class m171220_111543_create_article_detail_table extends Migration
      */
     public function up()
     {
-        $this->createTable('article_detail', [
+        $this->createTable('article-detail', [
             'article_id' => $this->primaryKey(),
             'content'=>$this->text()->comment("文章详情")
         ]);
@@ -23,6 +23,6 @@ class m171220_111543_create_article_detail_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('article_detail');
+        $this->dropTable('article-detail');
     }
 }
