@@ -22,8 +22,14 @@
     </tr>
 
 </table>
+<?=
+\yii\widgets\LinkPager::widget([
+    "pagination"=>$pager,
+]);
+?>
 
 <?php
+
 /**
  * @var $this \yii\web\View
  */

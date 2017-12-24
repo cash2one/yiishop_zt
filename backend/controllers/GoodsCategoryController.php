@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 
 use backend\models\GoodsCategory;
+use yii\data\Pagination;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Request;
@@ -16,7 +17,15 @@ class GoodsCategoryController extends Controller{
      */
     public function actionIndex(){
         //获取表中所有的数据
-        $rows=GoodsCategory::find()->all();
+        $query=GoodsCategory::find();
+        //设定页数
+        $pager=new Pagination([
+            "defaultPageSize"=>9,
+            "totalCount"=>$query->count(),
+
+        ]);
+        //获取列表显示的记录
+        $rows=$query->limit($pager->limit)->offset($pager->offset)->all();
         //将id和name对应关系保存在数组中
         $arr=[];
         foreach ($rows as $row){
@@ -24,7 +33,7 @@ class GoodsCategoryController extends Controller{
         }
 
         //显示页面
-        return $this->render("index",["rows"=>$rows,"arr"=>$arr]);
+        return $this->render("index",["rows"=>$rows,"arr"=>$arr,"pager"=>$pager]);
 
     }
 
