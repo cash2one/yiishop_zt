@@ -84,21 +84,26 @@ class GoodsCategoryController extends Controller{
         $request=new Request();
         //实列化GoodsCategory
         $model=GoodsCategory::findOne(["id"=>$id]);
+        //获取没修改之前的父id
+        $parent_id=$model->parent_id;
         //判断是否是post提交
         if ($request->post()){
             //加载数据
             $model->load($request->post());
-            //判断是否是创建父类
-            if ($model->parent_id==0){
-                $model->makeRoot();
 
-            }else{
-                //获取父类的模型
-                $parent=GoodsCategory::findOne(["id"=>$model->parent_id]);
-                $model->appendTo($parent);
-            }
             //验证数据
             if ($model->validate()){
+                //判断是否是创建父类
+                if ($model->parent_id==0){
+                    //顶级分类不能修改为顶级分类
+                    if ($parent_id!=0){
+                        $model->makeRoot();
+                    }
+                }else{
+                    //获取父类的模型
+                    $parent=GoodsCategory::findOne(["id"=>$model->parent_id]);
+                    $model->appendTo($parent);
+                }
                 //保存数据
                 $model->save();
                 //提示成功信息

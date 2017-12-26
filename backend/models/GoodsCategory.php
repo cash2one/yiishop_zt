@@ -12,10 +12,19 @@ class GoodsCategory extends ActiveRecord {
     {
         return [
             [["name","parent_id","intro"],"required","message"=>"必须填写"],
+         // ["parent_id","validatePid"],
         ];
 
 
     }
+/*    //自定义验证规则
+    public function validatePid(){
+       $parent=GoodsCategory::findOne(["id"=>$this->parent_id]);
+       if ($parent->isChildOf($this)){
+         $this->addError("parent_id","不能修改到子孙分类下");
+       }
+    }*/
+
     /**
      * 获取表中数据
      */

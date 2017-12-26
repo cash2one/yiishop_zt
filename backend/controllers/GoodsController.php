@@ -7,6 +7,7 @@ use backend\models\GoodsCategory;
 use backend\models\GoodsCount;
 use backend\models\GoodsGallery;
 use backend\models\GoodsIntro;
+use yii\data\Pagination;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Request;
@@ -19,8 +20,27 @@ class GoodsController extends Controller{
 
        //显示商品列表
     public function actionIndex(){
-        //获取表中所有的数据
-       $rows=Goods::find()->all();
+
+       //获取所有的数据
+        $query=Goods::find();
+        $pager=new Pagination([
+            'defaultPageSize'=>5,
+            "totalCount"=>$query->count(),
+        ]);
+
+        //判断搜索条件
+           // $sn=\Yii::$app->request->get("sn")
+
+            if (\Yii::$app->request->get("name")){
+                $name=\Yii::$app->request->get("name");
+                $query->where(["like","name",$name]);
+            }
+            if (\Yii::$app->request->get("sn")){
+                $sn=\Yii::$app->request->get("sn");
+                $query->andwhere(["like","sn",$sn]);
+            }
+            $rows=$query->limit($pager->limit)->offset($pager->offset)->all();
+
        //获取品牌表中所有的数据
         $data=Brand::find()->all();
         //用一个数组保存id和name的关系
@@ -36,9 +56,9 @@ class GoodsController extends Controller{
             $arrs[$val->id]=$val->name;
         }
 
-
        //加载显示页面
-        return $this->render("index",["rows"=>$rows,"arr"=>$arr,"arrs"=>$arrs]);
+        return $this->render("index",["rows"=>$rows,"arr"=>$arr,"arrs"=>$arrs,"pager"=>$pager]);
+        //var_dump(\Yii::$app->request->get());
 
     }
 

@@ -1,3 +1,8 @@
+<form action="<?=\yii\helpers\Url::to(["goods/index"])?>" method="get">
+    货号:<input type="text" name="sn"/>
+    名称:<input type="text" name="name"/>
+    <input type="submit" value="搜索">
+</form>
 <table class="table">
     <tr>
         <th>货号</th>
@@ -35,6 +40,11 @@
     </tr>
 
 </table>
+<?=
+\yii\widgets\LinkPager::widget([
+        "pagination"=>$pager,
+])
+?>
 
 <?php
 
