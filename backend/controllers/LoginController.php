@@ -5,6 +5,7 @@ namespace backend\controllers;
 use backend\models\LoginForm;
 use frontend\models\User;
 use yii\captcha\CaptchaAction;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Request;
 
@@ -20,14 +21,19 @@ class LoginController extends Controller{
         if ($request->isPost){
             //加载数据
             $model->load($request->post());
+            if ($model->remember){
+                $rm=$model->remember[0];
+            }else{
+                $rm=null;
+            }
+
             //判断是否登录成功
-            if ($model->login($model->remember)){
+            if ($model->login($rm)){
 
                //登录成功
                 \Yii::$app->session->setFlash("success","登录成功");
                 //跳转到用户中心
                 return $this->redirect(["user/index"]);
-
             }
 
         }
@@ -47,6 +53,7 @@ class LoginController extends Controller{
             echo '已注销';
             return $this->redirect(["login/index"]);
         }
+
 
 
  /**

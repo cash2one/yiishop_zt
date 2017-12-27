@@ -21,6 +21,10 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
+    public $old_password;
+    public $new_password;
+    public $re_password;
+    public $role;
     /**
      * @inheritdoc
      */
@@ -31,17 +35,44 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'password_hash','email'], 'required',"message"=>"不能为空"],
+            [['username', 'password_hash','email','status'], 'required',"message"=>"不能为空"],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-            [["last_login_time","last_login_ip"],"safe"],
+            [["last_login_time","last_login_ip","role"],"safe"],
+            [["old_password","new_password","re_password"],"checkpwd"],
         ];
     }
 
+//定义修改密码的验证规则
+    public function checkpwd(){
+        //获取登录人的id
+        $id=\Yii::$app->user->identity->id;
+
+        $model=User::findOne($id);
+        //保存之前的旧密码
+        $old_password=$model->password_hash;
+        //旧密码不填表示不修改密码
+        if ($this->old_password){
+            //要修改密码,旧密码和输入密码必须一致
+            if(\Yii::$app->security->validatePassword($this->old_password,$old_password)){
+                //新密码和确认密码必须一致
+                if ($this->new_password!=$this->re_password){
+                    $this->addError("re_password","确认密码和新密码要一致");
+                } else{
+                    $this->password_hash=\Yii::$app->security->generatePasswordHash($model->re_password);
+                }
+            }else{
+                //新旧密码不一致
+                $this->addError("old_password","旧密码必须输入正确");
+            }
+
+        }
+
+    }
     /**
      * @inheritdoc
      */
@@ -110,6 +141,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function getAuthKey()
     {
         // TODO: Implement getAuthKey() method.
+        return $this->auth_key;
     }
 
     /**
@@ -123,5 +155,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         // TODO: Implement validateAuthKey() method.
+
+        return $this->getAuthKey()===$authKey;
     }
 }

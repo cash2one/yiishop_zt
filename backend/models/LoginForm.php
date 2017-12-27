@@ -22,7 +22,7 @@ class  LoginForm extends Model{
     }
 
     //验证规则
-    public function login($rm=null)
+    public function login($rm)
     {
         //验证账号密码
         $user = User::findOne(["username" => $this->username]);
@@ -35,12 +35,13 @@ class  LoginForm extends Model{
                 $ip=$_SERVER["REMOTE_ADDR"];
                 //跟新数据
                 $user::updateAll(["last_login_ip"=>$ip,"last_login_time"=>time()],["id"=>$id]);
-                //将用户信息保存到session
-              $session= \Yii::$app->session;
-               $session["userinfo"]=$user;
-               //如果用户点了记住我功能,将用户信息保存在cookie中
-                
+                //将用户信息保存到session,并且判断是否需要自动登录
+                \Yii::$app->user->login($user,0);
+              if($rm==1){
+                  \Yii::$app->user->login($user,2600*24*7);
+              }
 
+               //如果用户点了记住我功能,将用户信息保存在cookie中
 
                 return true;
 

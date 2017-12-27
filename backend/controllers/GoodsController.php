@@ -8,6 +8,7 @@ use backend\models\GoodsCount;
 use backend\models\GoodsGallery;
 use backend\models\GoodsIntro;
 use yii\data\Pagination;
+use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Request;
@@ -100,6 +101,7 @@ class GoodsController extends Controller{
                //保存数据
                  $goodsCount->save();
              }
+             //可以使用str_pad来进行操作.
              //拼接货号
              $sn=$time."0000";
 
@@ -308,5 +310,7 @@ class GoodsController extends Controller{
        $model->delete();
 
     }
+
+
 
 }

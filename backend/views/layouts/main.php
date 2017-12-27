@@ -54,8 +54,20 @@ AppAsset::register($this);
                 ['label' => '文章添加', 'url' => ['article/add']],
                 ]
             ],
+        ['label' => 'RBAC', 'url' => ['rbac/index'],
+            'items'=>[['label' => '权限列表', 'url' => ['rbac/index']],
+                ['label' => '权限添加', 'url' => ['rbac/add']],
+                ['label' => '角色列表', 'url' => ['role/index']],
+                ['label' => '角色添加', 'url' => ['role/add']],
+                ]
+        ],
+        ['label' => '用户管理', 'url' => ['user/index'],
+            'items'=>[['label' => '用户列表', 'url' => ['user/index']],
+                ['label' => '用户添加', 'url' => ['user/add']],
+                ['label' => '修改密码', 'url' => ['user/update']],
+                ]
+        ],
 
-        ['label'=>"注销",'url'=>["login/logout"]]
 
     ];
     if (Yii::$app->user->isGuest) {
@@ -66,7 +78,7 @@ AppAsset::register($this);
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                '注销(' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()
