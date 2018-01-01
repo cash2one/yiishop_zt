@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use backend\models\Brand;
+use backend\filters\RbacFilter;
 use backend\models\Goods;
 use backend\models\GoodsCategory;
 use backend\models\GoodsCount;
@@ -311,6 +312,16 @@ class GoodsController extends Controller{
 
     }
 
+    //配置过滤器
+   public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'only'=>['index','add','edit','delete'],//除了这些操作，其他操作生效
+            ]
 
+        ];
+    }
 
 }

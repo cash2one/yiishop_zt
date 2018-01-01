@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\Brand;
 use yii\helpers\Json;
 use yii\web\Controller;
@@ -171,6 +172,18 @@ class BrandController extends Controller
             return Json::encode(["errors"=>1]);
         }
 
+    }
+
+    //配置过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>['upload'],//除了这些操作，其他操作生效
+            ]
+
+        ];
     }
 
 }

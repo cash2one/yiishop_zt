@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\EditForm;
 use backend\models\User;
 use yii\web\Controller;
@@ -210,6 +211,17 @@ class UserController extends Controller{
         return $this->render("update",["model"=>$model]);
 
 
+    }
+
+    //配置过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>[],//除了这些操作，其他操作生效
+            ]
+        ];
     }
 
 }

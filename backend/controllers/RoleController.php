@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 
+use backend\filters\RbacFilter;
 use backend\models\EditForm;
 use backend\models\QjForm;
 use yii\rbac\Role;
@@ -165,5 +166,16 @@ class RoleController extends Controller{
         $authManager->remove($role);
 
     }
+    //配置过滤器
+/*    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>[],//除了这些操作，其他操作生效
+            ]
+
+        ];
+    }*/
 
 }

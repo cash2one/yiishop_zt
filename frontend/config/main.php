@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'layout'=>false,
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -36,14 +37,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',	// 伪静态后缀
             'rules' => [
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

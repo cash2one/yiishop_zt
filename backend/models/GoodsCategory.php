@@ -11,7 +11,8 @@ class GoodsCategory extends ActiveRecord {
    public function rules()
     {
         return [
-            [["name","parent_id","intro"],"required","message"=>"必须填写"],
+            [["name","parent_id"],"required","message"=>"必须填写"],
+            ['intro','safe'],
          // ["parent_id","validatePid"],
         ];
 

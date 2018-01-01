@@ -10,7 +10,8 @@
             <td><?php for($i=0;$i<=$row->depth;++$i){
                         echo "&emsp;&emsp;";
                 }echo $row->name?></td>
-            <td><?=$row->parent_id==0?'顶级分类':$arr[$row->parent_id]?></td>
+         <!--   <td><?/*=$row->parent_id==0?'顶级分类':$arr[$row->parent_id]*/?></td>-->
+            <td><?=$row->parent_id?></td>
             <td><?=$row->intro?></td>
             <td><?=\yii\bootstrap\Html::a("修改",["goods-category/edit","id"=>$row->id],["class"=>"btn btn-primary"])?>&emsp;
                 <?=\yii\bootstrap\Html::a("删除",null,["class"=>"btn btn-primary"])?>

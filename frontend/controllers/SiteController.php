@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Goods;
+use frontend\models\GoodsGallery;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -72,7 +74,40 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
         return $this->render('index');
+    }
+
+    /**
+     * 显示商品页面
+     *
+     */
+    public function actionList($id){
+        //根据id获取商品信息
+         $rows=Goods::find()->where(['goods_category_id'=>$id])->all();
+
+        //加载商品列表页
+        return $this->render("list",["rows"=>$rows]);
+
+    }
+
+    /**
+     * 展示商品详情
+     */
+    public function actionContent($id){
+        //获取商品的信息
+        $goods=Goods::findOne(["id"=>$id]);
+        //根据id获取商品的相册
+        $rows=GoodsGallery::find()->where(["goods_id"=>$id])->all();
+        //遍历获取第一张图片
+        $arr=[];
+        foreach ($rows as $row){
+            $arr[]=$row;
+            break;
+        }
+
+        //展示商品详情页面
+        return $this->render("content",["rows"=>$rows,"arr"=>$arr[0],"goods"=>$goods]);
     }
 
     /**

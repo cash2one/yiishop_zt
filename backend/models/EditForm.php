@@ -37,7 +37,7 @@ class EditForm extends Model{
                 //新密码和确认密码必须一致
                 if ($this->new_password!=$this->re_password){
                     $this->addError("re_password","确认密码和新密码要一致");
-                } 
+                }
             }else{
                 //新旧密码不一致
                 $this->addError("old_password","旧密码必须输入正确");

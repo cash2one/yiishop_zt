@@ -73,6 +73,37 @@ class User extends ActiveRecord implements IdentityInterface
         }
 
     }
+
+    //拼接菜单
+    public function getMenu(){
+        $menuItems=[];
+        //实列化Menu活动记录
+        $menus=Menu::find()->where(["parent_id"=>0])->all();
+        //循环显示
+        //定义一个数组保存二级分类
+
+        foreach ($menus as $menu){
+        //再查询该父类下得子分类
+            $children=Menu::find()->where(["parent_id"=>$menu->id])->all();
+            //再次遍历子分类
+            $items=[];
+            foreach ($children as $child){
+                //判断用户是不是有权限
+                if (\Yii::$app->user->can($child->url)){
+                    $items[]= ['label' =>$child->name, 'url' => [$child->url]];
+                }
+
+            }
+            if ($items){
+                $menuItems[] =
+                    ['label' => $menu->name, 'items'=>$items];
+            }
+
+        }
+         //返回值
+        return $menuItems;
+
+    }
     /**
      * @inheritdoc
      */

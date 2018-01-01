@@ -3,6 +3,7 @@ namespace backend\controllers;
 
 
 
+use backend\filters\RbacFilter;
 use backend\models\EditForm;
 use backend\models\QjForm;
 use yii\rbac\Permission;
@@ -120,6 +121,18 @@ class RbacController extends Controller{
          //删除
          $authManager->remove($permission);
      }
+
+    //配置过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+               // 'except'=>[],//除了这些操作，其他操作生效
+            ]
+
+        ];
+    }
 
 
 

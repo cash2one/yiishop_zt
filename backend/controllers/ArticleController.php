@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\Article;
 use backend\models\ArticleCategory;
 use backend\models\ArticleDetail;
@@ -159,6 +160,18 @@ class ArticleController extends Controller{
                     'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
                 ]
             ]
+        ];
+    }
+
+    //配置过滤器
+   public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'only'=>['index','add','edit','delete'],//除了这些操作，其他操作生效
+            ]
+
         ];
     }
 

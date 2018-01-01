@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\Article;
 use backend\models\ArticleDetail;
 use yii\web\Controller;
@@ -44,6 +45,18 @@ class ArticleDetailController extends Controller{
         //将数据传入到添加页面
         return $this->render("add",["model"=>$model]);
 
+    }
+
+    //配置过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>[],//除了这些操作，其他操作生效
+            ]
+
+        ];
     }
 
 

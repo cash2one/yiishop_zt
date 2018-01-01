@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\filters\RbacFilter;
 use backend\models\ArticleCategory;
 use yii\web\Controller;
 use yii\web\Request;
@@ -91,6 +92,18 @@ class ArticleCategoryController extends Controller{
         $model::updateAll(["status"=>-1],["id"=>$id]);
 
 
+    }
+
+    //过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>[],//除了这些操作，其他操作生效
+            ]
+
+        ];
     }
 
 }

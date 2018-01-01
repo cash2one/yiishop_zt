@@ -3,6 +3,7 @@ namespace backend\controllers;
 
 
 
+use backend\filters\RbacFilter;
 use backend\models\GoodsCategory;
 use yii\data\Pagination;
 use yii\helpers\Json;
@@ -137,7 +138,6 @@ class GoodsCategoryController extends Controller{
             return $this->redirect(["goods-category/index"]);
         };
 
-
     }
     /**
      * 测试zTree
@@ -146,6 +146,17 @@ class GoodsCategoryController extends Controller{
 
         return $this->renderPartial("show");
 
+    }
+    //配置过滤器
+    public function behaviors()
+    {
+        return [
+            "rbac"=>[
+                'class'=>RbacFilter::className(),
+                'except'=>[],//除了这些操作，其他操作生效
+            ]
+
+        ];
     }
 
 
