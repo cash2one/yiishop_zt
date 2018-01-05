@@ -17,10 +17,10 @@
 </head>
 <body>
 	<!-- 顶部导航 start -->
-<!--	<div class="topnav">
+	<!--<div class="topnav">
 		<div class="topnav_bd w1210 bc">
 			<div class="topnav_left">
-				
+
 			</div>
 			<div class="topnav_right fr">
 				<ul>
@@ -36,7 +36,6 @@
 	</div>-->
     <?php require "/header.php" ?>
 	<!-- 顶部导航 end -->
-
 	
 	<div style="clear:both;"></div>
 
@@ -49,7 +48,7 @@
 			<div class="search fl">
 				<div class="search_form">
 					<div class="form_left fl"></div>
-					<form action="" name="serarch" method="get" class="fl">
+					<form action="" name="" method="get" class="fl">
 						<input type="text" class="txt" name="name" value="" />
                         <input type="hidden" name="id" value="<?=$id?>"/>
                         <input type="submit" class="btn" value="搜索"/>
@@ -102,9 +101,9 @@
 						<div class="viewlist mt10">
 							<h3>最近浏览的商品：</h3>
 							<ul>
-								<li><a href=""><img src="images/view_list1.jpg" alt="" /></a></li>
-								<li><a href=""><img src="images/view_list2.jpg" alt="" /></a></li>
-								<li><a href=""><img src="images/view_list3.jpg" alt="" /></a></li>
+								<li><a href=""><img src="/images/view_list1.jpg" alt="" /></a></li>
+								<li><a href=""><img src="/images/view_list2.jpg" alt="" /></a></li>
+								<li><a href=""><img src="/images/view_list3.jpg" alt="" /></a></li>
 							</ul>
 						</div>
 					</dd>
@@ -439,21 +438,36 @@
 			<div style="clear:both;"></div>
 
 			<!-- 商品列表 start-->
-			<div class="goodslist mt10">
-				<ul id="ul" url="<?=\yii\helpers\Url::to(["site/liu"])?>">
-                    <?php foreach ($rows as $row){ ?>
-					<li  id="<?=$row->id?>">
+			<!--<div class="goodslist mt10">
+				<ul>
+                    <?php /*foreach ($rows as $row){ */?>
+					<li>
 						<dl>
-							<dt><a href=""><img src="<?=$row->logo?>" alt="" /></a></dt>
-							<dd><a class="a" href="<?=\yii\helpers\Url::to(["site/content",'id'=>$row->id])?>"><?=$row->name?></a></dt>
-							<dd><strong>￥<?=$row->market_price?></strong></dt>
-							<dd><a href=""><em>已有<?=$row->view_times?$row->view_times:0?>人评价</em></a></dt>
+							<dt><a href=""><img src="<?/*=$row->logo*/?>" alt="" /></a></dt>
+							<dd><a href="<?/*=\yii\helpers\Url::to(["site/content",'id'=>$row->id])*/?>"><?/*=$row->name*/?></a></dt>
+							<dd><strong>￥<?/*=$row->market_price*/?></strong></dt>
+							<dd><a href=""><em>已有<?/*=$row->sort*/?>人评价</em></a></dt>
 						</dl>
 					</li>
-                  <?php };?>
+                  <?php /*};*/?>
 
 				</ul>
-			</div>
+			</div>-->
+            <div class="goodslist mt10">
+                <ul id="ul" url="<?=\yii\helpers\Url::to(["site/liu"])?>">
+                    <?php foreach ($rows as $row){ ?>
+                        <li  id="<?=$row->id?>">
+                            <dl>
+                                <dt><a href=""><img src="<?=$row->logo?>" alt="" /></a></dt>
+                                <dd><a class="a" href="<?=\yii\helpers\Url::to(["site/content",'id'=>$row->id])?>"><?=$row->name?></a></dt>
+                                <dd><strong>￥<?=$row->market_price?></strong></dt>
+                                <dd><a href=""><em>已有<?=$row->view_times?$row->view_times:0?>人评价</em></a></dt>
+                            </dl>
+                        </li>
+                    <?php };?>
+
+                </ul>
+            </div>
 			<!-- 商品列表 end-->
 
 			<!-- 分页信息 start -->
@@ -570,17 +584,18 @@
 		</p>
 	</div>
 	<!-- 底部版权 end -->
-<script type="text/javascript">
-    $("#ul").on("click","dl dd .a",function() {
-        //获取id
-        var id=$(this).closest("li").attr("id");
-        //获取地址
-        var url=$("#ul").attr("url");
-        //发送ajax请求
-        $.get(url,{"id":id})
+    <script type="text/javascript">
+        $("#ul").on("click","dl dd .a",function() {
 
-    })
-</script>
+            //获取id
+            var id=$(this).closest("li").attr("id");
+            //获取地址
+            var url=$("#ul").attr("url");
+            //发送ajax请求
+            $.get(url,{"id":id})
+
+        })
+    </script>
 
 </body>
 </html>

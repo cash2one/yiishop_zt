@@ -7,4 +7,6 @@ class GoodsCategory extends ActiveRecord{
 
 
 
+
+
 }

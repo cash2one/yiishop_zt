@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 
 use backend\filters\RbacFilter;
+use backend\models\Goods;
 use backend\models\GoodsCategory;
 use yii\data\Pagination;
 use yii\helpers\Json;
@@ -130,7 +131,7 @@ class GoodsCategoryController extends Controller{
              //根据id获取数据
         $model=GoodsCategory::findOne(["id"=>$id]);
         //判断该记录下是不是有子分类
-        if (GoodsCategory::findOne(["parent_id"=>$id])){
+        if (GoodsCategory::findOne(["parent_id"=>$id]) || Goods::findOne(["goods_category_id"=>$id])){
              echo Json::encode(["msg"=>"此分类有子类,请先删除子分类"]);
         }else{
             $model->delete();

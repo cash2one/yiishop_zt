@@ -125,7 +125,7 @@ class BrandController extends Controller
         //接收id
         $id = $_GET["id"];
         //根据id获取相应的记录
-        echo $id;
+
         $model = Brand::findOne(["id" => $id]);
 
         //修改该记录

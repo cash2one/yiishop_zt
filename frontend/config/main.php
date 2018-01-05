@@ -17,7 +17,7 @@ return [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'frontend\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
@@ -36,6 +36,13 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'sms'=>[
+            'class'=>\frontend\components\Sms::className(),
+            'ak'=>'LTAIS7TjVKveEM8U',
+            'sk'=>'ZCHz5t6hmYYJbzxNP1V8Fzly6NQ0Al',
+            'sign'=>'郑先生小厨',
+            'template'=>'SMS_120130246',
         ],
 
         'urlManager' => [
