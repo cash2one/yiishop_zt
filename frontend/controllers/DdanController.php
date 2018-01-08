@@ -73,8 +73,10 @@ class DdanController extends Controller{
                //统计总金额
                 $model->total+=$model->delivery_price;
                 $model->save();
-
-
+              //清空购物车
+                foreach ($rows as $row){
+                    $row->delete();
+                }
 
             //添加成功跳转到提示才成功页面
             return $this->redirect(["ddan/msg"]);
@@ -106,8 +108,13 @@ class DdanController extends Controller{
 
     //显示订单状态
     public function actionStatus(){
+        //获取用户id
+        $member_id=\Yii::$app->user->identity->id;
+        //根据id获取相应的订单
+        $rows=Ddan::find()->where(["member_id"=>$member_id])->all();
 
-        return $this->render("order");
+
+        return $this->render("order",["ddans"=>$rows]);
     }
 
 

@@ -240,33 +240,24 @@
 						</tr>
 					</thead>
 					<tbody>
+                    <?php foreach ($ddans as $ddan){?>
 						<tr>
-							<td><a href="">852592106</a></td>
-							<td><a href=""><img src="/images/order1.jpg" alt="" /></a></td>
-							<td>王超平</td>
-							<td>￥35.00 货到付款</td>
-							<td>2013-11-12 16:28:14</td>
-							<td>已取消</td>
+							<td><a href=""><?=$ddan->id?></a></td>
+							<td><a href="">
+                                    <?php
+                                    $rows=\frontend\models\DdanGoods::find()->where(["order_id"=>$ddan->id])->all();
+                                    foreach ($rows as $row){
+                                    ?>
+                                    <img src="<?=$row->logo?>" alt="" width="50px" />
+                                <?php }; ?>
+                                </a></td>
+							<td><?=\Yii::$app->user->identity->username?></td>
+							<td>￥<?=$ddan->delivery_price?>.00 <?=$ddan->payment_name?></td>
+							<td><?=date("Y-m-d H:i:s",$ddan->create_time)?></td>
+							<td><?=$ddan->status==1?'未处理':''?></td>
 							<td><a href="">查看</a> | <a href="">删除</a></td>
 						</tr>
-						<tr>
-							<td><a href="">852571653</a></td>
-							<td><a href=""><img src="/images/order2.jpg" alt="" /></a></td>
-							<td>王超平</td>
-							<td>￥35.00 在线支付</td>
-							<td>2013-11-13 19:28:14</td>
-							<td>已完成</td>
-							<td><a href="">查看</a> | <a href="">删除</a></td>
-						</tr>
-						<tr>
-							<td><a href="">471196680</a></td>
-							<td><a href=""><img src="/images/order2.jpg" alt="" /></a></td>
-							<td>王超平</td>
-							<td>￥169.00 货到付款</td>
-							<td>2013-02-20 23:00:00</td>
-							<td>已完成</td>
-							<td><a href="">查看</a> | <a href="">删除</a></td>
-						</tr>
+                    <?php }; ?>
 					</tbody> 
 				</table>
 			</div>

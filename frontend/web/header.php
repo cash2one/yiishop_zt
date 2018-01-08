@@ -13,7 +13,7 @@
                     ?>
                 [<a href="<?=\yii\helpers\Url::to(["login/logout"])?>">注销(<?=\Yii::$app->user->identity->username?>)</a>]
                     <li class="line">|</li>
-                    <li>我的订单</li>
+                    <li><a href="<?=\yii\helpers\Url::to(["ddan/status"])?>">我的订单</li>
                     <li class="line">|</li>
                     <li>客户服务</li>
                 <?php };?>
