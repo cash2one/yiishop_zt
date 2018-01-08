@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 
+use frontend\models\Cart;
 use frontend\models\LoginForm;
 use yii\web\Controller;
 use yii\web\Request;
@@ -25,6 +26,39 @@ class LoginController extends Controller{
             if ($model->login($rm)){
                 //登录成功提示成功信息
                // \Yii::$app->session->setFlash("success","登录成功");
+                //同步用户购物车数据
+                //先判断cookie中是否有值
+                //登录时,将cookie信息同步到购物车表
+                //获取用户id
+                $member_id=\Yii::$app->user->identity->id;
+                $cookie=\Yii::$app->request->cookies;
+                if ($cookie->has("cart")){
+                    $value=$cookie->getValue("cart");
+                    $cart=unserialize($value);
+                    //判断是否已经添加了该商品
+                    foreach ($cart as $key=>$val){
+                        $goods=Cart::find()->where(["goods_id"=>$key])->andWhere(["member_id"=>$member_id])->one();
+                        //如果用户存在
+                        if ($goods){
+                            $goods::updateAll(["amount"=>$goods->amount+$val],["id"=>$goods->id]);
+                        }else{
+                            //实列化cart组件
+                            $model=new Cart();
+                            //赋值
+                            $model->amount=$val;
+                            $model->goods_id=$key;
+                            $model->member_id=$member_id;
+                            if ($model->validate()){
+                                //保存数据
+                                $model->save();
+                            }
+                        }
+
+                    }
+                  //同步数据到数据库之后,删除cookie中的信息
+                    \yii::$app->response->cookies->remove('cart');
+
+                }
                 echo "登录成功";
                 //跳转到首页
                 return $this->redirect(["site/index"]);

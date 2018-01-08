@@ -128,7 +128,7 @@ class CartController extends Controller{
               //获取用户id
             $member_id=\Yii::$app->user->identity->id;
             //先判断cookie中是否有值
-            $cookie=\Yii::$app->request->cookies;
+           /* $cookie=\Yii::$app->request->cookies;
             if ($cookie->has("cart")){
                 $value=$cookie->getValue("cart");
                 $cart=unserialize($value);
@@ -154,7 +154,7 @@ class CartController extends Controller{
                 }
 
 
-            }
+            }*/
             //当用户登陆时,获取数据表的信息
 
             //根据member_id获取用户数据库中的购物车数据

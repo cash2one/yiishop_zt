@@ -72,7 +72,7 @@
             <?php foreach ($rows as $row){?>
 				<tr id="<?=$row->id?>" url="<?=\yii\helpers\Url::to(["cart/amount"])?>">
 					<td class="col1"><a href=""><img src="<?=$row->logo?>" alt="" /></a>  <strong><a href="">【1111购物狂欢节】惠<?=$row->name?></a></strong></td>
-					<td class="col3">￥<span><?=$row->shop_price?></span></td>
+					<td class="col3">￥<span><?=$row->shop_price?>.00</span></td>
 					<td class="col4"> 
 						<a  href="javascript:;" class="reduce_num"></a>
 						<input type="text" id="id_<?=$row->id?>" name="amount" value="<?=$cart[$row->id]?>" class="amount"/>
@@ -91,7 +91,7 @@
 		</table>
 		<div class="cart_btn w990 bc mt10">
 			<a href="<?=\yii\helpers\Url::to(["site/index"])?>" class="continue">继续购物</a>
-			<a href="" class="checkout">结 算</a>
+			<a href="<?=\yii\helpers\Url::to(["ddan/index"])?>" class="checkout">结 算</a>
 		</div>
 	</div>
 	<!-- 主体部分 end -->
