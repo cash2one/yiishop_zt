@@ -53,7 +53,7 @@
 			</div>
 		</div>
 	</div>-->
-    <?php require "/header.php" ?>
+    <?php require "./header.php" ?>
 	<!-- 顶部导航 end -->
 	
 	<div style="clear:both;"></div>
@@ -126,7 +126,7 @@
 				</dl>
 			</div>-->
 			<!-- 用户中心 end-->
-            <?php require "/body.php" ?>
+            <?php require "./body.php" ?>
 			<!-- 购物车 start -->
 		<!--	<div class="cart fl">
 				<dl>

@@ -29,7 +29,7 @@
 		</div>
 	</div>-->
 
-    <?php require "/header.php" ?>
+    <?php require "./header.php" ?>
 	<!-- 顶部导航 end -->
 	
 	<div style="clear:both;"></div>
