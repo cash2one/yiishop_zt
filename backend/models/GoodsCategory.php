@@ -66,7 +66,7 @@ class GoodsCategory extends ActiveRecord {
     //获取商品分类数据
 
     //将页面静态化保存再redis中
-    public static function getCategory(){
+    public static function getCategory($name=null){
         //开启redis
         $redis=new \Redis();
         $redis->connect("127.0.0.1");
@@ -84,7 +84,7 @@ class GoodsCategory extends ActiveRecord {
                 $html.=     '<h3><a href="'.\yii\helpers\Url::to(["site/show-two","id"=>$v->id]).'">'.$v->name.'</a><b></b></h3>';
                 $html.=    '<div class="cat_detail">';
                 //加入收索条件
-                $name=\Yii::$app->request->get("name");
+                $name=\Yii::$app->request->get("key");
                 $data=\backend\models\GoodsCategory::find()->where(["parent_id"=>$v->id])->all() ;
                 if ($name){
                     $data=\backend\models\GoodsCategory::find()->where(["parent_id"=>$v->id])->andWhere(["like","name",$name])->all() ;

@@ -223,6 +223,16 @@ class SiteController extends Controller
          return $this->render("regist");
      }
 
+     public function actionSousuo(){
+         //接收get传过来的数据
+         $name=\Yii::$app->request->get("name");
+
+         //根据搜索条件获取数据
+         $rows=\backend\models\Goods::find()->where(["like","name",$name])->all();
+         //加载显示页面
+         return $this->render("sousuo",["rows"=>$rows]);
+
+     }
      //添加浏览次数
     public function actionLiu($id){
          $id=\Yii::$app->request->get("id");

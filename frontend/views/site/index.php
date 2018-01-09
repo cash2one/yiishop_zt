@@ -48,8 +48,8 @@
         <div class="search fl">
             <div class="search_form">
                 <div class="form_left fl"></div>
-                <form action="" name="serarch" method="get" class="fl">
-                    <input type="text" name= 'name' class="txt" value="" /><input type="submit" class="btn" value="搜索" />
+                <form action="<?=\yii\helpers\Url::to(["site/sousuo"])?>" name="serarch" method="get" class="fl">
+                    <input type="text" name= 'name' class="txt"/><input type="submit" class="btn" value="搜索" />
                 </form>
                 <div class="form_right fl"></div>
             </div>

@@ -19,11 +19,13 @@ class DdanController extends Controller{
 
             return $this->redirect(["login/index"]);
         }
+
         //获取用户id
         $member_id=\Yii::$app->user->identity->id;
         $model=new Ddan();
         //根据member_id获取用户数据库中的购物车数据
         $rows=Cart::find()->where(["member_id"=>$member_id])->all();
+
         //处理提交过来的数据
         $request=new Request();
         if ($request->isPost){
