@@ -19,7 +19,7 @@
 			<div class="topnav_right fr">
 				<ul>
 					<li>您好，欢迎来到福鑫商城 [<a href="<?=\yii\helpers\Url::to(["site/regist"])?>">免费注册</a>]
-                        [<a href="<?=\yii\helpers\Url::to(["site/index"])?>">首页</a>]</li>
+                        [<a href="<?=\yii\helpers\Url::to(["./index"])?>">首页</a>]</li>
 
 				</ul>
 			</div>

@@ -61,7 +61,7 @@ class LoginController extends Controller{
                 }
                 echo "登录成功";
                 //跳转到首页
-                return $this->redirect(["site/index"]);
+                return $this->redirect(["./index"]);
 
             }
 
@@ -77,11 +77,16 @@ class LoginController extends Controller{
     public function actionLogout(){
         \Yii::$app->user->logout();
         //echo '已注销';
-        return $this->redirect(["site/index"]);
+        return $this->redirect(["./index"]);
+
     }
 
     //测试发短信
     public function actionSms($phone){
+        //为了防止短信盗刷，首先判断是不是同一手机号的请求，如果是就要判断当前时间减去过期时间如果小于60提示客户60s只能发送一次
+   /*     $redis=new \Redis();
+        $redis->connect("127.0.0.1");
+        $redis->ttl("code_".$phone);//获取号码的过期时间。*/
          //验证电话号码是否正确
           //准备验证码
         $code=rand(1000,9999);

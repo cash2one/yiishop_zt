@@ -82,9 +82,28 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        return $this->render('index');
+         $content= $this->render('index');
+        file_put_contents("./index.html",$content);
+        echo "已经生成静态页面";
+        //return $this->render('index');
     }
+        //判断用户是否登陆，返回相应的静态页面信息
+    public function actionSouye(){
+        //判断用户是否登陆
+        if (!\Yii::$app->user->isGuest){
+            $result=[
+                "result"=>true,
+                "username"=>\Yii::$app->user->identity->username,
+            ];
+            //返回给页面
+            return  \yii\helpers\Json::encode($result);
 
+        }
+
+
+
+
+    }
     /**
      * 显示商品页面
      *
@@ -222,11 +241,10 @@ class SiteController extends Controller
          //加载注册页面
          return $this->render("regist");
      }
-
+     //添加首页搜索条件
      public function actionSousuo(){
          //接收get传过来的数据
          $name=\Yii::$app->request->get("name");
-
          //根据搜索条件获取数据
          $rows=\backend\models\Goods::find()->where(["like","name",$name])->all();
          //加载显示页面
@@ -276,6 +294,15 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    //跟新点击数
+    public function actionClick(){
+        $id=\Yii::$app->request->get("id");
+        $goods=Goods::findOne(["id"=>$id]);
+        $goods::updateAllCounters(["view_times"=>1],["id"=>$id]);
+        return \yii\helpers\Json::encode($goods->view_times);
+
     }
 
 

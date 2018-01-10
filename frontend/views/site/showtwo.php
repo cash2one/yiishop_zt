@@ -459,7 +459,7 @@
                         <li  id="<?=$row->id?>">
                             <dl>
                                 <dt><a href=""><img src="<?=$row->logo?>" alt="" /></a></dt>
-                                <dd><a class="a" href="<?=\yii\helpers\Url::to(["site/content",'id'=>$row->id])?>"><?=$row->name?></a></dt>
+                                <dd><a class="a" href="<?=\yii\helpers\Url::to(["./content/".$row->id])?>"><?=$row->name?></a></dt>
                                 <dd><strong>￥<?=$row->market_price?></strong></dt>
                                 <dd><a href=""><em>已有<?=$row->view_times?$row->view_times:0?>人评价</em></a></dt>
                             </dl>

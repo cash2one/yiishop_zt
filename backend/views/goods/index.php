@@ -15,6 +15,7 @@
         <th>logo</th>
         <th>是否在售</th>
         <th>添加时间</th>
+        <th>生成静态页</th>
         <th>操作</th>
     </tr>
     <?php foreach ($rows as $row){ ?>
@@ -29,6 +30,9 @@
             <td><img src="<?=$row->logo?>" width="100px"></td>
             <td><?=$row->is_on_sale==0?'下架':'在售'?></td>
             <td><?=date("Y-m-d H:i:s",$row->create_time)?></td>
+            <td> <?=\yii\bootstrap\Html::a("生成静态页",["goods/content","id"=>$row->id],["class"=>"btn btn-primary"])?>
+                <?=\yii\bootstrap\Html::a("",null,[])?>
+            </td>
             <td> <?=\yii\bootstrap\Html::a("相册",["goods/gallery","id"=>$row->id],["class"=>"btn btn-primary"])?>&emsp;
                 <?=\yii\bootstrap\Html::a("修改",["goods/edit","id"=>$row->id],["class"=>"btn btn-primary"])?>&emsp;
                 <?=\yii\bootstrap\Html::a("删除",null,["class"=>"btn btn-primary"])?>

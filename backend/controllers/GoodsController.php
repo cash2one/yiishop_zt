@@ -112,6 +112,7 @@ class GoodsController extends Controller{
              //加载数据
              $model->save();
 
+
              //将数据保存到content
              $goodsintro->goods_id=$model->id;
              $goodsintro->content=$model->content;
@@ -147,10 +148,58 @@ class GoodsController extends Controller{
     public function actionGallery($id){
         //实列化Request
         $request=new Request();
+        //添加完相册之后生成静态文件保存，根据id获取商品信息
+        //$goods=Goods::findOne(["id"=>$id]);
+
+
         //实列化GoodsGallery
         $rows=GoodsGallery::find()->where(["goods_id"=>$id])->all();
+       //遍历获取第一张图片
+    /*    $arr=[];
+        foreach ($rows as $row){
+            $arr[]=$row;
+            break;
+        }
+        if (!$arr[0]){
+            $arr[0]=$goods->logo;
+        }
+        //保存生成的静态页面
+        $content=$this->renderPartial("content",["rows"=>$rows,"arr"=>$arr[0],"goods"=>$goods]);
+        //将静态文件保存
+        file_put_contents("../../frontend/web/content/".$id.".html",$content);*/
 
       return $this->render("show",["rows"=>$rows,"id"=>$id]);
+
+    }
+    //获取商品点击数据
+    public function actionClick(){
+        $id=\Yii::$app->request->get("id");
+        $goods=Goods::findOne(["id"=>$id]);
+        $goods::updateAllCounters(["view_times"=>1],["id"=>$id]);
+        return \yii\helpers\Json::encode($goods->view_times);
+    }
+    //生产静态页面
+    public function actionContent($id){
+        //获取商品的信息
+        $goods=Goods::findOne(["id"=>$id]);
+        //$goods::updateAllCounters(["view_times"=>1],["id"=>$id]);
+        //根据id获取商品的相册
+        $rows=GoodsGallery::find()->where(["goods_id"=>$id])->all();
+        //遍历获取第一张图片
+        $arr=[];
+        foreach ($rows as $row){
+            $arr[]=$row;
+            break;
+        }
+        //保存生成的静态页面
+        $content=$this->renderPartial("content",["rows"=>$rows,"arr"=>$arr[0],"goods"=>$goods]);
+        //将静态文件保存
+        file_put_contents("../../frontend/web/content/".$id.".html",$content);
+        //提示修改信息
+        \Yii::$app->session->setFlash("success","静态页面已经生成");
+        //跳转回首页
+       // return $this->redirect(["goods/index"]);
+
 
     }
     /**

@@ -59,7 +59,7 @@
 		<div class="success_bd">
 			<p><span></span>订单提交成功，我们将及时为您处理</p>
 			
-			<p class="message">完成支付后，你可以 <a href="<?=\yii\helpers\Url::to(["ddan/status"])?>">查看订单状态</a>  <a href="<?=\yii\helpers\Url::to(["site/index"])?>">继续购物</a> </p>
+			<p class="message">完成支付后，你可以 <a href="<?=\yii\helpers\Url::to(["ddan/status"])?>">查看订单状态</a>  <a href="<?=\yii\helpers\Url::to(["./index"])?>">继续购物</a> </p>
 		</div>
 	</div>
 	<!-- 主体部分 end -->

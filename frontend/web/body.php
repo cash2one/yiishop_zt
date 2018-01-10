@@ -41,7 +41,7 @@
             <?php }else{?>
             <div class="prompt">
 
-               您好，<?=\Yii::$app->user->identity->username?></a>
+               您好，<a><?=\Yii::$app->user->identity->username?></a>
             </div>
             <div class="uclist mt10">
                 <ul class="list1 fl">
