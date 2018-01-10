@@ -208,7 +208,7 @@
 
 		<div class="fillin_ft">
             <button type="submit"><span>提交订单</span></button>
-			<p>应付总额：<strong id="total">61205</strong></p>
+			<p>应付总额：<strong id="total"><?=$num+25?></strong></p>
 		</div>
 
 	</div>
@@ -243,22 +243,27 @@
 	</div>
 	<!-- 底部版权 end -->
 <script type="text/javascript ">
-    $("#tbody").on("click","tr input",function () {
-        //获取该运送方式的key
-        var key=$(this).closest("tr").attr("key");
-       //获取选中的运送方式对应的运费
-        var money=$("#"+key).html();
-      //替换id=money中的内容
-        $("#money").html(money);
-        //获取商品总金额
-        var goods_money=$("#em").html();
-        //计算总金额
-        //转化为整数进行计算
-        var total=parseInt(goods_money)+parseInt(money);
-        //替换id=total的总金额
-        $("#total").html(total);
 
+    $(function () {
+
+        $("#tbody").on("click","tr input",function () {
+            //获取该运送方式的key
+            var key=$(this).closest("tr").attr("key");
+            //获取选中的运送方式对应的运费
+            var money=$("#"+key).html();
+            //替换id=money中的内容
+            $("#money").html(money);
+            //获取商品总金额
+            var goods_money=$("#em").html();
+            //计算总金额
+            //转化为整数进行计算
+            var total=parseInt(goods_money)+parseInt(money);
+            //替换id=total的总金额
+            $("#total").html(total);
+
+        })
     })
+
 
 
 </script>

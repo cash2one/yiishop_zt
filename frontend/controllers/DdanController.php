@@ -51,9 +51,14 @@ class DdanController extends Controller{
             $model->status=1;
             $model->trade_no=1565165;
             $model->create_time=time();
+            //开启redis
+            $redis=new \Redis();
+            $redis->connect("127.0.0.1");
+
             //验证是否符合要求
             if ($model->validate()) {
                 $model->save();
+                $redis->set("ddan_id",$model->id);
             }
             //实列化订单商品详情
 
@@ -104,7 +109,19 @@ class DdanController extends Controller{
 
     //显示订单生成成功页面
     public function actionMsg(){
+        //开启redis
+        $redis=new \Redis();
+        $redis->connect("127.0.0.1");
+        $username=\Yii::$app->user->identity->username;
 
+         $result=\Yii::$app->mailer->compose()
+             ->setFrom('1939279208@qq.com')
+             ->setTo('1939279208@qq.com')
+             ->setSubject('福鑫商城')
+             ->setHtmlBody('亲爱的:'.$username.'先生，您的订单已生成，订单号：'.$redis->get("ddan_id"))
+             ->send();
+          //清楚redis
+        $redis->del("ddan_id");
         return $this->render("flow3");
     }
 
