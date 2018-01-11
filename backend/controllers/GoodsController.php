@@ -193,8 +193,10 @@ class GoodsController extends Controller{
         }
         //保存生成的静态页面
         $content=$this->renderPartial("content",["rows"=>$rows,"arr"=>$arr[0],"goods"=>$goods]);
+        $filename="@frontend/web/content";
+        \Yii::getAlias($filename);
         //将静态文件保存
-        file_put_contents("../../frontend/web/content/".$id.".html",$content);
+        file_put_contents(\Yii::getAlias($filename).$id.".html",$content);
         //提示修改信息
         \Yii::$app->session->setFlash("success","静态页面已经生成");
         //跳转回首页
