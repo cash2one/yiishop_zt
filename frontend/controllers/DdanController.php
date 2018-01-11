@@ -61,7 +61,6 @@ class DdanController extends Controller{
                 $redis->set("ddan_id",$model->id);
             }
             //实列化订单商品详情
-
                 foreach ($rows as $row){
                     $order_goods=new DdanGoods();
                     $goods=Goods::findOne(["id"=>$row->goods_id]);
