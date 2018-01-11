@@ -84,7 +84,9 @@ class SiteController extends Controller
     {
 
          $content= $this->render('index');
-        file_put_contents("./index.html",$content);
+        $filename="@frontend/web/";
+        \Yii::getAlias($filename);
+        file_put_contents( \Yii::getAlias($filename)."index.html",$content);
         echo "已经生成静态页面";
         //return $this->render('index');
     }
