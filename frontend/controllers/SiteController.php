@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use backend\models\User;
+use common\models\SphinxClient;
 use frontend\models\Goods;
 use frontend\models\GoodsCategory;
 use frontend\models\GoodsGallery;
@@ -245,8 +246,28 @@ class SiteController extends Controller
      public function actionSousuo(){
          //接收get传过来的数据
          $name=\Yii::$app->request->get("name");
+         //使用Sphinx
+         $cl = new SphinxClient();
+         $cl->SetServer ( '127.0.0.1', 9312);
+//$cl->SetServer ( '10.6.0.6', 9312);
+//$cl->SetServer ( '10.6.0.22', 9312);
+//$cl->SetServer ( '10.8.8.2', 9312);
+         $cl->SetConnectTimeout ( 10 );
+         $cl->SetArrayResult ( true );
+// $cl->SetMatchMode ( SPH_MATCH_ANY);
+         $cl->SetMatchMode ( SPH_MATCH_EXTENDED2);
+         $cl->SetLimits(0, 1000);
+         $info = $name;
+         $res = $cl->Query($info, 'mysql');//shopstore_search
+//print_r($cl);
+        $ids=[];
+        if ($res["matches"]){
+            foreach ($res["matches"] as $re){
+                $ids[]=$re["id"];
+            }
+        }
          //根据搜索条件获取数据
-         $rows=\backend\models\Goods::find()->where(["like","name",$name])->all();
+         $rows=\backend\models\Goods::find()->where(["in","id",$ids])->all();
          //加载显示页面
          return $this->render("sousuo",["rows"=>$rows]);
 
