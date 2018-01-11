@@ -83,8 +83,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-         $content= $this->render('index');
-        $filename="@frontend/web/";
+         $content=$this->render('index');
+       $filename="@frontend/web/";
         \Yii::getAlias($filename);
         file_put_contents( \Yii::getAlias($filename)."index.html",$content);
         echo "已经生成静态页面";
