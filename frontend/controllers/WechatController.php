@@ -40,7 +40,7 @@ class WechatController extends Controller{
                        foreach ($data->results as $res){
                            $news=new News([
                                'title'       => $res->name,
-                           'url'         => $res->detail_url,
+                           'url'         => $res->detail_info->detail_url,
                           // 'image'       => $image,
                        ]);
                            $msg[]=$news;
