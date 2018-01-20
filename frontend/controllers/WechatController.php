@@ -31,10 +31,9 @@ class WechatController extends Controller{
                    if($redis->exists("key_".$open_id)){
                        $arr=$redis->hGetAll("key_".$open_id);
                        //调用百度地图api
-                  $url="http://api.map.baidu.com/place/v2/search?query={$message->Content}&location={$arr['label']},{$arr['label']}&radius=2000&output=json&ak=FQMHCPUH7t6WGNFNBMtlphIfNPPLEjr7&page_size=8&scope=2";
+                  $url="http://api.map.baidu.com/place/v2/search?query={$message->Content}&location={$arr['x']},{$arr['y']}&radius=2000&output=json&ak=FQMHCPUH7t6WGNFNBMtlphIfNPPLEjr7&page_size=8&scope=2";
                    $json_str=file_get_contents($url);
                   $data=json_decode($json_str);
-                  return $data;
                   //设置恢复信息
                        //用一个数组来存放地理位置信息
                        $msg=[];
