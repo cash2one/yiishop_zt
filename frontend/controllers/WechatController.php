@@ -34,6 +34,7 @@ class WechatController extends Controller{
                   $url="http://api.map.baidu.com/place/v2/search?query={$message->Content}&location={$arr['label']},{$arr['label']}&radius=2000&output=json&ak=FQMHCPUH7t6WGNFNBMtlphIfNPPLEjr7&page_size=8&scope=2";
                    $json_str=file_get_contents($url);
                   $data=json_decode($json_str);
+                  return $data;
                   //设置恢复信息
                        //用一个数组来存放地理位置信息
                        $msg=[];
