@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use EasyWeChat\Message\News;
+use frontend\models\Goods;
 use yii\web\Controller;
 use EasyWeChat\Foundation\Application;
 
@@ -24,6 +25,29 @@ class WechatController extends Controller{
                     return '收到事件消息';
                     break;
                 case 'text':
+                    //当输入最新商品
+                    if ($message->Content=="最新活动"){
+                        //获取最近添加的8个商品
+                        $rows=Goods::find()->all();
+                        //循环八次
+                        $data=[];
+                      $num=1;
+                      foreach ($rows as $row){
+                          if ($num==8){
+                              break;
+                          }
+                          $news=new News([
+                              'title'       => $row->name,
+                             // 'url'         => $row->,
+                              'image'       => $row->logo,
+                          ]);
+                          $data[]=$news;
+                          $num++;
+
+                      }
+                       return $data;
+
+                    }
                    // return $message->Content;
                     $open_id=$message->FromUserName;
                     $redis=new \Redis();
@@ -92,6 +116,51 @@ class WechatController extends Controller{
         $response = $server->serve();
 
         $response->send(); // Laravel 里请使用：return $response;
+
+    }
+    //生成菜单,此方法需要每次手动去访问，才能生成
+    public function actionAddMenu(){
+        $app = new Application(\Yii::$app->params['wechat']);
+        $menu=$app->menu;
+        $buttons = [
+            [
+                //一级菜单
+                "type" => "click",
+                "name" => "在线商城",
+                "key"  => "CITY"
+            ],
+            [
+                "name"       => "个人中心",//二级菜单的一级菜单
+                "sub_button" => [
+                    [
+                        "type" => "view",
+                        "name" => "我的订单",  //以下都是二级菜单
+                        "url"  => "http://www.soso.com/"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "视频",
+                        "url"  => "http://v.qq.com/"
+                    ],
+                    [
+                        "type" => "click",
+                        "name" => "赞一下我们",
+                        "key" => "V1001_GOOD"
+                    ],
+                ],
+            ],
+        ];
+        $menu->add($buttons);
+        echo "设置成功";
+
+    }
+    //查询菜单
+    public function actionGetMenu(){
+        $app = new Application(\Yii::$app->params['wechat']);
+        $menu=$app->menu;
+        $menus = $menu->all();
+        //打印生成的菜单
+        var_dump($menus);
 
     }
 
