@@ -69,34 +69,36 @@ class WechatController extends Controller{
 
                       }
                        return $data;
-                    }
-                   // return $message->Content;
-                    $open_id=$message->FromUserName;
-                    $redis=new \Redis();
-                    $redis->connect("127.0.0.1");
-                   if($redis->exists("key_".$open_id)){
-                       $arr=$redis->hGetAll("key_".$open_id);
-                       //调用百度地图api
-                  $url="http://api.map.baidu.com/place/v2/search?query={$message->Content}&location={$arr['x']},{$arr['y']}&radius=2000&output=json&ak=FQMHCPUH7t6WGNFNBMtlphIfNPPLEjr7&page_size=8&scope=2";
-                   $json_str=file_get_contents($url);
-                  $data=json_decode($json_str);
-                  //设置恢复信息
-                       //用一个数组来存放地理位置信息
-                       $msg=[];
-                       foreach ($data->results as $res){
-                           $news=new News([
-                               'title'       => $res->name,
-                           'url'         => $res->detail_info->detail_url,
-                          // 'image'       => $image,
-                       ]);
-                           $msg[]=$news;
-                       }
-                     //返回结果
-                       return $msg;
+                    }else{
+                        // return $message->Content;
+                        $open_id=$message->FromUserName;
+                        $redis=new \Redis();
+                        $redis->connect("127.0.0.1");
+                        if($redis->exists("key_".$open_id)){
+                            $arr=$redis->hGetAll("key_".$open_id);
+                            //调用百度地图api
+                            $url="http://api.map.baidu.com/place/v2/search?query={$message->Content}&location={$arr['x']},{$arr['y']}&radius=2000&output=json&ak=FQMHCPUH7t6WGNFNBMtlphIfNPPLEjr7&page_size=8&scope=2";
+                            $json_str=file_get_contents($url);
+                            $data=json_decode($json_str);
+                            //设置恢复信息
+                            //用一个数组来存放地理位置信息
+                            $msg=[];
+                            foreach ($data->results as $res){
+                                $news=new News([
+                                    'title'       => $res->name,
+                                    'url'         => $res->detail_info->detail_url,
+                                    // 'image'       => $image,
+                                ]);
+                                $msg[]=$news;
+                            }
+                            //返回结果
+                            return $msg;
 
-                   }else{
-                       return "请先输入位置信息";
-                   } ;
+                        }else{
+                            return "请先输入位置信息";
+                        }
+                    }
+                ;
                     break;
                 case 'image':
                     return '收到图片消息';
