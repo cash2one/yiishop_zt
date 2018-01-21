@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\Article;
 use EasyWeChat\Message\News;
 use frontend\models\Goods;
 use yii\web\Controller;
@@ -22,11 +23,33 @@ class WechatController extends Controller{
         $server->setMessageHandler(function ($message) {
             switch ($message->MsgType) {
                 case 'event':
-                    return '收到事件消息';
+                    //在线商城
+                    if ($message->Event=="CLICK"){
+                        if ($message->EventKey=='zxhd'){
+                            //返回五条文章信息给用户
+                            $rows=Article::find()->all();
+                            //循环八次
+                            $data=[];
+                            $num=1;
+                            foreach ($rows as $row){
+                                if ($num==5){
+                                    break;
+                                }
+                                $news=new News([
+                                    'title'       => $row->name,
+                                ]);
+                                $data[]=$news;
+                                $num++;
+                            }
+                           return $data;
+
+                        }
+                    }
+                   // return '收到事件消息';
                     break;
                 case 'text':
                     //当输入最新商品
-                    if ($message->Content=="最新活动"){
+                    if ($message->Content=="最新商品"){
                         //获取最近添加的8个商品
                         $rows=Goods::find()->all();
                         //循环八次
@@ -46,7 +69,6 @@ class WechatController extends Controller{
 
                       }
                        return $data;
-
                     }
                    // return $message->Content;
                     $open_id=$message->FromUserName;
@@ -125,19 +147,26 @@ class WechatController extends Controller{
         $buttons = [
             [
                 //一级菜单
-                "type" => "click",
+                "type" => "view",
                 "name" => "在线商城",
-                "key"  => "CITY"
+                "url"  => "http://zt.eachone.top/"//跳转到商城首页
             ],
+            [
+                //一级菜单
+                "type" => "click",
+                "name" => "最新活动",
+                "key"  => "zxhd"//获取五条文章信息返回给用户。
+            ],
+
             [
                 "name"       => "个人中心",//二级菜单的一级菜单
                 "sub_button" => [
                     [
                         "type" => "view",
                         "name" => "我的订单",  //以下都是二级菜单
-                        "url"  => "http://www.soso.com/"
+                        "url"  => "http://zt.eachone.top/"
                     ],
-                    [
+                   /* [
                         "type" => "view",
                         "name" => "视频",
                         "url"  => "http://v.qq.com/"
@@ -146,7 +175,7 @@ class WechatController extends Controller{
                         "type" => "click",
                         "name" => "赞一下我们",
                         "key" => "V1001_GOOD"
-                    ],
+                    ],*/
                 ],
             ],
         ];
