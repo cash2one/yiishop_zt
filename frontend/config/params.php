@@ -34,12 +34,13 @@ return [
         /**
          * OAuth 配置
          *
-         * scopes：公众平台（snsapi_userinfo / snsapi_base），开放平台：snsapi_login
+         * scopes：公众平台（snsapi_userinfo / snsapi_base）第二个参数表示只获取用户的openid
+         * 第一个参数可以获取用户很多信息，开放平台：snsapi_login
          * callback：OAuth授权完成后的回调页地址
          */
         'oauth' => [
-            'scopes'   => ['snsapi_userinfo'],
-            'callback' => '/examples/oauth_callback.php',
+            'scopes'   => ['snsapi_base'],
+            'callback' => 'http://zt.eachone.top/wechat/callback.html',
         ],
 
         /**

@@ -1,0 +1,91 @@
+.banner{width: 100%;height: 340px;}
+.top-slide{height: 400px;}
+.banner a{width: 100%;height: 100%;display: block;}
+.content_list{width: 1190px;margin: 30px auto;}
+.content_list .sort{height: 46px; border:1px solid #d5d5d5;background: #fff;border-radius: 8px;}
+.grid-container{border: 1px solid #d5d5d5;background-color: #fff;font-size: 14px;color: #333333;  border-radius: 7px;  }
+.filter-items{height: 40px;width: 1160px;margin-left: 12px;border-bottom: 1px dashed #d5d5d5;padding-top: 6px;padding-left: 10px;}
+.filter-items:first-of-type{margin-top: 10px;}
+.filter-items:last-of-type{border-bottom: none;margin-bottom: 10px;}
+.filter-items .title{font-weight: bold;font-size: 14px;}
+.filter-items-content{font-size: 14px;}
+.filter-items-content a{display:inline-block;height:24px;line-height:24px;padding: 0 10px;margin:0 20px;color: #333333;}
+.filter-items-content .active{background: #2db4df;color:#fff;}
+/*.filter-grades{border-top:1px solid #d5d5d5}
+.filter-grades .filter-condition{text-align: center;margin-right: -3px;}
+.filter-grades .filter-condition a{width: 80px;height: 45px;display: inline-block;line-height: 45px;border: 1px solid #d5d5d5;margin: -1px -1px -1px -1px;}*/
+.grid-container .filter-list{height: 200px;  overflow: hidden;}
+.grid-container .all-list{height: 100%;}
+.grid-container .more-load{font-size: 14px;color:#2db4df;text-align: center;margin: 30px  0;  cursor: pointer;}
+.grid-container .more-load i{display:inline-block;width: 9px;height: 6px;margin-left:7px;background: url("../images/more-load.jpg")  0 0 no-repeat;vertical-align: middle;}
+.site-content{float: left;}
+.archive-list{width: 900px;height: 319px;border-radius:10px;border: 1px solid #d5d5d5;background-color: #fff;margin-top: 20px;padding-top: 27px;}
+.archive-list:hover{
+    border:1px solid #2db4df;box-shadow: 0 0 10px 1px #b5dfdb;
+}
+
+.archive-list h2,.entry-header > span{overflow: hidden;color:#2299ee; font-weight: 500; font-size:26px;width: inherit;line-height: 30px;}
+.entry-header > span{line-height: 38px;display: block;}
+.archive-list h2 a{color: #444444;}
+.archive-list h2 a:hover{color: #2299ee;text-decoration: underline;}
+
+
+.entry-img{width:198px;height:263px;float: left;margin-left: 30px;}
+.entry-img a{display: inline-block;width: 198px;height: 140px;overflow: hidden;border: 1px solid #d5d5d5;border-radius: 5px;line-height: 200px;}
+.entry-img .service span{display: inline-block;width: 63px;margin-top: 19px;text-align: center;color:#444444;line-height: 35px;}
+.entry-img .service span:before{margin: 0 auto;content: "";display:block;width: 36px;height: 36px;background: url("../images/server-ico.png") 0 0 no-repeat;}
+.entry-content{width:460px;color: #666666;float: left;margin: -7px 0 0 25px;}
+.entry-content h2{overflow: hidden;color:#2299ee; font-weight: 500; font-size:24px;width: inherit;line-height: 30px;}
+.entry-content h2 a{color: #444444;}
+.entry-content h2 a:hover{color: #2299ee;text-decoration: underline;}
+.entry-content .post-field{width:230px;display:inline-block;font-size: 12px;color:#606060;}
+.entry-content .post-type{}
+.entry-content .type-widget{height: 22px;color: #2db4df;display:inline-block;font-size:12px;padding:0 10px 0 10px;margin-right:12px;line-height:21px;  border:1px solid #2db4df;}
+.entry-content .post-grade{color: #3fa5ff;font-size: 16px;margin-top: 34px;}
+.entry-content .post-index .star{background: url(../images/hospitalstart.png) center no-repeat;width: 78px;height: 14px;}
+.entry-content .grade-other{margin: 10px;line-height: 40px;}
+.entry-content .grade-other i{color: #2db4df;}
+.entry-content .post-doctor{margin-top: 18px;}
+.entry-content .post-doctor li{width:80px;height:80px;overflow:hidden;border:1px solid #ececec;box-sizing:border-box;float: left;margin-right: 10px;}
+.entry-content .jigou{border:1px solid #ececec;width: 390px;height: 85px;}
+.entry-content .jigou ul{float: left;}
+
+.entry-content .jigou li{height: 85px;width:116px;position: relative;}
+.entry-content .jigou li img{width: 100%;}
+.entry-content .jigou li:before{content: '';display: inline-block;width: 61px;height: 29px;background: url("../images/service-function.png") no-repeat;position: absolute;top:0;}
+
+.entry-content .jigou dl{font-size: 12px;color:#444444;line-height: 18px;padding-top: 5px;}
+.entry-content .jigou dt:before{content: "·";margin-right: 5px;}
+.content-area .right-function{width:185px;height:270px;border-left:1px solid #e7e7e7;float: left;padding-top: 45px;padding-left: 24px;}
+.content-area .right-function span{display: inline-block;cursor:pointer;margin-top:12px;width: 133px;height: 38px;line-height:38px;border:1px solid #e4e4e4;color:#666666;font-size: 14px;border-radius: 38px;padding-left: 23px;}
+.content-area .right-function > span >i{display: inline-block;width: 20px;height: 20px;background: url("../images/hospital-act.png") no-repeat;vertical-align: sub;margin-right: 12px;}
+.content-area .right-function > span:nth-child(1) >i{
+    background-position: 0px -40px;
+}.content-area .right-function > span:nth-child(2) >i{
+     background-position: 0px -60px;
+}.content-area .right-function > span:nth-child(3) >i{
+      background-position: 0px -80px;
+}
+.content-area .comparison .active{background: url("../images/hospital-act.png") center no-repeat;}
+.content-area .consult{background: #2db4df;color:#fff!important;}
+.widget-area{width:270px;margin-top:20px;float: right;border: 1px solid #e6e6e6;background-color: #fff;border-radius:10px;}
+.right-article .widget-title{font-size: 20px;font-weight: 200;margin: 20px;}
+.right-hospital-box .hospital-list{width: 230px;height: 200px;border:1px solid #e6e6e6;}
+.right-hospital-box .hospital-list a{font-size: 14px;color:#2db7dc;}
+.right-hospital-box .hospital-list:hover{box-shadow: 0 0 10px 3px #e6e6e6}
+.right-hospital-box .hospital-list figcaption{text-align: center;line-height: 10px;}
+.right-hospital-box article{margin: 0 auto;margin-bottom: 15px;}
+
+
+/*对比样式*/
+.comparison-box{width: 1190px;/*height: 190px;*/position:fixed;background-color:white;left:50%;margin-left:-595px;bottom:0;border: 4px solid #7cc5f8;}
+.comparison-box .hospital-list{float: left;}
+.comparison-box .hospital-list li{width: 190px;height: 180px;border-right: 1px dashed #dddddd;color:#d9d9d9;text-align: center;}
+.comparison-box .hospital-list p{font-size: 72px;line-height: 120px;}
+.comparison-box .hospital-list li>div{width: 140px;margin: 0 auto;}
+.comparison-box .push-button{width:212px;height:181px;float: right;position: relative;}
+.comparison-box .push-button .close-comparison-box a{right: 10px;position: absolute;color: #0065bb;top:10px;}
+.comparison-box .push-button .begin-button a{top: 77px;left:35px;width:111px;height:40px;border-radius:5px;line-height:40px;text-align:center;font-size:18px;position: absolute;color:#fff;background-color: #30a6fe;}
+.comparison-box .push-button .begin-button >span{left: 155px;top:85px;color:#0065bb;position:absolute;font-size: 16px;text-decoration: underline;}
+
+.list-page a{background: #fff;}

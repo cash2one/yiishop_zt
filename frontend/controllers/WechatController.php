@@ -4,6 +4,9 @@ namespace frontend\controllers;
 use backend\models\Article;
 use EasyWeChat\Message\News;
 use frontend\models\Goods;
+use frontend\models\User;
+use frontend\models\WechatForm;
+use yii\helpers\Url;
 use yii\web\Controller;
 use EasyWeChat\Foundation\Application;
 
@@ -194,5 +197,135 @@ class WechatController extends Controller{
         var_dump($menus);
 
     }
+
+    //发起授权
+    public function actionTest(){
+        //授权
+        $app = new Application(\Yii::$app->params['wechat']);
+        $menu=$app->menu;
+        $response = $app->oauth->scopes(['snsapi_base'])
+            ->redirect();
+        //发送获取用户信息
+        $response->send();
+    }
+    //获取已授权的用户信息
+    public function actionCallback(){
+        $app = new Application(\Yii::$app->params['wechat']);
+        $menu=$app->menu;
+        $user = $app->oauth->user();
+        //将用户的openid保存再session中
+        \Yii::$app->session->set("openid",$user->getId());
+        //跳转到登录页面
+        return $this->redirect(["wechat/login"]);
+
+
+        //此时将获取到的openid保存到
+        // $user 可以用的方法:
+        // $user->getId();  // 对应微信的 OPENID
+        // $user->getNickname(); // 对应微信的 nickname
+        // $user->getName(); // 对应微信的 nickname
+        // $user->getAvatar(); // 头像网址
+        // $user->getOriginal(); // 原始API返回的结果
+        // $user->getToken(); // access_token， 比如用于地址共享时使用
+    }
+
+    //我的订单
+    public function actionOrder(){
+        //如果登录就让用户查看订单，未登录就引导用户登录
+        if (\Yii::$app->user->isGuest){
+            //记住用户访问地路由
+            Url::remember(["wechat/order"],"redirect");
+            return $this->redirect(["wechat/login"]);
+
+        }
+
+    }
+
+     //用户登录
+    public function actionLogin(){
+        //判断是否已经有openid
+        if (\Yii::$app->session->has("openid")){
+           //获取openid
+            $openid=\Yii::$app->session->get("openid");
+        }else{
+//授权
+            $app = new Application(\Yii::$app->params['wechat']);
+            $menu=$app->menu;
+            $response = $app->oauth->scopes(['snsapi_base'])
+                ->redirect();
+            //发送获取用户信息
+            $response->send();
+        }
+        //看用户openid是否绑定，如果绑定了就自动登录，未绑定，就让用户登录
+        //根据openid获取到相应的用户
+        $member=User::findOne(["openid"=>$openid]);
+        //如果存在证明已经绑定了openid
+        if ($member){
+            //自动登录，保存用户信息
+            \Yii::$app->user->login($member);
+            //获取用户登录之前访问的页面
+            $url=Url::previous("redirect");
+            //跳转
+            return $this->redirect([$url]);
+
+        }else{
+            //实列化wechat登录表单模型
+            $model=new WechatForm();
+            //实列化用户表
+            $user=new User();
+            //根据openid查不到该用户，说明没有绑定，就让用户登录，绑定
+            if (\Yii::$app->request->isPost){
+               //加载数据
+                $model->load(\Yii::$app->request->post());//因为这是yii自带的表单所以不用填第二个参数。不是就填“”；
+                //进行验证，验证成功将openid添加到字段中
+                //验证过程要自己写
+                $user->openid=$openid;
+                $user->save(false);
+                //跳转到登录之前访问的页面
+                //获取用户登录之前访问的页面
+                $url=Url::previous("redirect");
+                //跳转
+                return $this->redirect([$url]);
+
+            }
+           //显示添加页面
+            $this->render("login",["model"=>$model]);
+
+        }
+
+
+
+
+    }
+
+    //消息推送
+    public function actionMsg(){
+        //设置消息模板
+        $app = new Application(\Yii::$app->params['wechat']);
+        $notice=$app->notice;
+        /**
+         * 短信模板
+         * $messageId = $notice->to($userOpenId)->uses($templateId)->andUrl($url)->data($data)->send();
+         * $userOpenId用户的openid
+         * $templateId模板id
+         * $url可以点击的链接
+         * $data发送的内容
+         */
+        //订单下单成功，给用户微信发送下单成功信息
+        $id=\Yii::$app->user->identity->id;
+        $user=User::findOne(["id"=>$id]);
+
+        //所以
+        $username=$user->username;
+        $userOpenId=$user->openid;
+        $templateId='aIH0CovoT4mrixMtonuGfKlERLauZiBoNUyU3axjTiM';
+        $url=Url::to(["wechat/order"],1);
+        $data=$username."先生，您已成功下单，请在2个小时内支付订单，否则我们将会取消您的订单";
+        $messageId = $notice->to($userOpenId)->uses($templateId)->andUrl($url)->data($data)->send();
+        //打印发送信息的结果
+        var_dump($messageId);
+
+    }
+
 
 }

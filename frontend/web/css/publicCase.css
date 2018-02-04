@@ -1,0 +1,360 @@
+img{
+    vertical-align: middle;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.verTop{
+    vertical-align: top;
+}
+.blueC{
+    color:#2DB4DF;
+}
+.redC{
+    color: red;
+}
+.greyC{
+    color: #939494;
+}
+.textL{
+    text-align: left;
+}
+.F18{
+    font-size: 18px;
+}
+.F14{
+    font-size: 14px;
+}
+.bolder{
+    font-weight: bold;
+}
+.underL{
+    text-decoration: underline;
+}
+.HD:after{
+    content:',';
+    display: block;
+    width:0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+
+}
+.picInWrap{
+    position: relative;
+}
+.picinput{
+    width: 240px;
+    height: 240px;
+    background-color: #EEF4F6;
+    text-align: center;
+    line-height: 240px;
+
+}
+.picinputT{
+    display: inline-block;
+    line-height: 26px;
+    font-size: 12px;
+}
+.importText{
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    display: inline-block;
+    padding: 0 6px;
+}
+#uploadFile{
+    width: 240px;
+    height: 240px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+    border:0;
+    opacity: 0;
+}
+.publicCR{
+    width: 100%;
+    border:1px solid #D0D0D0;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: relative;
+}
+.publicCRTitle{
+    border-bottom: 1px solid #D0D0D0;
+    height: 37px;
+    line-height: 37px;
+    width: 100%;
+    padding: 0 66px;
+    display: block;
+}
+.publicCRTitle li{
+    float: left;
+    padding: 0 22px;
+
+}
+.publicCRTitle li.active{
+    border-bottom: 2px solid #2DB4DF;
+    color: #2DB4DF;
+    height: 36px;
+    line-height: 36px;
+}
+.tubeBaby{
+    padding: 20px 0;
+    background-color: #EEF4F6;
+
+}
+.tubeBaby ul{
+    display: block;
+    width: 100%;
+}
+.tubeBaby_li{
+    margin-bottom: 10px;
+    line-height: 26px;
+    font-size: 12px;
+    width: 100%;
+    display: block;
+}
+.tubeBaby_liL{
+    width: 78px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.tubeBaby_liR{
+    width:590px;
+
+}
+.tubeBaby_liR_li{
+    width: 98px;
+    padding: 0 0px 0  20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    float: left;
+    box-sizing: content-box;
+}
+.perLine{
+    padding: 0 0px 0  20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    box-sizing: content-box;
+}
+.tubeBaby_liR_li:hover{
+    opacity: .8;
+}
+.radioCheck{
+    background-image: url("../images/member/radioChooseGrey.png");
+}
+.radioCheck.active{
+    background-image: url("../images/member/radioChoose.png");
+}
+.checkboxCheck{
+    background-image: url("../images/member/ico-36.png");
+}
+.checkboxCheck.active{
+    background-image: url("../images/member/ico-37.png");
+}
+.alertInfo{
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 60px;
+    margin-top: -14px;
+}
+.mealBigWrap{
+    width: 681px;
+}
+.mealT{
+    text-indent: 2px;
+    color:#666;
+    margin-bottom: 20px;
+}
+.mealT span{
+    display: inline-block;
+}
+.chooseMeal{
+    margin-left: 27px;
+    padding-left:20px;
+    height: 20px;
+    background: url("../images/member/bigRadioCGrey.png")no-repeat left center;
+    cursor: pointer;
+    line-height: 20px;
+    
+}
+.chooseMeal:hover{
+    opacity: .7;
+}
+.chooseMeal.active{
+    background-image: url("../images/member/bigRadioCheck.png");
+}
+.mealInputs{
+    margin: 20px 0 30px 0;
+}
+.mealInputs_li{
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    line-height: 30px;
+}
+.mealInputs_liL{
+    width: 102px;
+    text-align: right;
+
+}
+.mealInputs_liR{
+    width: 560px;
+
+}
+.mealInputs_liR span{
+    color: #939494;
+}
+.tubeBaby .mealInput{
+    height: 30px;
+    border: 1px solid #D8D8D8;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 0 0 0 6px;
+}
+.tubeBaby .mealInput_1{
+    width: 130px;
+}
+.tubeBaby .mealInput_2{
+    width: 100px;
+}
+.tubeBaby .mealInput_3{
+    width: 216px;
+}
+.tubeBaby .mealInput_4{
+    width: 62px;
+}
+.tubeBaby .wBC{
+    background-color: white;
+}
+.tubeBaby .textaH{
+    height:100px;
+}
+.tubeBaby .mealInput_5{
+    width: 450px;
+
+}
+.mealAlertInfo,.mealAlertInfo_2{
+    text-align: center;
+    font-size: 12px;
+    color: #909090;
+}
+.mealAlertInfo_2{
+    text-align: right;
+    padding-right: 10px;
+}
+.addDefinedProject{
+    margin: 30px 0 30px 28px;
+    font-size: 14px;
+}
+.definedSpan{
+    display: inline-block;
+    line-height: 30px;
+
+}
+.definedW_1{
+    width: 100px;
+}
+.definedW_2{
+    width: 222px;
+}
+.definedBtn{
+    width: 56px;
+    line-height: 32px;
+    background-color:#2DB4DF ;
+    cursor: pointer;
+    color:#fff;
+    text-align: center;
+    border-radius: 2px;
+}
+.definedBtn:hover{
+    opacity: .8;
+}
+.textM{
+    text-align: center;
+}
+.addMWrap{
+    width:100%;
+}
+.addMeal{
+    width: 83px;
+    height: 30px;
+    line-height: 25px;
+    border-radius: 4px;
+    text-align: center;
+    color: #2DB4DF;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #2DB4DF;
+    display:inline-block;
+    cursor: pointer;
+}
+.addMeal:hover{
+    opacity: .8;
+}
+.addMealTAlert{
+    font-size: 12px;
+    color: #909090;
+    margin-top: 6px;
+}
+.closeAddM{
+    position: absolute;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    line-height: 20px;
+    right: 10px;
+    top:8px;
+    cursor: pointer;
+    color: white;
+    background-color: #CED0D3;
+    font-size: 18px;
+    font-weight: bold;
+}
+.closeAddM:hover{
+    opacity: .8;
+}
+.selfMealL{
+    width: 190px;
+}
+.selfMealR{
+    width: 360px;
+}
+.selfMealR_li{
+    width: 52px;
+}
+.surePublicWrap{
+    width: 930px;
+    margin: 80px auto 20px;
+    padding-top: 44px;
+    border-top:1px solid #E1E1E1;
+    text-align: center;
+}
+.surePublic{
+    width: 134px;
+    height: 38px;
+    background: #2db4df;
+    font-size: 16px;
+    color: #FFF;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+.surePublic:hover{
+    opacity: .8;
+}

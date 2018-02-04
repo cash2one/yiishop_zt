@@ -1,83 +1,89 @@
-/*
-@功能：首页面js
-@作者：diamondwang
-@时间：2013年11月13日
-*/
-
-/* 注意，要在页面中先引入jquery*/
 $(function(){
-	//右侧，话费、旅行、彩票、游戏切换效果
-	$(".service h2 span").mouseover(function(){
-		$(this).addClass("on").siblings().removeClass("on");
-		$(".service_wrap div").hide().eq($(this).index()).show();
+    $(".site-nav-wrap ul li").hover(function(){
+        console.log();
+        //$(this).addClass("navbar-act");
+        $(".site-nav-part").find(".sub-menu").eq($(this).index()).addClass("active");
+        $(".site-nav-part").show();
+    },function(){
+        $(".site-nav-part").find(".sub-menu").eq($(this).index()).removeClass("active");
+        $(".site-nav-part").hide();
+    });
 
-	});
+    $(".accordion-item").hover(function(){
+        $(this).parent().parent().find('.accordion-item').removeClass('active');
+        $(this).addClass('active');
+    },function(){
 
-	//导购区域切换效果，疯狂抢购，热卖商品、推荐商品、新品上架，猜您喜欢
-	$(".guide_content h2 span").mouseover(function(){
-		$(this).addClass("on").siblings().removeClass("on");
-		$(".guide_wrap div").hide().eq($(this).index()).show();
+    });
+    $(".filter-type-li ul li").on("mouseover",function(){
+        var index = $(this).index()+1;
+        $(this).addClass("active"+index).siblings().removeClass();
+    });
+});
 
-	});
+var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+    pagination: '.swiper-pagination',
+    paginationClickable :true,
+   /* nextButton: '.swiper-button-next',*/
+    /*prevButton: '.swiper-button-prev',*/
+    spaceBetween: 30,
+    effect: 'fade',
+    lazyLoading : true,
+    lazyLoadingInPrevNext : true,
+});
+var swiper = new Swiper('.log-container', {
+    loop: true,
+    direction: 'vertical',
+    slidesPerView: 4,
+    autoplay: 2000,
+    autoplayDisableOnInteraction : false,
+});
 
-	//各楼层区域切换
-	$(".goodslist h2 span").mouseover(function(){
-		$(this).addClass("on").siblings().removeClass("on");
-		$(".goodslist_wrap div").hide().eq($(this).index()).show();
+$('.baby-company-nav').moveline({
+    color:'#fe4979', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.baby-case-nav').moveline({
+    color:'#fe4979', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.patient-company-nav').moveline({
+    color:'#30a6fe', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.patient-case-nav').moveline({
+    color:'#30a6fe', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.inspect-box-company-nav').moveline({
+    color:'#41cbc0', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.birth-box-case-nav').moveline({
+    color:'#fb8115', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
+$('.birth-box-company-nav').moveline({
+    color:'#fb8115', customTop:true,top:0,
+    click:function(ret){
+        ret.ele.addClass('active').siblings().removeClass('active');
+    }
+});
 
-	});
-
-	//首页幻灯片效果
-	var len = $(".slide_items li").size(); //获取图片的数目
-	var init = 1; //设置图片切换初始值，从第二张开始
-	var dt = null; //设置定时器
-	
-	//定义一个函数完成动画
-	function slide(){
-		dt = setInterval(function(){
-			//大图切换
-			$(".slide_items li").stop(true,false).fadeOut().eq(init).fadeIn();
-			//数字索引切换
-			$(".slide_controls li").removeClass("on").eq(init).addClass("on");
-			init++;
-			if (init >= len ){
-				init = 0;
-			}
-		},5000)
-	}
-
-	// function slide(){
-	// 	if (init >= len ){
-	// 		init = 0;
-	// 	}
-	// 	//大图切换
-	// 	$(".slide_items li").fadeOut().eq(init).fadeIn();
-	// 	//数字索引切换
-	// 	$(".slide_controls li").removeClass("on").eq(init).addClass("on");
-	// 	init++;
-		
-	// 	setTimeout("slide()",2000);
-	// }
-	 
-	//调用函数，实现动画
-	slide();
-
-	//鼠标放置在图片上则停止幻灯,离开则继续
-	$(".slide_items li").mouseover(function(){
-		clearInterval(dt);
-	}).mouseout(function(){
-		slide();
-	});
-
-	//鼠标放置到数字索引上时，立即切换到该图片上,并停止动画，离开则继续
-	$(".slide_controls li").mouseover(function(){
-		clearInterval(dt);
-		init = $(this).index();
-		$(".slide_items li").stop(true,false).fadeOut().eq(init).fadeIn();
-		init++;
-		$(this).addClass("on").siblings().removeClass("on");
-	}).mouseout(function(){
-		slide();
-	});
-
+$(".common-right-list li").on("click",function(){
+    var index = $(this).index();
+    $(this).parent().parent().next('.case-container').find('.case-li-index').eq(index).show().siblings().hide();
 });

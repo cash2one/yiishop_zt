@@ -1,0 +1,768 @@
+img{
+    vertical-align: middle;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.HD:after{
+    content:',';
+    display: block;
+    width:0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+
+}
+/*banner*/
+.bannerWrap{
+    width: 100%;
+    position: relative;
+    height: 480px;
+
+}
+.bannerModule{
+    width: 550px;
+    height: 442px;
+    position: absolute;
+    left:10%;
+    /*margin-left: -300px;*/
+    background-color: #2DB4DF;
+    z-index: 10;
+    top:19px;
+}
+.bannerModuleCon{
+    width: 518px;
+    margin: 14px auto 16px;
+}
+.bannerModuleCon_title1{
+    font-size: 24px;
+    color: white;
+    margin: 6px 0;
+}
+.bannerModuleCon_title2{
+    font-size: 14px;
+    color: white;
+}
+.customizationWrap{
+    width: 100%;
+    background-color: white;
+    margin: 14px auto 0;
+    /*height: 346px;*/
+    border-radius: 8px;
+
+}
+.customizationWrap_nav{
+    height: 42px;
+    line-height: 42px;
+    background-color: #338EE8;
+    color: #fff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.customizationWrap_nav ul{
+    width: 100%;
+}
+.customizationWrap_navLI{
+    float: left;
+    height: 42px;
+    width: 129.5px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.customizationWrap_navLI:hover{
+    opacity: .8;
+}
+.customizationWrap_navLISpan{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    text-align: center;
+    left: 0;
+}
+.customizationWrap_navLI.active{
+    opacity: 1;
+}
+.customizationWrap_navLI.active .customizationWrap_navLISpan{
+    background:url("../images/newsFourPage/trapezoid.png") no-repeat center;
+    width: 129.5px;
+    height: 66px;
+    background-size:100% 100%;
+    color: #2DB4DF;
+    z-index: 10;
+}
+.none{
+    display: none;
+}
+.customizationWrap_con{
+    background-color: white;
+    height: 304px;
+    width: 100%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333333;
+}
+.customizationWrap_conMain{
+    width: 485px;
+    margin: 30px auto 30px;
+}
+.customizationWrap_conMain ul,.customizationWrap_conMain li{
+    width: 100%;
+    display: block;
+}
+.customizationWrap_conMain li{
+    margin-bottom: 16px;
+}
+.customizationLL,.customizationLR{
+    display: inline-block;
+    vertical-align:middle;
+    height: 32px;
+    line-height: 32px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.customizationLL{
+    text-align: right;
+    width: 68px;
+}
+.customizationLR{
+    background-color: #fff;
+    border: 1px solid #D6D6D6;
+    width: 150px;
+    padding-left: 10px;
+    margin-left: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background:url('../images/newsFourPage/downA.png') no-repeat right center;
+    padding-right: 18px;
+}
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: .8;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+}
+.customizationLR:hover{
+    border: 1px solid #69C8E9;
+}
+
+.customizationWrapBtn{
+    width: 460px;
+    height: 42px;
+    line-height: 42px;
+    margin: 30px auto 0;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: #2DB4DF;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.customizationWrapBtn:hover{
+    opacity: .7;
+}
+/************************************/
+.newsPNav{
+    margin-top: 60px;
+    width: 100%;
+    position: relative;
+}
+.newsPNav ul{
+    width: 100%;
+    font-size: 0;
+}
+.newsPNav li{
+    overflow: hidden;
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+}
+.newsPNav li a{
+    background-size: 80px 80px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display:block;
+    padding-top: 80px;
+    filter: grayscale(100%);
+}
+.newsPNav li a{
+    display: block;
+    width: 100%;
+    height:100%;
+}
+.newsPNav li a:hover{
+    filter: grayscale(0%);
+    color: #2DB4DF;
+}
+/*.foreignSNavWrap{*/
+    /*width: 1176px;*/
+    /*margin: 0 auto;*/
+/*}*/
+.AMSeeSickNav{
+    width:16.6666% ;
+}
+.foreignSeeSNav{
+    width:157px;
+}
+/*美国看病导航*/
+.newsPNav .AMSeeSickNav:nth-child(1) a{
+    background-image: url("../images/newsFourPage/AmericaSeeSick/steps.png");
+}
+.newsPNav .AMSeeSickNav:nth-child(2) a{
+    background-image: url("../images/newsFourPage/AmericaSeeSick/money.png");
+}
+.newsPNav .AMSeeSickNav:nth-child(3) a{
+    background-image: url("../images/newsFourPage/AmericaSeeSick/advantage.png");
+}
+.newsPNav .AMSeeSickNav:nth-child(4) a{
+     background-image: url("../images/newsFourPage/AmericaSeeSick/choose.png");
+ }
+.newsPNav .AMSeeSickNav:nth-child(5) a{
+    background-image: url("../images/newsFourPage/AmericaSeeSick/hospital.png");
+}
+.newsPNav .AMSeeSickNav:nth-child(6) a{
+    background-image: url("../images/newsFourPage/AmericaSeeSick/provider.png");
+}
+/*出国看病*/
+.newsPNav .foreignSeeSNav .ForeignSee_1{
+    background-image: url("../images/newsFourPage/foreignSeeSick/AmericaSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_2{
+    background-image: url("../images/newsFourPage/foreignSeeSick/EngSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_3{
+    background-image: url("../images/newsFourPage/foreignSeeSick/JapSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_4{
+    background-image: url("../images/newsFourPage/foreignSeeSick/GerSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_5{
+    background-image: url("../images/newsFourPage/foreignSeeSick/FranSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_6{
+    background-image: url("../images/newsFourPage/foreignSeeSick/TaiWSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_7{
+    background-image: url("../images/newsFourPage/foreignSeeSick/XinGPSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_8{
+    background-image: url("../images/newsFourPage/foreignSeeSick/IndianSee.png");
+}
+.newsPNav .foreignSeeSNav .ForeignSee_9{
+    background-image: url("../images/newsFourPage/foreignSeeSick/HangSee.png");
+}
+/*出国体检导航*/
+.ForeignExaNav{
+    width: 16.6666%;
+}
+.newsPNav .ForeignExaNav:nth-child(1) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/AmericaExa.png");
+}
+.newsPNav .ForeignExaNav:nth-child(2) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/JapanExa.png");
+}
+.newsPNav .ForeignExaNav:nth-child(3) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/taiwanExa.png");
+}
+.newsPNav .ForeignExaNav:nth-child(4) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/hongkExa.png");
+}
+.newsPNav .ForeignExaNav:nth-child(5) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/xingapoExa.png");
+}
+.newsPNav .ForeignExaNav:nth-child(6) a{
+    background-image: url("../images/newsFourPage/foreignPhysicalExam/taiLanExa.png");
+}
+#foreignSeeSNav{
+    width: 1099px;
+    margin: 0 auto;
+    /*padding: 0 25px;*/
+}
+
+.button-next,.button-prev{
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    -moz-background-size: 27px 44px;
+    -webkit-background-size: 27px 44px;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-prev{
+    background: url(../images/index-ico.png) -118px -114px no-repeat;
+    left: 10px;
+    right: auto;
+}
+.button-next{
+    background: url(../images/index-ico.png) -142px -114px no-repeat;
+    right: 10px;
+    left: auto;
+}
+
+/*治疗方案*/
+.cureProject{
+    width: 100%;
+    margin: 50px auto 45px;
+}
+.cureProjectL{
+    width: 600px;
+    height:416px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+.exaPL{
+    width:290px;
+}
+.cureProjectLCon{
+
+}
+.cureProjectLi{
+    width: 118px;
+    float: left;
+    height: 104px;
+    text-align: center;
+    font-size: 14px;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+}
+.cureProjectLi:nth-child(odd){
+    background-color: #C0E8F5;
+}
+.cureProjectLi:nth-child(even){
+    background-color: #DEF1F7;
+}
+.deepBC{
+    background-color: #C0E8F5;
+}
+.lightBC{
+    background-color: #DEF1F7;
+}
+.cureProjectLi a,.examNavLi a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #2db4df;;
+
+}
+.cureProjectLi:hover,.examNavLi:hover{
+    -webkit-box-shadow: 2px 2px 10px 2px #cdcdcd ;
+    -moz-box-shadow: 2px 2px 10px 2px #cdcdcd ;
+    box-shadow: 2px 2px 10px 2px #cdcdcd;
+
+}
+.cureProjectLiImg{
+    width: 100%;
+    height:70px;
+    line-height: 70px;
+    overflow: hidden;
+}
+.cureProjectLiImg img{
+    max-height: 50px;
+}
+.cureProjectLiText{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cureProjectR{
+    width: 580px;
+    height: 416px;
+    background:url("../images/newsFourPage/doctor.png")no-repeat 289px 34px;
+    background-color: #DEF1F7;
+}
+.cureProjectRCon{
+    width: 249px;
+    margin: 22px 0 0 20px;
+
+}
+.cureProjectRConTitle{
+    color: #0698c6;
+    width: 100%;
+    text-align: center;
+}
+.cureProjectRConTitleText{
+    font-size: 24px;
+    font-weight: 600;
+}
+.cureProjectRConTitleText img{
+    width: 35px;
+}
+.cureProjectRConTitleEng{
+    margin-top: 6px;
+}
+.cureProjectRConinfo{
+    text-align: left;
+    font-size: 14px;
+    margin: 25px 0 15px 0;
+    height: 230px;
+    color: #0698c6;
+    line-height: 30px;
+    overflow: hidden;
+}
+.cureProjectRConBtn{
+    width: 100%;
+    text-align: center;
+}
+.blueTitleVertical:before{
+    background-color: #2DB4DF;
+}
+.cureProjectRConBtn a{
+    display: inline-block;
+    width: 160px;
+    height: 32px;
+    background-color: #2DB4DF;
+    font-size: 14px;
+    color: white;
+    line-height: 32px;
+    -webkit-transition: all .4s ;
+    -moz-transition: all .4s ;
+    -ms-transition: all .4s ;
+    -o-transition: all .4s ;
+    transition: all .4s ;
+}
+.cureProjectRConBtn a:hover{
+    opacity: .7;
+}
+.blueBack:before{
+    background: #2DB4DF;
+}
+.hotA{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.ivf-active .hotABtn{
+    border-radius: 15px;
+    -webkit-transition: all .4s ;
+    -moz-transition: all .4s ;
+    -ms-transition: all .4s ;
+    -o-transition: all .4s ;
+    transition: all .4s ;
+    background-color: white;
+}
+.ivf-active .blueBtn{
+    border: 1px solid #63C7E7;
+    color: #63C7E7;
+
+}
+.ivf-active .greyBtn{
+    color: #666666;
+    border: 1px solid #666;
+}
+.ivf-active .greyBtn:hover{
+    background-color: #EBEBEB;
+    border: 1px solid #EBEBEB;
+    color: #666666;
+}
+.ivf-active .blueBtn:hover{
+    background-color: #2DB4DF;
+    color: white;
+}
+.hotACon{
+    height: 90px;
+    overflow: hidden;
+}
+.hotImgW{
+    position: relative;
+}
+.hotImgText{
+    position: absolute;
+    left: 0;
+    top:0;
+    border-bottom-right-radius: 5px;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+
+}
+.newsText{
+    background-color: #2DB4DF;
+    color: white;
+}
+.pastText{
+    background-color: #999999;
+    color: white;
+}
+.ivf-hospital .hospital-list2 .blue-number{
+    background-color:#2DB4DF ;
+}
+.ivf-hospital .condition .active a, .ivf-hospital .blue_condition a:hover {
+    color: #2DB4DF;
+}
+.company-box .condition .active a, .ivf-hospital .blue_condition a:hover {
+    color: #2DB4DF;
+}
+.seeSexchangeWrap{
+    float: none;
+}
+.redGoodIcon{
+    background-position: -46px 0;
+}
+.service-box .blue-container-list li:hover {
+    background: #2DB4DF;
+}
+.service-box .blue-container-list li {
+    border: 1px solid #2DB4DF;
+}
+/*热点新闻*/
+.hot-news-container .news-li > span:before{
+    background-color:#2DB4DF ;
+}
+.hot-news-container .blue-cloumn a:hover {
+    color: #2DB4DF;
+}
+
+.examNavLi{
+    float: left;
+    height: 104px;
+    text-align: center;
+    font-size: 14px;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
+    transition: all 200ms;
+    width:145px ;
+    background-color: #DEF1F7;
+}
+.examNavLi:nth-child(4n){
+    background-color: #C0E8F5;
+}
+.examNavLi:nth-child(4n+1){
+    background-color: #C0E8F5;
+}
+.exaPM{
+    width: 290px;
+    margin-left: 10px;
+    height: 416px;
+    background: url("../images/newsFourPage/examTwoP.png")no-repeat 157px 287px;
+    background-color: #DFF7F5;
+}
+.exaPMTitle{
+    margin-top: 20px;
+    text-align: center;
+    color: #16aca0;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.exaPMTitleImg{
+    height: 36px;
+}
+.exaPMCon{
+    width: 240px;
+    color: #444;
+    margin: 20px auto 0;
+    height: 204px;
+    line-height: 28px;
+    font-size: 14px;
+    overflow: hidden;
+
+}
+.exaPR{
+    width: 590px;
+}
+.exaPRPup{
+    width: 590px;
+    height:30px;
+    background: url("../images/newsFourPage/strip.png")no-repeat center;
+    text-align: center;
+    font-size: 18px;
+    color:#16aca0;
+    position: relative;
+}
+.exaPRPtext{
+    position: absolute;
+    top:0;
+    left: 50%;
+    height: 100%;
+    background-color: white;
+    padding: 0 20px;
+    transform: translate(-50%);
+}
+.exaPRPM{
+    width: 100%;
+    margin: 12px auto;
+}
+.exaPRPMA{
+    width: 290px;
+    display: block;
+    position: relative;
+    height:204px;
+}
+.exaPRPMA img{
+    width: 100%;
+    height: 100%;
+}
+.exaPRPMAText{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    white-space: nowrap;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+}
+.exaServiceP{
+    width: 100%;
+    margin-left: -10px;
+
+
+}
+.exaServicePPer{
+    float: left;
+    width: 186px;
+    height:126px;
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    margin-left: 10px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 126px;
+}
+.exaServicePPer a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.exaServicePPer a:hover{
+    opacity: .7;
+}
+/*体检行程攻略*/
+.journeyStrategy{
+    width: 100%;
+    margin-top: 80px;
+}
+.journeyStrategyWrap{
+    width: 100%;
+
+}
+.journeyStrategyWrapUL{
+    margin-left: -10px;
+}
+.journeyStrategyLi{
+    width: 590px;
+    float: left;
+    height: 178px;
+    border: 1px solid #E1E1E1;
+    background-color: white;
+    margin:0 0 20px 10px;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s ;
+    -ms-transition: all .4s ;
+    -o-transition: all .4s ;
+    transition: all .4s ;
+}
+.journeyStrategyLi:hover{
+    border: 1px solid #4CCEC4;
+    box-shadow: 0 0 10px 2px #DADADA;
+}
+.journeyStrategyLi .journeyStrategyLiA{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: #444;
+    overflow: hidden;
+}
+.journeyStrategyLiCon{
+    height: 140px;
+    width: 500px;
+    margin:19px auto;
+}
+.journeyStrategyLiConL{
+    width: 200px;
+    height:140px;
+    line-height: 140px;
+    text-align: center;
+}
+.journeyStrategyLiConL img{
+    width: 100%;
+    height: 100%;
+}
+.journeyStrategyLiConR{
+    width: 284px;
+    text-align: left;
+
+}
+.journeyStrategyLiConR_title{
+    font-size: 22px;
+    color: #444;
+}
+.journeyStrategyLiConR_provider{
+    margin: 10px auto 0;
+    font-size: 16px;
+}
+.blueC{
+    color:#6AD4CB ;
+}
+.servP,.servNum{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.servP{
+    width: 75px;
+}
+.servNum{
+    width: 33px;
+}
+.journeyStrategyLiConR_detail{
+    font-size: 14px;
+}
+.inlineSpan{
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.journeyStrategyLiConR_detailR{
+    width:186px ;
+}
+.RNum{
+    position: absolute;
+    top:0;
+    right: -4px;
+    background: url("../images/newsFourPage/foreignPhysicalExam/examTrangle.png")no-repeat center;
+    width: 57px;
+    height: 51px;
+    line-height:37px;
+    text-indent: 28px;
+    font-size: 20px;
+    color: white;
+}

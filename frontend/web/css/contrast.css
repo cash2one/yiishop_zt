@@ -1,0 +1,174 @@
+.container{
+	width: 1190px;
+	padding: 0;
+}
+.contrast_list{
+	border: 1px solid #d5d5d5;
+	width: 100%;
+	border-radius: 6px;
+	background-color: #fff;
+	padding: 10px;
+	margin-bottom: 55px;
+}
+.table{
+	margin-bottom: 0;
+}
+.contrast_list .table th{
+}
+.contrast_list .table td{
+	width: 210px;
+	height: 50px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+.list_title{
+	height: 280px;
+}
+.title_img{
+	float: left;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	width: 98px;
+	border: 1px solid #e1e1e1;
+	background-color: #f6f6f6;
+	height: 280px;
+	border: 0;
+}
+.title_img img{
+	display: block;
+	margin: 92px auto 0;
+}
+.list_title ul li{
+	float: left;
+	width: 214px;
+	height: 280px;
+	border: 1px solid #fff;
+	position: relative;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	position: relative;
+}
+.title_top{
+	height: 228px;
+	background-color: #d1f1f7;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
+}
+.cancel{
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	z-index: 999;
+}
+.title_info{
+	height: 204px;
+	width: 186px;
+	margin: 12px auto 0;	
+}
+.title_info div{
+	height: 130px;
+}
+.title_info p{
+	text-align: center;
+	color: #fff;
+	height: 73px;
+	background-color: #2DB7DC;
+	overflow: hidden;
+}
+.title_info p span{
+	display: block;
+	margin-top: 10px;
+}
+.bottom_btn{
+	padding: 8px 15px;
+	display: flex;
+	justify-content: space-between;
+	border-left: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+.bottom_btn span{
+	font-size: 13px;
+	border-radius: 15px;
+	border: 1px solid #3DC0E3;
+	line-height: 34px;
+	text-align: center;
+	color: #3DC0E3;
+	background-color: #f7f7f7;
+}
+.shopcar{
+	width: 90px;
+	height: 34px;
+}
+.reserved{
+	width: 80px;
+	height: 34px;
+}
+.active_btn{
+	background: #3DC0E3!important;
+	color: #fff!important;
+}
+.table{
+	background-color: #f7f7f7;
+}
+.table tbody tr th{
+	width: 98px;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: middle;
+}
+.head_info{
+	background-color: #F1EFEF;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 10px;
+	font-size: 17px;
+}
+.head_info i{
+	color: #2DB4DF;
+	font-size: 24px;
+	vertical-align: middle;
+}
+.head_info span{
+	vertical-align: middle;
+}
+
+.hos_table .table tbody tr:nth-child(even){background-color: #fff;}
+.server_table .table tbody tr:nth-child(even){background-color: #fff;}
+.medical_table .table tbody tr:nth-child(even){background-color: #fff;}
+.life_table .table tbody tr:nth-child(even){background-color: #fff;}
+.other_table .table tbody tr:nth-child(even){background-color: #fff;}
+
+.bc_w{
+	background-color: #fff;
+}
+.bc_b{
+	background-color: #f7f7f7;
+}
+
+.programme_table .table tbody tr:nth-child(1) td{color: #2DB4DF;font-size: 18px;}
+.programme_table .table tbody tr:nth-child(2) td{color: #fdc156;}
+.programme_table .table tbody tr:nth-child(3) td{font-size: 15px;}
+.programme_table .table tbody tr:nth-child(4) td{color: #2DB4DF;}
+.programme_table .table tbody tr:nth-child(5) td{color: #FD4778;}
+.programme_table .table tbody tr:nth-child(6) td{color: #2DB4DF;font-size: 18px;}
+.programme_table .table tbody tr em{font-size: 22px;}
+
+
+.hos_table .table tbody tr:nth-child(1) td{color: #fdc156;}
+.hos_table .table tbody tr:nth-last-child(1) td{color: #2DB4DF;font-size: 18px;}
+.hos_table .table tbody tr:nth-last-child(2) td{color: #2DB4DF;font-size: 18px;}
+.hos_table .table tbody tr:nth-last-child(3) td{color: #2DB4DF;font-size: 18px;}
+.hos_table .table tbody tr em{font-size: 22px;}
+
+.server_table .table tbody tr:nth-child(1) td{color: #fdc156;}
+.server_table .table tbody tr:nth-last-child(1) td{color: #2DB4DF;font-size: 18px;}
+.server_table .table tbody tr:nth-last-child(2) td{color: #2DB4DF;font-size: 18px;}
+.server_table .table tbody tr:nth-last-child(3) td{color: #2DB4DF;font-size: 18px;}
+.server_table .table tbody tr em{font-size: 22px;}
+
+.medical_table .table tbody tr td i{color: #55c67e;font-size: 17px;}
+.life_table .table tbody tr td i{color: #55c67e;font-size: 17px;}
+.other_table .table tbody tr td i{color: #55c67e;font-size: 17px;}
