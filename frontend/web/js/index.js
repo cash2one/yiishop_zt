@@ -1,13 +1,24 @@
 $(function(){
-    $(".site-nav-wrap ul li").hover(function(){
-        console.log();
-        //$(this).addClass("navbar-act");
-        $(".site-nav-part").find(".sub-menu").eq($(this).index()).addClass("active");
-        $(".site-nav-part").show();
-    },function(){
-        $(".site-nav-part").find(".sub-menu").eq($(this).index()).removeClass("active");
-        $(".site-nav-part").hide();
-    });
+//  $(".site-nav-wrap ul li").hover(function(){
+//      //$(this).addClass("navbar-act");
+//      $(".site-nav-part").find(".sub-menu").eq($(this).index()).addClass("active");
+//      $(".site-nav-part").show();
+//  },function(){
+//      $(".site-nav-part").find(".sub-menu").eq($(this).index()).removeClass("active");
+//      $(".site-nav-part").hide();
+//  });
+
+	$(".site-nav-wrap ul li").mouseover(function(){
+		$(".site-nav-part").find(".sub-menu").eq($(this).index()).addClass("active").siblings().removeClass("active");
+		$(".site-nav-part").show();
+	})
+	
+	$(".swiper-wrapper").mouseover(function(){
+		$(".site-nav-part").hide();
+	})
+	$(".top-wrap").mouseover(function(){
+		$(".site-nav-part").hide();
+	})
 
     $(".accordion-item").hover(function(){
         $(this).parent().parent().find('.accordion-item').removeClass('active');

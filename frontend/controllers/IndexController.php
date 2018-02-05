@@ -6,7 +6,9 @@
  * Time: 19:15
  */
 namespace frontend\controllers;
-use frontend\model\LifeProvice;
+use frontend\models\BackStep;
+use frontend\models\ForeignStep;
+use frontend\models\LifeProvice;
 use frontend\models\ArticleBirth;
 use frontend\models\ArticleBirthData;
 use frontend\models\ArticleHealthcheck;
@@ -24,6 +26,7 @@ use frontend\models\HospitalProvice;
 use frontend\models\MemberComment;
 use frontend\models\MemberFacilitator;
 use frontend\models\MemberHospital;
+use frontend\models\MemberService;
 use frontend\models\MemberShare;
 use frontend\models\ProgramCost;
 use frontend\models\Programme;
@@ -41,6 +44,7 @@ use frontend\models\TubeReason;
 use frontend\models\TubeSkill;
 use yii\data\Pagination;
 use yii\db\Transaction;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Cookie;
 
@@ -67,13 +71,37 @@ class IndexController extends Controller{
         $experience = Experience::find()->all();
         //>>试管婴儿文章列表
         $tube_article = TubeArticle::find()->orderBy('id desc')->limit(6)->offset(0)->all();
+        $tube_article_r = TubeArticle::find()->orderBy('id asc')->limit(6)->offset(0)->all();
         //>>出国看病文章列表
         $article_oversea = ArticleOversea::find()->orderBy('id desc')->limit(6)->offset(0)->all();
+        $article_oversea_r = ArticleOversea::find()->orderBy('id asc')->limit(6)->offset(0)->all();
         //>>出国体检文章列表
         $article_check = ArticleHealthcheck::find()->orderBy('id desc')->limit(6)->offset(0)->all();
+        $article_check_r = ArticleHealthcheck::find()->orderBy('id asc')->limit(6)->offset(0)->all();
         //>>出国生子文章列表
         $article_birth = ArticleBirth::find()->orderBy('id desc')->limit(6)->offset(0)->all();
-        return $this->render('index',['tubes'=>$tube,'ages'=>$age,'counts'=>$count,'reasons'=>$reason,'skills'=>$skill,'countrys'=>$country,'budgets'=>$budget,'experiences'=>$experience,'tubeArticles'=>$tube_article,'article_overseas'=>$article_oversea,'article_checks'=>$article_check,'article_births'=>$article_birth]);
+        $article_birth_r = ArticleBirth::find()->orderBy('id asc')->limit(6)->offset(0)->all();
+        //>>热点新闻文章列表
+        $hot_article_left = TubeArticle::find()->orderBy('id asc')->limit(3)->offset(0)->all();
+        $hot_article_right = TubeArticle::find()->orderBy('id asc')->limit(8)->offset(3)->all();
+        //>>医院列表
+        $hospital_tube = MemberHospital::find()->orderBy('hid asc')->limit(4)->offset(0)->all();
+        $hospital_oversea = MemberHospital::find()->orderBy('hid desc')->limit(4)->offset(0)->all();
+        $hospital_check = MemberHospital::find()->orderBy('hid desc')->limit(4)->offset(4)->all();
+        $hospital_birth = MemberHospital::find()->orderBy('hid desc')->limit(4)->offset(8)->all();
+        //>>底部医院
+        $hospital_footer = MemberHospital::find()->orderBy('hid desc')->limit(9)->offset(0)->all();
+        //>>底部服务商图
+        $service_footer1 = MemberService::find()->limit(10)->offset(0)->all();
+        $service_footer2 = MemberService::find()->limit(10)->offset(10)->all();
+        $service_footer3 = MemberService::find()->limit(10)->offset(20)->all();
+        //>>查询日志
+        $member_coment1=MemberComment::find()->limit(4)->offset(0)->all();
+        $member_coment2=MemberComment::find()->limit(4)->offset(5)->all();
+        $member_coment3=MemberComment::find()->limit(4)->offset(10)->all();
+        $member_coment4=MemberComment::find()->limit(4)->offset(15)->all();
+        return $this->render('index',['tubes'=>$tube,'ages'=>$age,'counts'=>$count,'reasons'=>$reason,'skills'=>$skill,'countrys'=>$country,'budgets'=>$budget,'experiences'=>$experience,'tubeArticles'=>$tube_article,'article_overseas'=>$article_oversea,'article_checks'=>$article_check,'article_births'=>$article_birth,'hot_article_lefts'=>$hot_article_left,'hot_article_rights'=>$hot_article_right,'hospitals'=>$hospital_tube,'tube_article_r'=>$tube_article_r,'article_oversea_r'=>$article_oversea_r,'hospital_oversea'=>$hospital_oversea,'article_check_r'=>$article_check_r,'hospital_check'=>$hospital_check,'article_birth_r'=>$article_birth_r,'hospital_birth'=>$hospital_birth,'hospital_footer'=>$hospital_footer,'service_footer1'=>$service_footer1, 'service_footer2'=>$service_footer2,'service_footer3'=>$service_footer3,'member_coment1'=>$member_coment1,
+ 'member_coment2'=>$member_coment2,'member_coment3'=>$member_coment3,'member_coment4'=>$member_coment4,          ]);
     }
     //>>项目搜索结果页
     public function actionSearch(){
@@ -202,6 +230,7 @@ class IndexController extends Controller{
                       $pagetool = new Pagination([
                           'pageSize'=>5,
                           'totalCount'=>$count,
+
                       ]);
                       $tubeCrowds = $query->limit($pagetool->limit)->offset($pagetool->offset)->all();
 
@@ -254,6 +283,29 @@ class IndexController extends Controller{
     }
     //>>方案详情页
     public function actionProgramDetail($id){
+        //>>加入购物车
+        //>>读cookie
+        $cart_programs=[];
+        $cookie_read = \Yii::$app->request->cookies;
+        //>>有购物车信息
+        if($cookie_read->has('cart')){
+            //>>购物车信息  id=>数量
+            $cart = unserialize($cookie_read->getValue('cart'));
+            foreach($cart as $key=>$c){
+                $cart_program = Programme::find()->where(['id'=>$key])->one();
+                //>>total_price   reserve_money    programe_name doctor_id
+                $package = TubePakege::find()->where(['id'=>$cart_program->id])->one();
+                $doc_ids = unserialize($cart_program->doctor_id);
+                $doc_id = $doc_ids[0];
+                $cart_doc=Doctor::find()->where(['id'=>$doc_id])->one();
+                $cart_program->doc =$cart_doc;
+                $cart_program->num = $c;
+                $cart_program->package =$package;
+                $cart_programs[]=$cart_program;
+
+            }
+
+        }
         //>>基本信息
         $tube = ServerType::find()->where(['ser_pro_id'=>1])->all();
         //>>试管婴儿适合用户年龄
@@ -309,8 +361,12 @@ class IndexController extends Controller{
         $type_h = HospitalProperty::find()->where(['id'=>$hospital->type])->one();
         //>>医院等级
         $level_h = HospitalLevel::find()->where(['id'=>$hospital->level])->one();
-        //>>方案流程
+        //>>国内方案流程
         $domesticStep = DomesticStep::find()->where(['program_id'=>1])->all();
+        //>>国外方案流程
+        $foreignStep = ForeignStep::find()->where(['program_id'=>1])->all();
+        //>>回国方案流程
+        $backStep = BackStep::find()->where(['program_id'=>1])->all();
         //>>费用包含
         $costs = ProgramCost::find()->where(['program_id'=>1])->all();
         //>>服务说明
@@ -319,14 +375,9 @@ class IndexController extends Controller{
         $memberShare = MemberShare::find()->where(['pragram_id'=>$program->id])->all();
         //>>用户评论
         $memberComment = MemberComment::find()->where(['program_id'=>$program->id])->all();
-        /*foreach ($domesticStep as $d){
-            //var_dump();die;
-            foreach (unserialize($d->package_id) as $v){
-                var_dump($v);die;
-            }
-        }*/
-        //var_dump($domesticStep);die;
-        return $this->render('program_detail',['program'=>$program,'crowd'=>$crowd,'packages'=>$tubePackage,'doctors'=>$doctors,'facilitator'=>$facilitator,'hospital'=>$hospital,'hospital_detail'=>$hospital_detail,'type'=>$type_h,'level'=>$level_h,'domesticStep'=>$domesticStep,'costs'=>$costs,'service_explain'=>$service_explain,'memberShares'=>$memberShare,'memberComments'=>$memberComment]);
+
+        Url::remember(['index/program-detail','id'=>$id],'program-detail');
+        return $this->render('program_detail',['program'=>$program,'crowd'=>$crowd,'packages'=>$tubePackage,'doctors'=>$doctors,'facilitator'=>$facilitator,'hospital'=>$hospital,'hospital_detail'=>$hospital_detail,'type'=>$type_h,'level'=>$level_h,'domesticStep'=>$domesticStep,'costs'=>$costs,'service_explain'=>$service_explain,'memberShares'=>$memberShare,'memberComments'=>$memberComment,'cart_programs'=>$cart_programs,'foreignSteps'=>$foreignStep,'backSteps'=>$backStep]);
     }
     //>>找医院
     public function actionSearchHospital(){
@@ -335,28 +386,49 @@ class IndexController extends Controller{
     //>>试管婴儿文章详情页
     public function actionTubeDetail($id)
     {
+
         $detail = TubeArticleData::find()->where(['id'=>$id])->one();
         $title = TubeArticle::find()->where(['id'=>$id])->one();
-        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title]);
+        //查询方案
+        $programme=Programme::find()->limit(6)->offset(0)->all();
+        //查询用户评论
+        $member_comment=MemberComment::find()->limit(4)->offset(0)->all();
+
+        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title,"programmes"=>$programme,
+            'member_comments'=>$member_comment]);
     }
     //>>出国看病文章详情页
     public function actionOverseaDetail($id){
         $title =  ArticleOversea::find()->where(['id'=>$id])->one();
         $detail = ArticleOverseaData::find()->where(['id'=>$id])->one();
-        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title]);
+        //查询方案
+        $programme=Programme::find()->limit(6)->offset(7)->all();
+        //查询用户评论
+        $member_comment=MemberComment::find()->limit(4)->offset(7)->all();
+        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title,"programmes"=>$programme,
+            'member_comments'=>$member_comment]);
     }
     //>>出国体检文章详情页
     public function actionCheckDetail($id)
     {
         $title = ArticleHealthcheck::find()->where(['id'=>$id])->one();
         $detail = ArticleHealthcheckData::find()->where(['id'=>$id])->one();
+        //查询方案
+        $programme=Programme::find()->limit(6)->offset(11)->all();
+        //查询用户评论
+        $member_comment=MemberComment::find()->limit(4)->offset(11)->all();
         return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title]);
 }
     //>>出国生子文章详情页
     public function actionBirthDetail($id){
         $title = ArticleBirth::find()->where(['id'=>$id])->one();
         $detail = ArticleBirthData::find()->where(['id'=>$id])->one();
-        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title]);
+        //查询方案
+        $programme=Programme::find()->limit(6)->offset(20)->all();
+        //查询用户评论
+        $member_comment=MemberComment::find()->limit(4)->offset(20)->all();
+        return $this->renderPartial('article_detail',['detail'=>$detail,'title'=>$title,"programmes"=>$programme,
+            'member_comments'=>$member_comment]);
     }
     //>>方案加入对比
     public function actionAddCompareProject($id){
@@ -366,7 +438,17 @@ class IndexController extends Controller{
         if($cookie_read->has('project')){
             //>>将id存入cookie
             $ids=unserialize($cookie_read->getValue('project'));
+            //如果存在相同的id,就提示用户该方案已经加入对比
+            foreach ($ids as $v){
+                if ($v==$id){
+                    return $this->redirect(['index/search']);
+                }
+            }
             $ids[]=$id;
+            //如果ids中的个数大于5个就提示用户只能加入五个对比.
+            if(count($ids)>5){
+                return $this->redirect(['index/search']);
+            }
             //>>跳转到方案对比页
             //var_dump(unserialize($cookie_read->getValue('project')));die;
         }else{
@@ -384,7 +466,11 @@ class IndexController extends Controller{
     //>>对比详情页
     public function actionCompareDetail(){
         $cookie_read = \Yii::$app->request->cookies;
+
         $ids = unserialize($cookie_read->getValue('project'));
+        if(!$ids){
+            $this->redirect(Url::previous());
+        }
         $program = [];
         $ser_types=[];
         $hospitals=[];
@@ -393,6 +479,7 @@ class IndexController extends Controller{
         $program_nums=[];
         $hospital_services=[];
         $life_services = [];
+        //$other_services=[];
         foreach ($ids as $id){
             //>>方案
             $p = Programme::find()->where(['id'=>$id])->one();
@@ -414,6 +501,7 @@ class IndexController extends Controller{
             $life_service=TubePakege::find()->where(['programe_id'=>$p->id])->one();
             $life_ids=unserialize($life_service->life_service);
             $lif_services =LifeProvice::find()->where(['in','id',$life_ids])->all();
+
             $program[]=$p;
             $ser_types[]=$server_type;
             $hospitals[]=$hospital;
@@ -425,6 +513,62 @@ class IndexController extends Controller{
         }
        //var_dump($res);die;
         return $this->renderPartial('compare_project',['programs'=>$program,'server_types'=>$ser_types,'hospitals_details'=>$hospitals_detail,'hospitals'=>$hospitals,'services'=>$services,'program_nums'=>$program_nums,'hospital_services'=>$hospital_services,'life_services'=>$life_services]);
+    }
+    //>>购物车
+    public function actionCart($id){
+        $cookie_write = \Yii::$app->response->cookies;
+        $cookie_read = \Yii::$app->request->cookies;
+        $cookie = new Cookie();
+       if($cookie_read->has('cart')){
+           //>>购物车有信息
+           $program = $cookie_read->getValue('cart');
+           $program = unserialize($program);
+           //>>传入相同id数量+1
+           foreach ($program as $k=>$v){
+               if($k==$id){
+                   $v+=1;
+                   $program[$id]=$v;
+               }else{
+                   $program[$id]=1;
+               }
+           }
+           $program = serialize($program);
+           $cookie->name='cart';
+           $cookie->value = $program;
+           $cookie_write->add($cookie);
+          // var_dump($cookie_read->getValue('cart'));die;
+       }else{
+           //>>购物车没有信息
+
+           $ids=[];
+           $ids[$id]=1;
+           $ids = serialize($ids);
+           $cookie->name='cart';
+           $cookie->value = $ids;
+           $cookie_write->add($cookie);
+       }
+       $url = Url::previous('program-detail');
+        return $this->redirect($url);
+    }
+    //>>删除购物车指定商品
+    public function actionDeleteCart($id){
+       $cookie_read = \Yii::$app->request->cookies;
+       $cookie_write = \Yii::$app->response->cookies;
+       $carts = unserialize($cookie_read->getValue('cart'));
+        unset($carts[$id]);
+        //var_dump(count($carts));die;
+       if(count($carts)==0){
+           $cookie_write->remove('cart');
+       }else{
+           $ids = serialize($carts);
+           $cookie = new Cookie();
+           $cookie->name= 'cart';
+           $cookie->value = $ids;
+           $cookie_write->add($cookie);
+       }
+
+        return $this->redirect(Url::previous('program-detail'));
+
     }
     //>>测试函数
     public function actionTest()

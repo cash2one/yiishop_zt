@@ -911,6 +911,10 @@
     color: #41cbc0;
     line-height:38px;
 }
+.rate_img_food img{
+	width: 290px;
+	height: 204px;
+}
 .inspect-box .container-list .member-log{
     width: 290px;
     float: left;
@@ -1704,6 +1708,7 @@
 	width: 150px;
 	height: 35px;
 	margin: 0 0 15px 10px;
+	background-color: #fff;
 }
 .btn-info{
 	width: 460px;
