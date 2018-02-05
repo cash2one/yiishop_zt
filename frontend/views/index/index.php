@@ -59,14 +59,15 @@
                 </a>
             </hgroup>
             <nav class="site-nav-wrap">
-                <ul class="navbar-menu">
+                <ul class="navbar-menu" style="margin-right: 80px;">
                     <li class="navbar-list"><a href="">首页</a></li>
                     <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
+                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
+                    <!--<li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国生子<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search-hospital'])?>">找医院</a></li>
-                    <li class="navbar-list"><a href="">找机构</a></li>
+                    <li class="navbar-list"><a href="">出国生子<i class="site-nav-arrow"></i></a></li>-->
+                    <!--<li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search-hospital'])?>">找医院</a></li>
+                    <li class="navbar-list"><a href="">找机构</a></li>-->
                     <li class="navbar-list"><a href="">话题圈子</a></li>
                 </ul>
                 <span class="top-menu-seach"><i></i></span>
@@ -107,9 +108,9 @@
                 <div class="filter-type-li">
                     <ul>
                         <li class="active1">试管婴儿</li>
-                        <li>出国看病</li>
+                        <!--<li>出国看病</li>
                         <li>出国体检</li>
-                        <li>出国生子</li>
+                        <li>出国生子</li>-->
                     </ul>
                 </div>
                 <div class="filter-type">
@@ -215,27 +216,15 @@
                 <div class="hot-news">
                     <div class="hot-news-title">热点新闻 <a href="">更多>></a></div>
                     <ul>
+                        <?php foreach ($hot_article_lefts as $hot_article_left):?>
                         <li>
-                            <div class="accordion-item active" style="background-image: url('images/hot-news.png');">
+                            <div class="accordion-item active" style="background-image: url('<?=$hot_article_left->thumb?>');background-size: 590px 350px">
                                 <div class="cover_bg">
-                                    <a href="/">美国试管婴儿中需要补充哪些营养</a>
+                                    <a href="/"><?=$hot_article_left->title?></a>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                <div class="cover_bg">
-                                    <a href="/">美国试管婴儿中需要补充哪些营养</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                <div class="cover_bg">
-                                    <a href="/">美国试管婴儿中需要补充哪些营养</a>
-                                </div>
-                            </div>
-                        </li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
                 <div class="newslist">
@@ -247,14 +236,9 @@
                     </div>
                     <div class="news-li">
                         <ul>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
-                            <li><span><a href="" title="">艰难求子路，瑞可优见证小公举到来</a></span></li>
+                            <?php foreach ($hot_article_rights as $hot_article_right):?>
+                            <li><span><a href="" title=""><?=$hot_article_right->title?></a></span></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>
@@ -262,12 +246,12 @@
                     <div class="service-title">找您需要的服务</div>
                     <div class="service-li">
                         <ul>
-                            <li><span>找医生</span><p>专注于自驾游的攻略</p></li>
-                            <li><span>找医院</span><p>专注于自驾游的攻略</p></li>
-                            <li><span>找服务机构</span><p>专注于自驾游的攻略</p></li>
-                            <li><span>我要租车</span><p>专注于自驾游的攻略</p></li>
-                            <li><span>我要翻译</span><p>专注于自驾游的攻略</p></li>
-                            <li><span>我要租车</span><p>专注于自驾游的攻略</p></li>
+                            <li><span>找医生</span><p> 你的健康，我的责任。</p></li>
+                            <li><span>找医院</span><p>承载希望，健康起航。</p></li>
+                            <li><span>找服务机构</span><p>省心、安心、放心的医疗服务</p></li>
+                            <li><span>我要租车</span><p>有租必驾，有诚必达。</p></li>
+                            <li><span>我要翻译</span><p>专业医疗翻译，交流无障碍</p></li>
+                            <li><span>我要租车</span><p>不同的城市,一样的家</p></li>
                         </ul>
                     </div>
                 </div>
@@ -294,7 +278,24 @@
                     <div class="log-title baby-box-title">用户日志分享</div>
                     <div class="log-container">
                         <ul class="swiper-wrapper">
+                            <?php foreach ($member_coment1 as $member_comment):?>
                             <li class="swiper-slide">
+                                <div class="avatar">
+                                    <a href="">
+                                        <img src="<?=$member_comment->logo?>" >
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="meta">
+                                        <a href=""><?=$member_comment->name?></a>
+                                    </div>
+                                    <div class="message">
+                                        <a href=""><?=mb_substr($member_comment->discuss,0,10)?>...</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <?php endforeach; ?>
+                            <!--<li class="swiper-slide">
                                 <div class="avatar">
                                     <a href="">
                                         <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
@@ -323,24 +324,9 @@
                                         <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
+                            </li>-->
                         </ul>
-                        <p class="title">123456<span class="desc">人在分享日志</span></p>
+                        <p class="title">13000<span class="desc">人在分享日志</span></p>
                     </div>
                 </div>
                 <div class="company">
@@ -354,34 +340,15 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
+                                <?php foreach ($hospitals as $hospital):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('images/hot-news.png');">
+                                    <div class="accordion-item act" style="background-image: url('<?=$hospital->logo?>');">
                                         <div class="cover_bg">
-                                            <a href="/">美国梅奥诊所肺癌治疗中心</a>
+                                            <a href="/"><?=$hospital->short_name?></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="accordion-item active" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国梅奥诊所肺癌治疗中心</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国梅奥诊所肺癌治疗中心</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国梅奥诊所肺癌治疗中心</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="none">
@@ -427,7 +394,7 @@
                     </div>
                     <div class="case-container">
                         <div class="case-li-index">
-                            <div class="pictrue"><img src="/images/baby-case.png"/></div>
+                            <div class="pictrue"><img src="/d/file/content/2017/12/5a38873a23c5a.jpg"/></div>
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($tubeArticles as $tubeArticle):?>
@@ -440,12 +407,9 @@
                             <div class="pictrue"><img src="/images/baby-case.png"/></div>
                             <div class="case-li">
                                 <ul>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
+                                    <?php foreach($tube_article_r as $v):?>
+                                    <li><span><a href="" title=""><?=strlen($v->title)>=48?substr($v->title,'0',48).'...':$v->title?></a></span></li>
+                                    <?php endforeach;?>
                                 </ul>
                             </div>
                         </div>
@@ -468,7 +432,7 @@
             </div>
             <div class="container-list">
                 <div class="success-rate">
-                    <div class="rate-title patient-box-title">试管婴儿成功率测试</div>
+                    <div class="rate-title patient-box-title">选择适合您的就医方案</div>
                     <div class="rate-container">
                         <img src="/images/baby-rate.png">
                     </div>
@@ -477,7 +441,24 @@
                     <div class="log-title patient-box-title">用户日志分享</div>
                     <div class="log-container">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
+                            <?php foreach ($member_coment2 as $member_comment):?>
+                                <li class="swiper-slide">
+                                    <div class="avatar">
+                                        <a href="">
+                                            <img src="<?=$member_comment->logo?>" >
+                                        </a>
+                                    </div>
+                                    <div class="body">
+                                        <div class="meta">
+                                            <a href=""><?=$member_comment->name?></a>
+                                        </div>
+                                        <div class="message">
+                                            <a href=""><?=mb_substr($member_comment->discuss,0,10)?>...</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                           <!-- <li class="swiper-slide">
                                 <div class="avatar">
                                     <a href="">
                                         <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
@@ -492,8 +473,8 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
+                            <li class="swiper-slide">-->
+                         <!--       <div class="avatar">
                                     <a href="">
                                         <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
                                     </a>
@@ -506,24 +487,9 @@
                                         <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
+                            </li>-->
                         </ul>
-                        <p class="title">123456<span class="desc">人在分享日志</span></p>
+                        <p class="title">12200<span class="desc">人在分享日志</span></p>
                     </div>
                 </div>
                 <div class="company">
@@ -537,34 +503,15 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
+                                <?php foreach($hospital_oversea as $oversea):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('images/hot-news.png');">
+                                    <div class="accordion-item act" style="background-image: url('<?=$oversea->description_img?>');">
                                         <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
+                                            <a href="/"><?=$oversea->short_name?></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="accordion-item active" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
+                               <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="none">
@@ -572,7 +519,7 @@
                                 <li>
                                     <div class="accordion-item act" style="background-image: url('images/hot-news.png');">
                                         <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
+                                            <a href="/">美国试管婴儿中需2222222要补充哪些营养哪些营养哪些营养</a>
                                         </div>
                                     </div>
                                 </li>
@@ -610,7 +557,7 @@
                     </div>
                     <div class="case-container">
                         <div class="case-li-index">
-                            <div class="pictrue"><img src="/images/baby-case.png"/></div>
+                            <div class="pictrue"><img src="/d/file/content/2017/12/5a435a25f2c6c.png"/></div>
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($article_overseas as $article_oversea):?>
@@ -620,15 +567,12 @@
                             </div>
                         </div>
                         <div class="case-li-index" style="display: none">
-                            <div class="pictrue"><img src="/images/baby-case.png"/></div>
+                            <div class="pictrue"><img src="/d/file/content/2017/12/5a435a25f2c6c.png"/></div>
                             <div class="case-li">
                                 <ul>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
+                                    <?php foreach($article_oversea_r as $oversea):?>
+                                    <li><span><a href="" title=""><?=strlen($oversea->title)>48?substr($oversea->title,'0',48).'...':$oversea->title?></a></span></li>
+                                    <?php endforeach;?>
                                 </ul>
                             </div>
                         </div>
@@ -651,62 +595,36 @@
             </div>
             <div class="container-list">
                 <div class="success-rate">
-                    <div class="rate-title index-title-box">试管婴儿成功率测试</div>
-                    <div class="rate-container">
+                    <div class="rate-title index-title-box">美食美景</div>
+                    <div class="rate-container rate_img_food">
                         <img src="/images/baby-rate.png">
+                        <img src="/images/baby-rate.png" />
                     </div>
                 </div>
                 <div class="member-log">
                     <div class="log-title index-title-box">用户日志分享</div>
                     <div class="log-container">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
+                            <?php foreach ($member_coment3 as $member_comment):?>
+                                <li class="swiper-slide">
+                                    <div class="avatar">
+                                        <a href="">
+                                            <img src="<?=$member_comment->logo?>" >
+                                        </a>
                                     </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
+                                    <div class="body">
+                                        <div class="meta">
+                                            <a href=""><?=$member_comment->name?></a>
+                                        </div>
+                                        <div class="message">
+                                            <a href=""><?=mb_substr($member_comment->discuss,0,10)?>...</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php endforeach; ?>
+
                         </ul>
-                        <p class="title">123456<span class="desc">人在分享日志</span></p>
+                        <p class="title">14000<span class="desc">人在分享日志</span></p>
                     </div>
                 </div>
                 <div class="company">
@@ -720,34 +638,15 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
+                                <?php foreach ($hospital_check as $check):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('images/hot-news.png');">
+                                    <div class="accordion-item act" style="background-image: url('<?=$check->description_img?>');">
                                         <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
+                                            <a href="/"><?=$check->short_name?></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="accordion-item active" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="none">
@@ -793,7 +692,7 @@
                     </div>
                     <div class="case-container">
                         <div class="case-li-index">
-                            <div class="pictrue"><img src="/images/baby-case.png"/></div>
+                            <div class="pictrue"><img src="/d/file/content/2017/12/5a45dc9d5aeb8.png"/></div>
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($article_checks as $article_check):?>
@@ -806,12 +705,9 @@
                             <div class="pictrue"><img src="/images/baby-case.png"/></div>
                             <div class="case-li">
                                 <ul>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
+                                    <?php foreach ($article_check_r as $check):?>
+                                    <li><span><a href="" title=""><?=strlen($check->title)>48?substr($check->title,'0',48).'...':$check->title?></a></span></li>
+                                   <?php endforeach;?>
                                 </ul>
                             </div>
                         </div>
@@ -835,7 +731,8 @@
             <div class="container-list">
                 <div class="success-rate">
                     <div class="rate-title index-title-box">美食美景</div>
-                    <div class="rate-container">
+                    <div class="rate-container rate_img_food">
+                        <img src="/images/baby-rate.png">
                         <img src="/images/baby-rate.png">
                     </div>
                 </div>
@@ -843,53 +740,25 @@
                     <div class="log-title index-title-box">用户日志分享</div>
                     <div class="log-container">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
+                            <?php foreach ($member_coment4 as $member_comment):?>
+                                <li class="swiper-slide">
+                                    <div class="avatar">
+                                        <a href="">
+                                            <img src="<?=$member_comment->logo?>" >
+                                        </a>
                                     </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
+                                    <div class="body">
+                                        <div class="meta">
+                                            <a href=""><?=$member_comment->name?></a>
+                                        </div>
+                                        <div class="message">
+                                            <a href=""><?=mb_substr($member_comment->discuss,0,10)?>...</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="avatar">
-                                    <a href="">
-                                        <img src="https://imgcdn1.zuzuche.com/user_icon/129/12920494da5f1eb1772ca7c3b973dce1f7ac076_200.jpg!/both/34x34/quality/75/format/jpg" >
-                                    </a>
-                                </div>
-                                <div class="body">
-                                    <div class="meta">
-                                        <a href="">苏珊小鱼</a>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">非常棒的体验，一家人顺便出去旅游一圈，我们也终于有了...</a>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
-                        <p class="title">123456<span class="desc">人在分享日志</span></p>
+                        <p class="title">12500<span class="desc">人在分享日志</span></p>
                     </div>
                 </div>
                 <div class="company">
@@ -903,34 +772,15 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
+                                <?php foreach ($hospital_birth as $hos_birth):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('images/hot-news.png');">
+                                    <div class="accordion-item act" style="background-image: url('<?=$hos_birth->description_img?>');">
                                         <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
+                                            <a href="/"><?=$hos_birth->short_name?></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="accordion-item active" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="accordion-item" style="background-image: url('images/hot-news.png');">
-                                        <div class="cover_bg">
-                                            <a href="/">美国试管婴儿中需要补充哪些营养哪些营养哪些营养</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="none">
@@ -976,7 +826,7 @@
                     </div>
                     <div class="case-container">
                         <div class="case-li-index">
-                            <div class="pictrue"><img src="/images/baby-case.png"/></div>
+                            <div class="pictrue"><img src="/d/file/content/2017/12/5a447f409a43f.png"/></div>
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($article_births as $article_birth):?>
@@ -989,12 +839,9 @@
                             <div class="pictrue"><img src="/images/baby-case.png"/></div>
                             <div class="case-li">
                                 <ul>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
-                                    <li><span><a href="" title="">[攻略]求子路，瑞可优见证小公举到来</a></span></li>
+                                    <?php foreach($article_birth_r as $birth):?>
+                                    <li><span><a href="" title=""><?=strlen($birth->title)>48?substr($birth->title,'0',48).'...':$birth->title?></a></span></li>
+                                    <?php endforeach;?>
                                 </ul>
                             </div>
                         </div>
@@ -1018,114 +865,20 @@
             <div class="container-list">
                 <div class="hospital-list">
                     <div class="swiper-wrapper">
+                        <?php foreach($hospital_footer as $footer):?>
                         <div class="swiper-slide">
                             <div class="hospital-list2">
                                 <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
+                                    <img width="288px" height="193px" class="hospital-list2-img1" src="<?=$footer->description_img?>" title="<?=$footer->short_name?>">
                                 </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
+                                <span class="hospital-list2-span1"><a href=""><?=$footer->short_name?></a></span>
+                                <p class="hospital-list2-p1"><?=strlen($footer->description)>90?mb_substr($footer->description,'0',40).'...':$footer->description?></p>
                                 <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
+                                    <p class="hospital-list2-p2"><span><?=$footer->country?>　<?=$footer->city?></span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hospital-list2">
-                                <a href="" alt="">
-                                    <img class="hospital-list2-img1" src="/images/hospital-img.png" title="PFI太平洋生殖医学中心">
-                                </a>
-                                <span class="hospital-list2-span1"><a href="">PFI太平洋生殖医学中心</a></span>
-                                <p class="hospital-list2-p1">太平洋生殖医学中心是全球最大的连锁生殖医学机构之一，在洛杉矶以及唯一对中国免签的美...</p>
-                                <div class="hospital-list2-pic">
-                                    <p class="hospital-list2-p2"><span>In U.S.A · Saipan</span></p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach;?>
                     </div>
                     <a href="javascirpt:void(0)"><div class="hospital-button-next"></div></a>
                     <a href="javascirpt:void(0)"><div class="hospital-button-prev"></div></a>
@@ -1141,51 +894,30 @@
             <div class="container-title">
                 <i class="index-icon icon_tools_7"></i>
                 <h3>已入驻服务机构</h3>
-                <p>多加服务机构给您更多的选择</p>
+                <p>多家服务机构给您更多的选择</p>
             </div>
             <div class="container-list">
                 <div class="company-list">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide company-border">
                             <ul>
-                                <li><a href="1"><img src="/images/meiao.png"></a></li>
-                                <li><a href="2"><img src="/images/meiao.png"></a></li>
-                                <li><a href="3"><img src="/images/meiao.png"></a></li>
-                                <li><a href="4"><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
+                                <?php foreach($service_footer1 as $service):?>
+                                <li><a href="1"><img src="<?=$service->images?>"></a></li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="swiper-slide company-border">
                             <ul>
-                                <li><a href="1"><img src="/images/meiao.png"></a></li>
-                                <li><a href="2"><img src="/images/meiao.png"></a></li>
-                                <li><a href="3"><img src="/images/meiao.png"></a></li>
-                                <li><a href="4"><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
+                                <?php foreach($service_footer2 as $service):?>
+                                    <li><a href="1"><img src="<?=$service->images?>"></a></li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                         <div class="swiper-slide company-border">
                             <ul>
-                                <li><a href="1"><img src="/images/meiao.png"></a></li>
-                                <li><a href="2"><img src="/images/meiao.png"></a></li>
-                                <li><a href="3"><img src="/images/meiao.png"></a></li>
-                                <li><a href="4"><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
-                                <li><a href=""><img src="/images/meiao.png"></a></li>
+                                <?php foreach($service_footer3 as $service):?>
+                                    <li><a href="1"><img src="<?=$service->images?>"></a></li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                     </div>

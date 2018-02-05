@@ -72,7 +72,7 @@
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu">
-                    <li class="navbar-list"><a href="">首页</a></li>
+                    <li class="navbar-list"><a href="<?= \yii\helpers\Url::to(['index/index']) ?>">首页</a></li>
                     <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
@@ -406,7 +406,10 @@
     </li>
   </ul>-->
     <?=\yii\widgets\LinkPager::widget([
-        'pagination'=>$pageTool
+        'pagination'=>$pageTool,
+        'maxButtonCount'=>5,
+        'firstPageLabel' => '首页',
+        'lastPageLabel' => '尾页',
     ])?>
 </nav>
 <footer class="footer">

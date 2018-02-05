@@ -169,8 +169,8 @@
 							</div>
 							<div class="title_bottom">
 								<div class="bottom_btn">
-									<span class="shopcar active_btn">加入购物车</span>
-									<span class="reserved active_btn">立即预定</span>
+									<!--<span class="shopcar active_btn"><a href="<?/*=\yii\helpers\Url::to(['index/cart','id'=>$program->id])*/?>">加入购物车</a></span>
+									<span class="reserved active_btn">立即预定</span>-->
 								</div>
 							</div>
 						</li>
@@ -178,10 +178,10 @@
 					</ul>
 				</div>
 				
-				<div class="programme_table">
+				<div class="programme_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
+						<i class="iconfont icon-shousuo" style="display: none;" id="pro_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="pro_btn_s"></i>
 						<span>&nbsp;方案信息</span>	
 					</h2>
 					<table class="table table-bordered table-hover">
@@ -268,10 +268,10 @@
 					</table>
 				</div>
 				
-				<div class="hos_table">
+				<div class="hos_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
+						<i class="iconfont icon-shousuo" style="display: none;" id="hos_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="hos_btn_s"></i>
 						<span>&nbsp;医院信息</span>
 					</h2>
 					<table class="table table-bordered table-hover">
@@ -432,7 +432,7 @@
 									<td><em>99.8</em>分</td>
                                     <?php endforeach;?>
 								</tr>
-								<tr>
+								<!--<tr>
 									<th class="contrast_name">服务流程引导</th>
 									<td><em>99.7</em>分</td>
 									<td><em>98.7</em>分</td>
@@ -447,16 +447,16 @@
 									<td><em>97.9</em>分</td>
 									<td><em>98.8</em>分</td>
 									<td><em>97.6</em>分</td>
-								</tr>
+								</tr>-->
 								
 						</tbody>
 					</table>
 				</div>
 				
-				<div class="server_table">
+				<div class="server_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
+						<i class="iconfont icon-shousuo" style="display: none;" id="ser_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="ser_btn_s"></i>
 						<span>&nbsp;服务商信息</span>
 					</h2>
 					<table class="table table-bordered table-hover">
@@ -582,14 +582,14 @@
                                         <td><em><?=$service->agency_credit_level?></em>分</td>
                                     <?php endforeach;?>
 								</tr>
-								<tr>
+								<!--<tr>
 									<th class="contrast_name">服务流程引导</th>
 									<td><em>99.8</em>分</td>
 									<td><em>99.8</em>分</td>
 									<td><em>99.8</em>分</td>
 									<td><em>99.8</em>分</td>
 									<td><em>99.8</em>分</td>
-								</tr>
+								</tr>-->
 								<tr>
 									<th class="contrast_name">服务商反馈速度</th>
                                     <?php foreach($services as $service):?>
@@ -600,10 +600,10 @@
 					</table>
 				</div>
 				
-				<div class="medical_table">
+				<div class="medical_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
+						<i class="iconfont icon-shousuo" style="display: none;" id="med_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="med_btn_s"></i>
 						<span>&nbsp;医疗服务</span>
 					</h2>
 					<table class="table table-bordered table-hover">
@@ -786,11 +786,11 @@
 					</table>
 				</div>
 				
-				<div class="life_table">
+				<div class="life_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
-						<span>&nbsp;生活服务</span>
+						<i class="iconfont icon-shousuo" style="display: none;" id="lie_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="lie_btn_s"></i>
+						<span>&nbsp;生活服务	</span>
 					</h2>
 					<table class="table table-bordered table-hover">
 						<tbody>
@@ -894,10 +894,10 @@
 					</table>
 				</div>
 				
-				<div class="other_table">
+				<!--<div class="other_table line">
 					<h2 class="head_info">
-						<i class="iconfont icon-shousuo" style="display: none;"></i>
-						<i class="iconfont icon-zhankai"></i>
+						<i class="iconfont icon-shousuo" style="display: none;" id="oth_btn_h"></i>
+						<i class="iconfont icon-zhankai" id="oth_btn_s"></i>
 						<span>&nbsp;其他服务</span>
 					</h2>
 					<table class="table table-bordered table-hover">
@@ -1032,7 +1032,7 @@
 								</tr>
 						</tbody>
 					</table>
-				</div>
+				</div>-->
 				
 			</div>
 		</div>
@@ -1118,8 +1118,8 @@
 				</div>
 			</div>
 		</footer>
-		<script>
-		</script>
+		
+		<script src="/js/compare_project.js"></script>
 	</body>
 
 </html>

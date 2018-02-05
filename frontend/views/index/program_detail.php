@@ -10,6 +10,8 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_2iohiqkoy0wo2yb9.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/shopcar.css"/>
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_gksnpj5zdd7psyvi.css"/>
     <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
 </head>
@@ -185,7 +187,8 @@
 						  	</div>
 						  	<div class="btn_buy">
 						  		<button type="button" class="btn-info reserve_btn"><i class="iconfont icon-emichenggong"></i>立即预定</button>
-						  		<button type="button" class="btn-info shop_btn"><i class="iconfont icon-iconset0308"></i>加入购物车</button>
+                                <a href="<?=\yii\helpers\Url::to(['index/cart','id'=>$program->id])?>"><button type="button"  class="btn-info shop_btn"><i class="iconfont icon-iconset0308"></i>加入购物车
+                                    </button></a>
 						  	</div>
 						  </div>
 						</div>
@@ -460,7 +463,7 @@
                                 <span class="demand_color"><?php
                                     $id = unserialize($d->package_id);
                                     $a='（';
-                                    $end = '不包含）';
+                                    $end = '套餐自费）';
                                     if($id){
                                         foreach ($id as $p){
                                             $a.='套餐'.$p.',';
@@ -477,46 +480,50 @@
 					
 					<div class="step_num">
 						国外服务阶段
-						<!--<div class="demand">
-							<p class="demand_text">
-								<em>1</em>主驾驶员驾驶照原件<span class="demand_color">（套餐2、套餐3不包含）</span>
-								<span>持有驾照需要至少满一年</span>
-							</p>
-						</div>
+                        <?php foreach($foreignSteps as $foreignStep):?>
 						<div class="demand">
 							<p class="demand_text">
-								<em>2</em>主驾驶员驾驶照原件<span class="demand_color">（套餐5不包含）</span>
-								<span>持有驾照需要至少满一年</span>
+                                <em><?=$foreignStep->level?></em><?=$foreignStep->foreign_title?>
+                                <span class="demand_color"><?php
+                                    $id = unserialize($foreignStep->package_id);
+                                    $a='（';
+                                    $end = '套餐自费）';
+                                    if($id){
+                                        foreach ($id as $p){
+                                            $a.='套餐'.$p.',';
+                                        }
+                                        echo $a.$end;
+                                    }
+
+                                    ?></span>
+                                <span><?=$foreignStep->foreign_explain?></span>
 							</p>
 						</div>
-						<div class="demand">
-							<p class="demand_text">
-								<em>3</em>主驾驶员驾驶照原件国际信用卡<span class="demand_color">（套餐4不包含）</span>
-								<span>因国外大多数租车公司门店的POS机不支持银联通道，所以无法使用仅有银联标志的信用卡，需要带Mastercard或Visa标志的国际信用卡，信用卡可用额度至少500-3000美元，用于预授权/押金，高档车型需提供2张信用卡作担保。</span>
-							</p>
-						</div>-->
+                        <?php endforeach;?>
 					</div>
 					
 					<div class="step_num" style="margin-top: 40px;">
 						回国服务阶段
-						<!--<div class="demand">
-							<p class="demand_text">
-								<em>1</em>主驾驶员驾驶照原件<span class="demand_color">（套餐2、套餐3不包含）</span>
-								<span>持有驾照需要至少满一年</span>
-							</p>
-						</div>
-						<div class="demand">
-							<p class="demand_text">
-								<em>2</em>主驾驶员驾驶照原件<span class="demand_color">（套餐5不包含）</span>
-								<span>持有驾照需要至少满一年</span>
-							</p>
-						</div>
-						<div class="demand">
-							<p class="demand_text">
-								<em>3</em>主驾驶员驾驶照原件国际信用卡<span class="demand_color">（套餐4不包含）</span>
-								<span>因国外大多数租车公司门店的POS机不支持银联通道，所以无法使用仅有银联标志的信用卡，需要带Mastercard或Visa标志的国际信用卡，信用卡可用额度至少500-3000美元，用于预授权/押金，高档车型需提供2张信用卡作担保。</span>
-							</p>
-						</div>-->
+                        <?php foreach ($backSteps as $backStep):?>
+                            <div class="demand">
+                                <p class="demand_text">
+                                    <em><?=$backStep->level?></em><?=$backStep->back_title?>
+                                    <span class="demand_color"><?php
+                                        $id = unserialize($backStep->package_id);
+                                        $a='（';
+                                        $end = '套餐自费）';
+                                        if($id){
+                                            foreach ($id as $p){
+                                                $a.='套餐'.$p.',';
+                                            }
+                                            echo $a.$end;
+                                        }
+
+                                        ?></span>
+                                    <span><?=$backStep->back_explain?></span>
+                                </p>
+                            </div>
+                        <?php endforeach;?>
 					</div>
 				</div>
 			</div>
@@ -651,8 +658,8 @@
             <?php foreach($memberComments as $memberComment):?>
 			<div class="row user_list">
 				<div class="col-xs-2 col-md-2 user_left">
-				  	<img src="/images/baby-case.png"/>
-				  	<p>会飞的鱼</p>
+				  	<img src="<?=$memberComment->logo?>"/>
+				  	<p><?=$memberComment->name?></p>
 				</div>
 			  	<div class="col-xs-10 col-md-10 user_right">
 				  	<div class="user_evaluate">
@@ -681,6 +688,97 @@
 			</p>
     	</div>
 	</div>
+    <div class="help_nav">
+        <div class="nav_icon">
+            <ul>
+                <li>
+                    <i class="iconfont icon-dianhua"></i>
+                    <p>服务电话</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-yonghutouxiang"></i>
+                    <p>个人中心</p>
+                </li>
+                <li>
+                    <i class="iconfont icon-ERP_gouwuche"></i>
+                    <p>购物车</p>
+                    <span>8</span>
+                </li>
+                <li>
+                    <i class="iconfont icon-liaotian"></i>
+                    <p>我的消息</p>
+                    <span>...</span>
+                </li>
+                <li>
+                    <i class="iconfont icon-fanhuidingbu36px"></i>
+                    <p><a href="<?=\yii\helpers\Url::to(['index/search'])?>">返回上一页</a></p>
+                </li>
+            </ul>
+        </div>
+        <div class="shopcar">
+            <p class="shopcar_head">
+			<span class="head_left">
+				<i class="iconfont icon-ERP_gouwuche"></i>
+				<span>购物车</span>
+			</span>
+                <span class="head_right">
+				<i class="iconfont icon-chahao"></i>
+			</span>
+            </p>
+            <?php foreach ($cart_programs as $cart_program):?>
+            <div class="shop_list">
+               <!-- <div class="list_coupon">
+                    <img src="/images/youhui.png"/>
+                    &nbsp;支付预约金，可1.5倍抵扣合同款
+                </div>-->
+
+                <div class="row car_list">
+                    <div class="col-xs-2 col-md-2 list_left">
+                        <input type="checkbox" name="" id="" value="" />
+                    </div><!--total_price   reserve_money    programe_name doctor_id-->
+                    <div class="col-xs-10 col-md-10 list_right">
+                        <img width="88px" height="62px" src="<?=$cart_program->logo?>"/>
+                        <div class="right_info">
+                            <p class="info_name"><?=$cart_program->programe_name?></p>
+                            <em>￥<?=$cart_program->total_price*$cart_program->num?></em>
+                            <p class="info_num">
+                                <span>￥<?=$cart_program->reserve_money?> x<em> <?=$cart_program->num?></em></span>
+                                <span class="delete"><a href="<?=\yii\helpers\Url::to(['index/delete-cart','id'=>$cart_program->id])?>">删除</a></span>
+                            </p>
+                        </div>
+                        <div class="detail">
+                            <p><?=$cart_program->package->name?></p>
+                            <p><?=$cart_program->doc->name?></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <?php endforeach;?> <!--<div class="shop_list">
+                <div class="row car_list">
+                    <div class="col-xs-2 col-md-2 list_left">
+                        <input type="checkbox" name="" id="" value="" />
+                    </div>
+                    <div class="col-xs-10 col-md-10 list_right">
+                        <img src="/images/baby-case.png"/>
+                        <div class="right_info">
+                            <p class="info_name">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                            <em>￥110000</em>
+                            <p class="info_num">
+                                <span>￥6000 x<em> 1</em></span>
+                                <span class="delete">删除</span>
+                            </p>
+                        </div>
+                        <div class="detail">
+                            <p>2131232</p>
+                            <p>2131232</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+        </div>
+    </div>
 <footer class="footer">
     <div class="server">
         <ul class="server-list">
