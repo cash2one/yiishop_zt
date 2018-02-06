@@ -45,7 +45,7 @@
                 </li>
                 <li class="top-nav-pipe">|</li>
                 <li class="top-li-menu">
-                    <span class="site-type">服务热线：02865473811</span>
+                    <span class="site-type">服务热线：400-625-6025</span>
                 </li>
             </ul>
         </div>
@@ -286,7 +286,7 @@
 	        		
 	        		<div class="order_choose">
 	        			<button type="button" class="btn btn-danger" id="shop">加入购物车</button>
-	        			<button type="button" class="btn btn-danger" id="reserve">立即预定</button>
+	        			<!--<button type="button" class="btn btn-danger" id="reserve">立即预定</button>-->
 	        		</div>
 	        	</div>
         	</div>

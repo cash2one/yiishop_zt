@@ -56,7 +56,7 @@
                 </li>
                 <li class="top-nav-pipe">|</li>
                 <li class="top-li-menu">
-                    <span class="site-type">服务热线：02865473811</span>
+                    <span class="site-type">服务热线：400-625-6025</span>
                 </li>
             </ul>
         </div>
@@ -146,18 +146,18 @@
                         <input type="radio" value="0" name="A"/>
                         <span class="active1">全部</span>
                 </label>-->
-                <label class="checkbox_label">
+            <!--    <label class="checkbox_label">
                     <input type="radio" value="1" name="D"/>
-                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>1])?>">1万-5万</a></span>
+                    <span><a href="<?/*=\yii\helpers\Url::to(['index/search','D'=>1])*/?>">1万-5万</a></span>
                 </label>
                 <label class="checkbox_label">
                     <input type="radio" value="2" name="D"/>
-                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>2])?>">6万-10万</a></span>
+                    <span><a href="<?/*=\yii\helpers\Url::to(['index/search','D'=>2])*/?>">6万-10万</a></span>
                 </label>
                 <label class="checkbox_label">
                     <input type="radio" value="3" name="D"/>
-                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>3])?>">11万-20万</a></span>
-                </label>
+                    <span><a href="<?/*=\yii\helpers\Url::to(['index/search','D'=>3])*/?>">11万-20万</a></span>
+                </label>-->
                 <label class="checkbox_label">
                     <input type="radio" value="4" name="D"/>
                     <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>4])?>">21万-30万</a></span>
@@ -327,7 +327,7 @@
     			</label>
     		</div>
     		<div class="choose" style="border: 0;">
-    			<span class="t_name">年龄：</span>
+    			<span class="t_name">年&ensp;&ensp;&ensp;&ensp;龄：</span>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="0" name="A"/>
   		  			<span class="active1">全部</span>

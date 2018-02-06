@@ -42,7 +42,7 @@
                         <img src="http://www.trecare.com/statics/img/wx_fw.png" width="100" alt="">
                         扫描二维码关注微信公众号
                     </div>
-                </li>-->
+                </li>
                 <li class="top-nav-pipe">|</li>
                 <li class="top-li-menu">
                     <span class="site-type">服务热线：400-625-6025</span>
