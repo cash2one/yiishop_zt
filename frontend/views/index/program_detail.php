@@ -62,12 +62,7 @@
                 <ul class="navbar-menu">
                     <li class="navbar-list"><a href="">首页</a></li>
                     <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国生子<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">找医院</a></li>
-                    <li class="navbar-list"><a href="">找机构</a></li>
-                    <li class="navbar-list"><a href="">话题圈子</a></li>
+                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
                 </ul>
                 <span class="top-menu-seach"><i></i></span>
             </nav>
@@ -120,8 +115,7 @@
                 		</div>
 	                	<div class="recommend">
 	                		<img src="/images/project/tjly.png" />
-	                		<div>还记得你年初写下的计划么？还记得你年初写下的计划么？还记得你年初写下的计划么？还记得你年初写下的计划么？还记得你年初写下的计划么？还记得你年初写下的计划么？</div>
-	                	</div>
+	                		<div><?=$program->intro?></div>
                 	</div>
                 </div>
                 <div class="choose">
@@ -131,7 +125,7 @@
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
                         <span class="interval">热度：<i><?=$program->hot?></i></span>
-                        <span>收藏量：<i><?=$program->collect_num?></i></span>
+
                     </div>
                     <div class="buy_choose">
 	                    <div class="row">
@@ -200,10 +194,10 @@
                 	<h3><?=$facilitator->property_name?></h3>
                 	<p class="passway"><img src="/images/merchant/home-12.png" width="26px" height="26px" style="vertical-align: middle;margin-right: 8px;"/><a href="#">官方资质详情></a></p>
                 	<div class="ensure">
-                		<p><em>1</em>平台权威认证</p>
-                		<p><em>1</em>第三方服务保证</p>
-                		<p><em>1</em>7天退款保证</p>
-                		<p><em>1</em>平台先行赔付</p>
+                		<p><em></em>平台权威认证</p>
+                		<p><em></em>第三方服务保证</p>
+                		<p><em></em>7天退款保证</p>
+                		<p><em></em>平台先行赔付</p>
                 	</div>
                 	<div class="consult">
 						<div class="consult_way">

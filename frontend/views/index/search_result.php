@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="/css/merchant.css">
 </head>
 <body>
-
 <script>
     $(function(){
         $(".memberOrder3-5").hover(function(){
@@ -72,7 +71,7 @@
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu">
-                    <li class="navbar-list"><a href="<?= \yii\helpers\Url::to(['index/index']) ?>">首页</a></li>
+                    <li class="navbar-list"><a href="">首页</a></li>
                     <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
@@ -119,29 +118,6 @@
     	<form action="" method="post" id="">
             <input type="hidden" name="type" value="self">
     		<div class="choose">
-    			<span class="t_name">服务项目：</span>
-    			<!--<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="once1"/>
-  		  			<span class="active1">全部</span>
-    			</label>-->
-    			<label class="checkbox_label">
-  		  			<input  type="radio" value="1" name="once1"/>
-  		  			<span class="active1">试管婴儿</span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="once1"/>
-  		  			<span>海外医疗</span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="once1"/>
-  		  			<span>出国体检</span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="once1"/>
-  		  			<span>出国生子</span>
-    			</label>
-    		</div>
-    		<div class="choose">
     			<span class="t_name">类&ensp;&ensp;&ensp;&ensp;型：</span>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="" name="tube_type"/>
@@ -149,8 +125,7 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio"  value="1" name="tube_type"/>
-  		  			<span class="active1">试管婴儿</span>
-                    <a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>1])?>">试管婴儿</a>
+  		  			<span><a href="#">试管婴儿</a></span>
     			</label>
                 <label class="checkbox_label">
   		  			<input type="radio" value="2" name="tube_type"/>
@@ -159,19 +134,19 @@
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="tube_type"/>
-  		  			<span>试管婴儿+捐卵</span>
+  		  			<span><a href="#">试管婴儿+捐卵</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="tube_type"/>
-  		  			<span>试管婴儿+代孕</span>
+  		  			<span><a href="#">试管婴儿+代孕</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="tube_type"/>
-  		  			<span>试管婴儿+捐卵+代孕</span>
+  		  			<span><a href="#">试管婴儿+捐卵+代孕</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="6" name="tube_type"/>
-  		  			<span>冷冻卵子</span>
+  		  			<span><a href="#">冷冻卵子</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -182,43 +157,43 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio"  value="1" name="country"/>
-  		  			<span class="active1">美国</span>
+  		  			<span><a href="#">美国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>泰国</span>
+  		  			<span><a href="#">泰国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>俄罗斯</span>
+  		  			<span><a href="#">俄罗斯</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>马来西亚</span>
+  		  			<span><a href="#">马来西亚</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>柬埔寨</span>
+  		  			<span><a href="#">柬埔寨</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>新加坡</span>
+  		  			<span><a href="#">新加坡</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>日本</span>
+  		  			<span><a href="#">日本</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>台湾</span>
+  		  			<span><a href="#">台湾</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>英国</span>
+  		  			<span><a href="#">英国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span>以色列</span>
+  		  			<span><a href="#">以色列</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -229,26 +204,26 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="A"/>
-  		  			<span class="active1">未做过</span>
+  		  			<span><a href="#">未做过</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="A"/>
-  		  			<span>做过1次</span>
+  		  			<span><a href="#">做过1次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="A"/>
-  		  			<span>做过2次</span>
+  		  			<span><a href="#">做过2次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="A"/>
-  		  			<span>做过3次</span>
+  		  			<span><a href="#">做过3次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="A"/>
-  		  			<span>做过多次</span>
+  		  			<span><a href="#">做过多次</a></span>
     			</label>
     		</div>
-    		<div class="choose" style="border: 0;">
+    		<div class="choose">
     			<span class="t_name">试管原因：</span>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="" name="B"/>
@@ -256,15 +231,15 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="B"/>
-  		  			<span class="active1">男方原因</span>
+  		  			<span><a href="#">男方原因</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="B"/>
-  		  			<span>子宫原因</span>
+  		  			<span><a href="#">子宫原因</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="B"/>
-  		  			<span>卵巢原因</span>
+  		  			<span><a href="#">卵巢原因</a></span>
     			</label>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="4" name="B"/>
@@ -272,23 +247,144 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="B"/>
-  		  			<span>遗传因素</span>
+  		  			<span><a href="#">遗传因素</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="B"/>
-  		  			<span>同性爱人</span>
+  		  			<span><a href="#">同性爱人</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="6" name="B"/>
-  		  			<span>性别选择</span>
+  		  			<span><a href="#">性别选择</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="7" name="B"/>
-  		  			<span>生多胞胎</span>
+  		  			<span><a href="#">生多胞胎</a></span>
     			</label>
     		</div>
-    		
-    		<button type="submit" class="btn btn-info">立即筛选</button>
+    		<div class="choose">
+    			<span class="t_name">试管次数：</span>
+    			<!--<label class="checkbox_label">
+  		  			<input type="radio" value="0" name="A"/>
+  		  			<span class="active1">全部</span>
+    			</label>-->
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="1" name="A"/>
+  		  			<span><a href="#">未做过</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="2" name="A"/>
+  		  			<span><a href="#">做过1次</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="3" name="A"/>
+  		  			<span><a href="#">做过2次</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="4" name="A"/>
+  		  			<span><a href="#">做过3次</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="5" name="A"/>
+  		  			<span><a href="#">做过多次</a></span>
+    			</label>
+    		</div>
+    		<div class="choose">
+    			<span class="t_name">年龄：</span>
+    			<!--<label class="checkbox_label">
+  		  			<input type="radio" value="0" name="A"/>
+  		  			<span class="active1">全部</span>
+    			</label>-->
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="1" name="A"/>
+  		  			<span><a href="#">小于35</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="2" name="A"/>
+  		  			<span><a href="#">35-37</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="3" name="A"/>
+  		  			<span><a href="#">38-40</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="4" name="A"/>
+  		  			<span><a href="#">41-42</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="5" name="A"/>
+  		  			<span><a href="#">43以上</a></span>
+    			</label>
+    		</div>
+    		<div class="choose">
+    			<span class="t_name">预算区间：</span>
+    			<!--<label class="checkbox_label">
+  		  			<input type="radio" value="0" name="A"/>
+  		  			<span class="active1">全部</span>
+    			</label>-->
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="1" name="A"/>
+  		  			<span><a href="#">1万-5万</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="2" name="A"/>
+  		  			<span><a href="#">6万-10万</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="3" name="A"/>
+  		  			<span><a href="#">11万-20万</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="4" name="A"/>
+  		  			<span><a href="#">21万-30万</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="5" name="A"/>
+  		  			<span><a href="#">50万-100万</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="5" name="A"/>
+  		  			<span><a href="#">100万以上</a></span>
+    			</label>
+    		</div>
+    		<div class="choose">
+    			<span class="t_name">技术要求：</span>
+    			<!--<label class="checkbox_label">
+  		  			<input type="radio" value="0" name="A"/>
+  		  			<span class="active1">全部</span>
+    			</label>-->
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="1" name="A"/>
+  		  			<span><a href="#">第一代</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="2" name="A"/>
+  		  			<span><a href="#">第二代ICSI</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="3" name="A"/>
+  		  			<span><a href="#">第三代PGS/PGD</a></span>
+    			</label>
+    		</div>
+    		<div class="choose" style="border: 0;">
+    			<span class="t_name">服务体验：</span>
+    			<!--<label class="checkbox_label">
+  		  			<input type="radio" value="0" name="A"/>
+  		  			<span class="active1">全部</span>
+    			</label>-->
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="1" name="A"/>
+  		  			<span><a href="#">高性价比</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="2" name="A"/>
+  		  			<span><a href="#">高体验度</a></span>
+    			</label>
+    			<label class="checkbox_label">
+  		  			<input type="radio" value="3" name="A"/>
+  		  			<span><a href="#">高端定制</a></span>
+    			</label>
+    		</div>
     	</form>
 
     </div>
@@ -327,7 +423,6 @@
     			<div class="info_left">
                     <?php
                     $hos = \frontend\models\MemberHospital::find()->where(['hid'=>$p->hospital_id])->one();
-                    $hospital_detailes=\frontend\models\HospitalDetails::findOne(['hospital_id'=>$p->hospital_id]);
                     ?>
     				<div>
     					<img src="<?=$hos->logo?>" width="290" height="203"/>
@@ -338,17 +433,17 @@
     					<div class="hos_info">
 
     						<div>
-    							<span>所在地区：<?=$hospital_detailes->city?></span>
-    							<span>区域排名：<?=$hospital_detailes->area_rank?></span>
+    							<span>所在地区：<?=$hos->city?></span>
+    							<span>区域排名：<?=$hos->area_rank?></span>
                                 <?php
                                     $type = \frontend\models\HospitalProperty::find()->where(['id'=>$hos->type])->one();
                                 ?>
     							<span>医院性质：<?=$type->hospital_property?></span>
     						</div>
     						<div>
-    							<span>成立时间：<?=$hospital_detailes->create_time?></span>
-    							<span>成功率/治愈率：<?=$hospital_detailes->success_rate?></span>
-    							<span>好评率：<?=$hospital_detailes->parise_rate?></span>
+    							<span>成立时间：<?=$hos->create_time?></span>
+    							<span>成功率/治愈率：<?=$hos->success_rate?></span>
+    							<span>好评率：<?=$hos->success_rate?></span>
     						</div>
     					</div>
     					<div class="hos_doc">
@@ -363,7 +458,6 @@
     				<div class="service">
                         <?php
                         $service = \frontend\models\MemberFacilitator::find()->where(['id'=>$p->service_provid_id])->one();
-
                         ?>
     					<img width="200px" src="<?=$service->logo?>"/>
 
@@ -408,10 +502,7 @@
     </li>
   </ul>-->
     <?=\yii\widgets\LinkPager::widget([
-        'pagination'=>$pageTool,
-        'maxButtonCount'=>5,
-        'firstPageLabel' => '首页',
-        'lastPageLabel' => '尾页',
+        'pagination'=>$pageTool
     ])?>
 </nav>
 <footer class="footer">
@@ -493,9 +584,6 @@
 <script src="/js/index.js"></script>
 
 <script>
-	$(".checkbox_label").on('click','span',function(){
-		$(this).addClass("active1").siblings().removeClass('active1');
-	})
 </script>
   </body>
   </html>

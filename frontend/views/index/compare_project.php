@@ -579,7 +579,7 @@
 								<tr>
 									<th class="contrast_name">服务商信用等级</th>
                                     <?php foreach($services as $service):?>
-                                        <td><em><?=$service->agency_credit_level?></em>分</td>
+                                        <td><em><?=$service->agency_credit_level?></em></td>
                                     <?php endforeach;?>
 								</tr>
 								<!--<tr>

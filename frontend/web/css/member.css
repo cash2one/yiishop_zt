@@ -773,7 +773,6 @@ a{
 
 .filter{
 	width: 1188px;
-	height: 288px;
 	border: 1px solid #d5d5d5;
 	border-radius: 10px;
 	background-color: #fff;
@@ -796,19 +795,13 @@ a{
 	padding: 4px 10px;
 }
 .checkbox_label span{
-	color: #333;
+	color: #2DB4DF;
 	font-weight: 100;
 	margin-right: 21px;
 }
 .checkbox_label input{
+	display: none;
 }
-.btn{
-	width: 150px;
-	height: 35px;
-	display: block;
-	margin: 18px auto 0;
-}
-
 .solution{
 	width: 100%;
 	height: 355px;
@@ -818,6 +811,9 @@ a{
 	background-color: #fff;
 	position: relative;
 	margin-top: 30px;
+}
+.solution:hover{
+	box-shadow:0 0 30px #888;
 }
 .earnest{
 	position: absolute;
@@ -905,7 +901,7 @@ a{
 
 .solution_info{
 	width: 100%;
-	height: 254px;
+	height: 250px;
 	border: 1px solid #ececec;
 }
 .info_left{
@@ -945,10 +941,11 @@ a{
 }
 .hos_doc{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 .hos_doc img{
 	border: 1px solid #e5e5e5;
+	margin-right: 10px;
 }
 .service img{
 	border: 1px solid #d5d5d5;

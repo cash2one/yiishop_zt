@@ -77,6 +77,10 @@ a{color:#3cbce5;}
 .kbxq-top-box .slide-img{
     float:left;
 }
+.kbxq-top-box .slide-img>img{
+	width: 289px;
+	height: 204px;
+}
 .collect span i{
 	color: #fba121;
 }
@@ -473,7 +477,7 @@ a{color:#3cbce5;}
 	width: 270px;
 	position: absolute;
 	right: -4px;
-	top: 764px;
+	top: 17.4%;
 }
 .order_box{
 	background-color: #fff;
@@ -729,7 +733,7 @@ a{color:#3cbce5;}
 .package_type{
 	margin: 18px 0 20px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 .type_num{
 	margin-right: 25px;
@@ -805,12 +809,12 @@ a{color:#3cbce5;}
 }
 .icon2{
 	position: absolute;
-	bottom: 78px;
+	bottom: 457px;
 	left: 3px;
 }
 .icon3{
 	position: absolute;
-	bottom: 13px;
+	bottom: 179px;
 	left: 3px;
 }
 .process_step{

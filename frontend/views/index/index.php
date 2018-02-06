@@ -68,7 +68,7 @@
                     <li class="navbar-list"><a href="">出国生子<i class="site-nav-arrow"></i></a></li>-->
                     <!--<li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search-hospital'])?>">找医院</a></li>
                     <li class="navbar-list"><a href="">找机构</a></li>-->
-                    <li class="navbar-list"><a href="">话题圈子</a></li>
+                  <!--  <li class="navbar-list"><a href="">话题圈子</a></li>-->
                 </ul>
                 <span class="top-menu-seach"><i></i></span>
             </nav>
@@ -251,7 +251,7 @@
                             <li><span>找服务机构</span><p>省心、安心、放心的医疗服务</p></li>
                             <li><span>我要租车</span><p>有租必驾，有诚必达。</p></li>
                             <li><span>我要翻译</span><p>专业医疗翻译，交流无障碍</p></li>
-                            <li><span>我要租车</span><p>不同的城市,一样的家</p></li>
+                            <li><span>我要住宿</span><p>不同的城市,一样的家</p></li>
                         </ul>
                     </div>
                 </div>
