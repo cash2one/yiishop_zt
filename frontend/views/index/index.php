@@ -434,7 +434,7 @@
                 <div class="success-rate">
                     <div class="rate-title patient-box-title">选择适合您的就医方案</div>
                     <div class="rate-container">
-                        <img src="/images/baby-rate.png">
+                        <img src="/upload/5a790c859003b.png">
                     </div>
                 </div>
                 <div class="member-log">
@@ -597,8 +597,8 @@
                 <div class="success-rate">
                     <div class="rate-title index-title-box">美食美景</div>
                     <div class="rate-container rate_img_food">
-                        <img src="/images/baby-rate.png">
-                        <img src="/images/baby-rate.png" />
+                        <img src="/upload/5a790ce982848.png">
+                        <img src="/upload/5a790cfba2c0d.png">
                     </div>
                 </div>
                 <div class="member-log">
@@ -732,8 +732,8 @@
                 <div class="success-rate">
                     <div class="rate-title index-title-box">美食美景</div>
                     <div class="rate-container rate_img_food">
-                        <img src="/images/baby-rate.png">
-                        <img src="/images/baby-rate.png">
+                        <img src="/upload/5a790ca5baf1b.png">
+                        <img src="/upload/5a790cd156f79.png">
                     </div>
                 </div>
                 <div class="member-log">
@@ -931,7 +931,7 @@
 </main>
 <footer class="footer">
     <div class="server">
-        <ul class="server-list">
+        <!--<ul class="server-list">
             <li class="server-item">
                 <i></i><div>平台权威认证</div>
             </li>
@@ -950,7 +950,8 @@
             <li class="server-item">
                 <i></i><div>平安保险合作</div>
             </li>
-        </ul>
+        </ul>-->
+        <img src="/upload/5a790c53324b1.png"/>
     </div>
     <div class="bottom">
         <div class="bottom_nav">
