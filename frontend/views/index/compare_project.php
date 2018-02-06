@@ -52,35 +52,19 @@
 				<div class="top-menu">
 					<hgroup class="logo-site">
 						<a href="#">
-							<img src="/images/logo.png" alt="" title="">
+							<img src="/upload/5a795433db032.png" alt="" title="">
 							<h1>网站名称</h1>
 						</a>
 					</hgroup>
 					<nav class="site-nav-wrap">
 						<ul class="navbar-menu">
 							<li class="navbar-list">
-								<a href="">首页</a>
+								<a href="<?=\yii\helpers\Url::to(['index/index'])?>">首页</a>
 							</li>
+
+
 							<li class="navbar-list">
-								<a href="">试管婴儿<i class="site-nav-arrow"></i></a>
-							</li>
-							<li class="navbar-list">
-								<a href="">出国看病<i class="site-nav-arrow"></i></a>
-							</li>
-							<li class="navbar-list">
-								<a href="">出国体检<i class="site-nav-arrow"></i></a>
-							</li>
-							<li class="navbar-list">
-								<a href="">出国生子<i class="site-nav-arrow"></i></a>
-							</li>
-							<li class="navbar-list">
-								<a href="">找医院</a>
-							</li>
-							<li class="navbar-list">
-								<a href="">找机构</a>
-							</li>
-							<li class="navbar-list">
-								<a href="">话题圈子</a>
+								<a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a>
 							</li>
 						</ul>
 						<span class="top-menu-seach"><i></i></span>
@@ -786,7 +770,7 @@
 					</table>
 				</div>
 				
-				<div class="life_table line">
+				<!--<div class="life_table line">
 					<h2 class="head_info">
 						<i class="iconfont icon-shousuo" style="display: none;" id="lie_btn_h"></i>
 						<i class="iconfont icon-zhankai" id="lie_btn_s"></i>
@@ -892,7 +876,7 @@
 								</tr>
 						</tbody>
 					</table>
-				</div>
+				</div>-->
 				
 				<!--<div class="other_table line">
 					<h2 class="head_info">
@@ -1039,36 +1023,11 @@
 	
 		<footer class="footer">
 			<div class="server">
-				<ul class="server-list">
-					<li class="server-item">
-						<i></i>
-						<div>平台权威认证</div>
-					</li>
-					<li class="server-item">
-						<i></i>
-						<div>第三方服务保障</div>
-					</li>
-					<li class="server-item">
-						<i></i>
-						<div>14天退款保证</div>
-					</li>
-					<li class="server-item">
-						<i></i>
-						<div>平台先行赔付</div>
-					</li>
-					<li class="server-item">
-						<i></i>
-						<div>机构信用评价体系</div>
-					</li>
-					<li class="server-item">
-						<i></i>
-						<div>平安保险合作</div>
-					</li>
-				</ul>
+                <img src="/upload/5a790c53324b1.png"/>
 			</div>
 			<div class="bottom">
 				<div class="bottom_nav bottom_nav2">
-					<div><img src="/images/bottomlogo.png" /></div>
+					<div><img src="/upload/5a790c53324b1.png" /></div>
 					<div>
 						<p>服务项目</p>
 						<a href="#">试管婴儿</a>

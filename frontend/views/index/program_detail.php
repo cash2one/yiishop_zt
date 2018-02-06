@@ -54,14 +54,13 @@
         <div class="top-menu">
             <hgroup class="logo-site">
                 <a href="#">
-                    <img src="/images/logo.png"  alt="" title="">
+                    <img src="/upload/5a795433db032.png"  alt="" title="">
                     <h1>网站名称</h1>
                 </a>
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu">
                     <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/index'])?>">首页</a></li>
-                    <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
                 </ul>
                 <span class="top-menu-seach"><i></i></span>
@@ -121,7 +120,7 @@
                 </div>
                 <div class="choose">
                     <div class="single-info">
-                        <h3 class="single-title"><?=$program->programe_name?> <em class="mark-1"></em></h3>
+                        <h3 class="single-title"><?=$program->programe_name?><img src="/upload/5a795482e316e.png"/> <em class="mark-1"></em></h3>
                         <span class="score-value-no interval">方案综合指数：<em class="star-<?=$program->commend?>"></em></span>
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
@@ -133,8 +132,8 @@
 						  <div class="col-xs-10 col-md-10 choose_right">
 						  	<span class="price_num"><em>￥</em><?=$program->total_price?></span>
 						  	<p class="price_details"> 包括：
-						  		<span style="margin-right: 15px;"><em>1</em>&ensp;医疗机构费用：<i>￥100000</span></span>
-						  		<span><em>2</em>&ensp;服务商套餐费用：<i>￥10000</span></span>
+						  		<span style="margin-right: 15px;"><em>1</em>&ensp;医疗机构费用</span></span>
+						  		<span><em>2</em>&ensp;服务商套餐费用</span></span>
 						  	</p>
 						  </div>
 						</div>

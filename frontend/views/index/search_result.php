@@ -65,20 +65,15 @@
         <div class="top-menu">
             <hgroup class="logo-site">
                 <a href="#">
-                    <img src="/images/logo.png" alt="" title="">
+                    <img src="/upload/5a795433db032.png" alt="" title="">
                     <h1>网站名称</h1>
                 </a>
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu">
-                    <li class="navbar-list"><a href="">首页</a></li>
-                    <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="">出国生子<i class="site-nav-arrow"></i></a></li>
-                    <li class="navbar-list"><a href="javascript:;">找医院</a></li>
-                    <li class="navbar-list"><a href="">找机构</a></li>
-                    <li class="navbar-list"><a href="">话题圈子</a></li>
+                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/index'])?>">首页</a></li>
+
+                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
                 </ul>
                 <span class="top-menu-seach"><i></i></span>
             </nav>
@@ -384,7 +379,8 @@
     		</div>
     		
     		<div class="solution_title">
-    			<p class="title_text"><a href="<?=\yii\helpers\Url::to(['index/program-detail','id'=>$p->id])?>"><?=$p->programe_name?></a></p>
+    			<p class="title_text"><a href="<?=\yii\helpers\Url::to(['index/program-detail','id'=>$p->id])?>"><?=$p->programe_name?></a>
+                <img src="/upload/5a795482e316e.png"/></p>
     			<p class="title_num">
     				<span>方案推荐指数：<?=$p->commend?> &nbsp;</span>
     				<span>预定量：<em><?=$p->reserve_num?></em> &nbsp;</span>
@@ -482,26 +478,7 @@
 </nav>
 <footer class="footer">
     <div class="server">
-        <ul class="server-list">
-            <li class="server-item">
-                <i></i><div>平台权威认证</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>第三方服务保障</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>14天退款保证</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>平台先行赔付</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>机构信用评价体系</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>平安保险合作</div>
-            </li>
-        </ul>
+        <img src="/upload/5a790c53324b1.png"/>
     </div>
     <div class="bottom">
     	<div class="bottom_nav bottom_nav2">

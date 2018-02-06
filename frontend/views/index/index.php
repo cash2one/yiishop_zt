@@ -42,10 +42,10 @@
                         <img src="http://www.trecare.com/statics/img/wx_fw.png" width="100" alt="">
                         扫描二维码关注微信公众号
                     </div>
-                </li>
+                </li>-->
                 <li class="top-nav-pipe">|</li>
                 <li class="top-li-menu">
-                    <span class="site-type">服务热线：02865473811</span>
+                    <span class="site-type">服务热线：400-625-6025</span>
                 </li>
             </ul>
         </div>
@@ -54,14 +54,14 @@
         <div class="top-menu">
             <hgroup class="logo-site">
                 <a href="#">
-                    <img src="/images/logo.png"  alt="" title="">
+                    <img src="/upload/5a795433db032.png"  alt="" title="">
                     <h1>网站名称</h1>
                 </a>
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu" style="margin-right: 80px;">
                     <li class="navbar-list"><a href="">首页</a></li>
-                    <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
+                    <!--<li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>-->
                     <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
                     <!--<li class="navbar-list"><a href="">出国看病<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="">出国体检<i class="site-nav-arrow"></i></a></li>
@@ -73,30 +73,14 @@
                 <span class="top-menu-seach"><i></i></span>
             </nav>
         </div>
-        <div class="site-nav-part">
+        <!--<div class="site-nav-part">
             <ul class="sub-menu"></ul>
             <ul class="sub-menu">
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">11111</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
+                <li class="sub-list"><img src="/images/America.png"><a href="">美国试管婴儿</a></li>
+                <li class="sub-list"><img src="/images/Thailand.png"><a href="">泰国试管婴儿</a></li>
+                <li class="sub-list"><img src="/images/Russia.png"><a href="">俄罗斯试管婴儿</a></li>
             </ul>
-            <ul class="sub-menu">
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">22222</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-            </ul>
-            <ul class="sub-menu">
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">33333</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-                <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
-            </ul>
-        </div>
+        </div>-->
     </div>
 </header>
 <main>
@@ -216,9 +200,9 @@
                 <div class="hot-news">
                     <div class="hot-news-title">热点新闻 <a href="">更多>></a></div>
                     <ul>
-                        <?php foreach ($hot_article_lefts as $hot_article_left):?>
+                        <?php foreach ($hot_article_lefts as $k=>$hot_article_left):?>
                         <li>
-                            <div class="accordion-item active" style="background-image: url('<?=$hot_article_left->thumb?>');background-size: 590px 350px">
+                            <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$hot_article_left->thumb?>');background-size: 590px 350px">
                                 <div class="cover_bg">
                                     <a href="/"><?=$hot_article_left->title?></a>
                                 </div>
@@ -340,9 +324,9 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
-                                <?php foreach ($hospitals as $hospital):?>
+                                <?php foreach ($hospitals as $k=>$hospital):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('<?=$hospital->logo?>');">
+                                    <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$hospital->logo?>');">
                                         <div class="cover_bg">
                                             <a href="/"><?=$hospital->short_name?></a>
                                         </div>
@@ -503,9 +487,9 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
-                                <?php foreach($hospital_oversea as $oversea):?>
+                                <?php foreach($hospital_oversea as $k=>$oversea):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('<?=$oversea->description_img?>');">
+                                    <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$oversea->description_img?>');">
                                         <div class="cover_bg">
                                             <a href="/"><?=$oversea->short_name?></a>
                                         </div>
@@ -638,9 +622,9 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
-                                <?php foreach ($hospital_check as $check):?>
+                                <?php foreach ($hospital_check as $k=>$check):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('<?=$check->description_img?>');">
+                                    <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$check->description_img?>');">
                                         <div class="cover_bg">
                                             <a href="/"><?=$check->short_name?></a>
                                         </div>
@@ -772,9 +756,9 @@
                     <div class="company-container">
                         <div class="">
                             <ul>
-                                <?php foreach ($hospital_birth as $hos_birth):?>
+                                <?php foreach ($hospital_birth as $k=>$hos_birth):?>
                                 <li>
-                                    <div class="accordion-item act" style="background-image: url('<?=$hos_birth->description_img?>');">
+                                    <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$hos_birth->description_img?>');">
                                         <div class="cover_bg">
                                             <a href="/"><?=$hos_birth->short_name?></a>
                                         </div>
