@@ -125,7 +125,7 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio"  value="1" name="tube_type"/>
-  		  			<span><a href="#">试管婴儿</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>1])?>">试管婴儿</a></span>
     			</label>
                 <label class="checkbox_label">
   		  			<input type="radio" value="2" name="tube_type"/>
@@ -134,19 +134,15 @@
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="tube_type"/>
-  		  			<span><a href="#">试管婴儿+捐卵</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>3])?>">试管婴儿+捐卵</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="tube_type"/>
-  		  			<span><a href="#">试管婴儿+代孕</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>4])?>">试管婴儿+代孕</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="tube_type"/>
-  		  			<span><a href="#">试管婴儿+捐卵+代孕</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="6" name="tube_type"/>
-  		  			<span><a href="#">冷冻卵子</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>5])?>">试管婴儿+捐卵+代孕</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -157,43 +153,43 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio"  value="1" name="country"/>
-  		  			<span><a href="#">美国</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>1])?>">美国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">泰国</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>2])?>">泰国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">俄罗斯</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>3])?>">俄罗斯</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">马来西亚</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>4])?>">马来西亚</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">柬埔寨</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>5])?>">柬埔寨</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">新加坡</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>6])?>">新加坡</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">日本</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>7])?>">日本</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">台湾</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>8])?>">台湾</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">英国</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>9])?>">英国</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="country"/>
-  		  			<span><a href="#">以色列</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','country'=>10])?>">以色列</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -204,23 +200,23 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">未做过</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','A'=>1])?>">未做过</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">做过1次</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','A'=>2])?>">做过1次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">做过2次</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','A'=>3])?>">做过2次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="A"/>
-  		  			<span><a href="#">做过3次</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','A'=>4])?>">做过3次</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="A"/>
-  		  			<span><a href="#">做过多次</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','A'=>5])?>">做过多次</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -231,15 +227,15 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="B"/>
-  		  			<span><a href="#">男方原因</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>1])?>">男方原因</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="B"/>
-  		  			<span><a href="#">子宫原因</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>2])?>">子宫原因</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="B"/>
-  		  			<span><a href="#">卵巢原因</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>3])?>">卵巢原因</a></span>
     			</label>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="4" name="B"/>
@@ -247,46 +243,19 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="4" name="B"/>
-  		  			<span><a href="#">遗传因素</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>5])?>">遗传因素</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="5" name="B"/>
-  		  			<span><a href="#">同性爱人</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>6])?>">同性爱人</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="6" name="B"/>
-  		  			<span><a href="#">性别选择</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>7])?>">性别选择</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="7" name="B"/>
-  		  			<span><a href="#">生多胞胎</a></span>
-    			</label>
-    		</div>
-    		<div class="choose">
-    			<span class="t_name">试管次数：</span>
-    			<!--<label class="checkbox_label">
-  		  			<input type="radio" value="0" name="A"/>
-  		  			<span class="active1">全部</span>
-    			</label>-->
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">未做过</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">做过1次</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">做过2次</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="4" name="A"/>
-  		  			<span><a href="#">做过3次</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="5" name="A"/>
-  		  			<span><a href="#">做过多次</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>8])?>">生多胞胎</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -296,24 +265,24 @@
   		  			<span class="active1">全部</span>
     			</label>-->
     			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">小于35</a></span>
+  		  			<input type="radio" value="1" name="C"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>1])?>">小于35</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">35-37</a></span>
+  		  			<input type="radio" value="2" name="C"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>2])?>">35-37</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">38-40</a></span>
+  		  			<input type="radio" value="3" name="C"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>3])?>">38-40</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="4" name="A"/>
-  		  			<span><a href="#">41-42</a></span>
+  		  			<input type="radio" value="4" name="C"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>4])?>">41-42</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="5" name="A"/>
-  		  			<span><a href="#">43以上</a></span>
+  		  			<input type="radio" value="5" name="C"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>5])?>">43以上</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -323,28 +292,32 @@
   		  			<span class="active1">全部</span>
     			</label>-->
     			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">1万-5万</a></span>
+  		  			<input type="radio" value="1" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>1])?>">1万-5万</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">6万-10万</a></span>
+  		  			<input type="radio" value="2" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>2])?>">6万-10万</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">11万-20万</a></span>
+  		  			<input type="radio" value="3" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>3])?>">11万-20万</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="4" name="A"/>
-  		  			<span><a href="#">21万-30万</a></span>
+  		  			<input type="radio" value="4" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>4])?>">21万-30万</a></span>
+    			</label>
+                <label class="checkbox_label">
+  		  			<input type="radio" value="4" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>5])?>">31万-50万</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="5" name="A"/>
-  		  			<span><a href="#">50万-100万</a></span>
+  		  			<input type="radio" value="6" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>6])?>">50万-100万</a></span>
     			</label>
     			<label class="checkbox_label">
-  		  			<input type="radio" value="5" name="A"/>
-  		  			<span><a href="#">100万以上</a></span>
+  		  			<input type="radio" value="7" name="D"/>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>7])?>">100万以上</a></span>
     			</label>
     		</div>
     		<div class="choose">
@@ -355,15 +328,15 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">第一代</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>1])?>">第一代</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">第二代ICSI</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>2])?>">第二代ICSI</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">第三代PGS/PGD</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>3])?>">第三代PGS/PGD</a></span>
     			</label>
     		</div>
     		<div class="choose" style="border: 0;">
@@ -374,15 +347,15 @@
     			</label>-->
     			<label class="checkbox_label">
   		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="#">高性价比</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>1])?>">高性价比</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="#">高体验度</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>2])?>">高体验度</a></span>
     			</label>
     			<label class="checkbox_label">
   		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="#">高端定制</a></span>
+  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>3])?>">高端定制</a></span>
     			</label>
     		</div>
     	</form>

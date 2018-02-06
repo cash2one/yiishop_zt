@@ -60,7 +60,7 @@
             </hgroup>
             <nav class="site-nav-wrap">
                 <ul class="navbar-menu">
-                    <li class="navbar-list"><a href="">首页</a></li>
+                    <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/index'])?>">首页</a></li>
                     <li class="navbar-list"><a href="">试管婴儿<i class="site-nav-arrow"></i></a></li>
                     <li class="navbar-list"><a href="<?=\yii\helpers\Url::to(['index/search'])?>">找方案</a></li>
                 </ul>
@@ -116,6 +116,7 @@
 	                	<div class="recommend">
 	                		<img src="/images/project/tjly.png" />
 	                		<div><?=$program->intro?></div>
+	                	</div>
                 	</div>
                 </div>
                 <div class="choose">
@@ -125,7 +126,6 @@
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
                         <span class="interval">热度：<i><?=$program->hot?></i></span>
-
                     </div>
                     <div class="buy_choose">
 	                    <div class="row">
@@ -775,26 +775,7 @@
     </div>
 <footer class="footer">
     <div class="server">
-        <ul class="server-list">
-            <li class="server-item">
-                <i></i><div>平台权威认证</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>第三方服务保障</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>14天退款保证</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>平台先行赔付</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>机构信用评价体系</div>
-            </li>
-            <li class="server-item">
-                <i></i><div>平安保险合作</div>
-            </li>
-        </ul>
+        <img src="/upload/5a790c53324b1.png" alt="">
     </div>
     <div class="bottom">
     	<div class="bottom_nav bottom_nav2">
