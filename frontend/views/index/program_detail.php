@@ -10,9 +10,10 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/project.css">
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_2iohiqkoy0wo2yb9.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_xh05yht4sd1jor.css"/>
+
     <link rel="stylesheet" type="text/css" href="/css/shopcar.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_gksnpj5zdd7psyvi.css"/>
+
     <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
 </head>
 <body>
@@ -108,7 +109,7 @@
                 			<div><span>试管次数：</span><?=$crowd->A1?>　<?=$crowd->A2?>　<?=$crowd->A3?>　<?=$crowd->A4?>　<?=$crowd->A5?></div>
                 			<div><span>试管原因：</span><?=$crowd->B1?>&emsp;<?=$crowd->B2?>&emsp;<?=$crowd->B3?>&emsp;<?=$crowd->B4?>&emsp;<?=$crowd->B5?>&emsp;<?=$crowd->B6?>&emsp;<?=$crowd->B7?>&emsp;<?=$crowd->B8?>&emsp;<?=$crowd->B9?>&emsp;<?=$crowd->B10?>&emsp;</div>
                 			<div><span>适合年龄：</span><?=$crowd->C1?>&emsp;<?=$crowd->C2?>&emsp;<?=$crowd->C3?>&emsp;<?=$crowd->C4?>&emsp;<?=$crowd->C5?>&emsp;</div>
-                			<div><span>价格要求：</span><?=$crowd->D1?>&emsp;<?=$crowd->D2?>&emsp;<?=$crowd->D3?>&emsp;<?=$crowd->D4?>&emsp;<?=$crowd->D5?>&emsp;</div>
+                			<div><span>价格要求：</span><?=$crowd->D3?>&emsp;<?=$crowd->D4?>&emsp;<?=$crowd->D5?>&emsp;</div>
                 			<div><span>服务体验：</span><?=$crowd->service_experice?></div>
                 			<div><span>技术要求：</span><?=$crowd->tech_require?></div>
                 		</div>
@@ -120,7 +121,7 @@
                 </div>
                 <div class="choose">
                     <div class="single-info">
-                        <h3 class="single-title"><?=$program->programe_name?><img src="/upload/5a795482e316e.png"/> <em class="mark-1"></em></h3>
+                        <h3 class="single-title"><?=$program->programe_name?>&emsp;<img src="/upload/5a795482e316e.png"/> <em class="mark-1"></em></h3>
                         <span class="score-value-no interval">方案综合指数：<em class="star-<?=$program->commend?>"></em></span>
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
@@ -192,12 +193,12 @@
                 	<img height="150px" src="<?=$facilitator->logo?>" class="title_img"/>
                 	<h3><?=$facilitator->property_name?></h3>
                 	<p class="passway"><img src="/images/merchant/home-12.png" width="26px" height="26px" style="vertical-align: middle;margin-right: 8px;"/><a href="#">官方资质详情></a></p>
-                	<div class="ensure">
-                		<p><em></em>平台权威认证</p>
-                		<p><em></em>第三方服务保证</p>
-                		<p><em></em>7天退款保证</p>
-                		<p><em></em>平台先行赔付</p>
-                	</div>
+                    <div class="ensure">
+                        <p><i class="iconfont icon-zheng"></i><span>平台权威认证</span></p>
+                        <p><i class="iconfont icon-bao"></i><span>第三方服务保证</span></p>
+                        <p><i class="iconfont icon-icon-test1" style="font-size: 22.5px;"></i><span>7天退款保证</span></p>
+                        <p><i class="iconfont icon-pei"></i><span>平台先行赔付</span></p>
+                    </div>
                 	<div class="consult">
 						<div class="consult_way">
 							<span>

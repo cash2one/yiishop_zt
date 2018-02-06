@@ -380,7 +380,7 @@
     		
     		<div class="solution_title">
     			<p class="title_text"><a href="<?=\yii\helpers\Url::to(['index/program-detail','id'=>$p->id])?>"><?=$p->programe_name?></a>
-                <img src="/upload/5a795482e316e.png"/></p>
+                &emsp;<img src="/upload/5a795482e316e.png"/></p>
     			<p class="title_num">
     				<span>方案推荐指数：<?=$p->commend?> &nbsp;</span>
     				<span>预定量：<em><?=$p->reserve_num?></em> &nbsp;</span>

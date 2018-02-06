@@ -380,6 +380,21 @@ a{color:#3cbce5;}
 	padding: 22px 0;
 	border-top: 1px dashed #e4e4e4;
 	border-bottom: 1px dashed #e4e4e4;
+	width: 140px;
+	margin:0 auto;
+}
+.ensure p{
+	text-align: start;
+}
+.ensure p i{
+	font-size: 24px;
+	color: #2DB4DF;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+.ensure p span{
+	vertical-align: middle;
+	font-size: 15px;
 }
 .consult{
 	padding: 22px 30px;
