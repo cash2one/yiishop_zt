@@ -327,6 +327,7 @@
     			<div class="info_left">
                     <?php
                     $hos = \frontend\models\MemberHospital::find()->where(['hid'=>$p->hospital_id])->one();
+                    $hospital_detailes=\frontend\models\HospitalDetails::findOne(['hospital_id'=>$p->hospital_id]);
                     ?>
     				<div>
     					<img src="<?=$hos->logo?>" width="290" height="203"/>
@@ -337,17 +338,17 @@
     					<div class="hos_info">
 
     						<div>
-    							<span>所在地区：<?=$hos->city?></span>
-    							<span>区域排名：<?=$hos->area_rank?></span>
+    							<span>所在地区：<?=$hospital_detailes->city?></span>
+    							<span>区域排名：<?=$hospital_detailes->area_rank?></span>
                                 <?php
                                     $type = \frontend\models\HospitalProperty::find()->where(['id'=>$hos->type])->one();
                                 ?>
     							<span>医院性质：<?=$type->hospital_property?></span>
     						</div>
     						<div>
-    							<span>成立时间：<?=$hos->create_time?></span>
-    							<span>成功率/治愈率：<?=$hos->success_rate?></span>
-    							<span>好评率：<?=$hos->success_rate?></span>
+    							<span>成立时间：<?=$hospital_detailes->create_time?></span>
+    							<span>成功率/治愈率：<?=$hospital_detailes->success_rate?></span>
+    							<span>好评率：<?=$hospital_detailes->parise_rate?></span>
     						</div>
     					</div>
     					<div class="hos_doc">
@@ -362,6 +363,7 @@
     				<div class="service">
                         <?php
                         $service = \frontend\models\MemberFacilitator::find()->where(['id'=>$p->service_provid_id])->one();
+
                         ?>
     					<img width="200px" src="<?=$service->logo?>"/>
 

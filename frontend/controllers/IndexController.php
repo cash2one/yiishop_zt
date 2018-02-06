@@ -463,6 +463,7 @@ class IndexController extends Controller{
 
         return $this->redirect(['index/compare-detail']);
     }
+
     //>>对比详情页
     public function actionCompareDetail(){
         $cookie_read = \Yii::$app->request->cookies;
