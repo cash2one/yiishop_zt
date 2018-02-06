@@ -175,7 +175,7 @@
 						  		<span class="reserve_num">￥<em><?=$program->reserve_money?></em></span>
 						  		<span class="reserve_text">
 						  			<p><i>惠</i>预约金1.5倍抵押合同款</p>
-						  			<p>（预定金额 = 服务商套餐费用<em>￥10000 x 20%</em></span>）</p>
+						  			<p>（预约金额根据您所选套餐会有所不同</span>）</p>
 						  		</span>
 						  		<p class="reserve_remark">您提交订单时只需在线支付人民币<em>2000</em>元，7天内任意取消全额退款</p>
 						  	</div>
@@ -242,7 +242,10 @@
         <div class="process_pic">
         	<img src="/images/project/htlc.png"/>
         </div>
-        
+
+        <div style="position: relative">
+
+
         <ul class="kbxq_nav">
         	<li>医疗机构</li>
         	<li>服务商</li>
@@ -338,7 +341,7 @@
         			<span>专家详情</span>
         			<img src="<?=$doctor->logo?>"/>
         			<div class="info_name">
-        				<p><?=$doctor->e_name?></p><br>
+        				<p>Bruce&nbsp;Shapiro</p><br>
         				<p><?=$doctor->name?><span><?=$doctor->department?></span></p><br>
         				<p><span><?=$doctor->position?></span></p>
         			</div>
@@ -361,6 +364,7 @@
         	</div>
         </div>
 
+        </div>
 		<div class="provider model_common">
 			<div class="title">服务商</div>
 			<div class="pro_info">
@@ -693,15 +697,15 @@
                     <i class="iconfont icon-yonghutouxiang"></i>
                     <p>个人中心</p>
                 </li>
-                <li>
+                <li id="car_icon">
                     <i class="iconfont icon-ERP_gouwuche"></i>
                     <p>购物车</p>
                     <span>8</span>
                 </li>
-                <li>
-                    <i class="iconfont icon-liaotian"></i>
-                    <p>我的消息</p>
-                    <span>...</span>
+                <li id="to_top">
+                    <i class="iconfont icon-fanhuidingbu36px"></i>
+                    <p>返回顶部</p>
+<!--                    <span>...</span>-->
                 </li>
                 <li>
                     <i class="iconfont icon-fanhuidingbu36px"></i>
@@ -829,5 +833,6 @@
     	</div>
     </div>
 </footer>
+    <script src="/js/shopcar.js"></script>
 </body>
 </html>

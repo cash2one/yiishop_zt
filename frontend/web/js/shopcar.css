@@ -1,0 +1,144 @@
+.help_nav{
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.nav_icon{
+	width: 74px;
+	float: left;
+	margin-top: 293px;
+}
+.nav_icon ul li{
+	height: 66px;
+	width: 74px;
+	background-color: #48C5E4;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	border-bottom: 1px solid #fff;
+	position: relative;
+}
+.nav_icon ul li i{
+	font-size: 27px;
+	line-height: 43px;
+}
+.nav_icon ul li p{
+	line-height: 10px;
+}
+.nav_icon ul li:last-child{
+	background-color: #c8d0d5;
+}
+.nav_icon ul li span{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	line-height: 16px;
+	font-size: 12px;
+	position: absolute;
+	top: 5px;
+	right: 17px;
+	background-color: #F65E73;
+	border-radius: 100%;
+}
+
+.shopcar{
+	width: 297px;
+	height: 1080px;
+	background-color: #eceaea;
+	float: left;
+	overflow: scroll;
+	border-left: 6px solid #48c5e4;
+	display: none;
+}
+.shopcar_head{
+	padding: 0 5px;
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0;
+}
+.head_left span{
+	color: #666;
+	font-size: 16px;
+	vertical-align: middle;
+}
+.head_left i{
+	color: #666;
+	font-size: 24px;
+	vertical-align: middle;
+}
+.head_right i{
+	font-size: 20px;
+}
+.shop_list{
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding: 6px;
+}
+.car_list{
+	padding-top: 6px;
+}
+.list_left{
+	padding: 0;
+	width: 25px;
+	margin-left: 20px;
+}
+.list_left input{
+	width: 14px;
+	height: 14px;
+}
+.list_right{
+	padding: 0;
+}
+.list_right img{
+	width: 88px;
+	height: 62px;
+	border: 1px solid #E1E1E1;
+}
+.right_info{
+	width: 145px;
+	float: right;
+	text-align: start;
+	line-height: 16px;
+	margin-right: 10px;
+}
+.info_name{
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	line-height: 15px;
+}
+.right_info em{
+	font-size: 12px;
+	color: #999;
+}
+.info_num{
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+}
+.info_num>span:first-child{
+	color: #F65E73;
+}
+.delete{
+	color: #2DB7DC;
+	margin-right: 3px;
+	cursor: pointer;
+}
+.detail{
+	color: #999;
+	line-height: 18px;
+}
+.list_coupon{
+	width: 264px;
+	font-size: 13px;
+	margin-left: 31px;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #e1e1e1;
+}
+.list_coupon img{
+	vertical-align: bottom;
+}
