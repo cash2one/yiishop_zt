@@ -441,13 +441,13 @@ class IndexController extends Controller{
             //如果存在相同的id,就提示用户该方案已经加入对比
             foreach ($ids as $v){
                 if ($v==$id){
-                    return $this->redirect(['index/search']);
+                    return $this->redirect(['index/compare-detail']);
                 }
             }
             $ids[]=$id;
             //如果ids中的个数大于5个就提示用户只能加入五个对比.
             if(count($ids)>5){
-                return $this->redirect(['index/search']);
+                return $this->redirect(['index/compare-detail']);
             }
             //>>跳转到方案对比页
             //var_dump(unserialize($cookie_read->getValue('project')));die;

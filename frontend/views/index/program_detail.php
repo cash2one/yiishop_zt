@@ -338,8 +338,8 @@
         			<span>专家详情</span>
         			<img src="<?=$doctor->logo?>"/>
         			<div class="info_name">
-        				<p>Bruce&nbsp;Shapiro</p>
-        				<p><?=$doctor->name?><span><?=$doctor->department?></span></p>
+        				<p><?=$doctor->e_name?></p><br>
+        				<p><?=$doctor->name?><span><?=$doctor->department?></span></p><br>
         				<p><span><?=$doctor->position?></span></p>
         			</div>
         			<div class="info_prize">

@@ -145,6 +145,79 @@
   		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_type'=>5])?>">试管婴儿+捐卵+代孕</a></span>
     			</label>
     		</div>
+            <div class="choose">
+                <span class="t_name">预算区间：</span>
+                <!--<label class="checkbox_label">
+                        <input type="radio" value="0" name="A"/>
+                        <span class="active1">全部</span>
+                </label>-->
+                <label class="checkbox_label">
+                    <input type="radio" value="1" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>1])?>">1万-5万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="2" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>2])?>">6万-10万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="3" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>3])?>">11万-20万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="4" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>4])?>">21万-30万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="4" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>5])?>">31万-50万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="6" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>6])?>">50万-100万</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="7" name="D"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>7])?>">100万以上</a></span>
+                </label>
+            </div>
+            <div class="choose">
+                <span class="t_name">技术要求：</span>
+                <!--<label class="checkbox_label">
+                        <input type="radio" value="0" name="A"/>
+                        <span class="active1">全部</span>
+                </label>-->
+                <label class="checkbox_label">
+                    <input type="radio" value="1" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>1])?>">第一代</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="2" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>2])?>">第二代ICSI</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="3" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>3])?>">第三代PGS/PGD</a></span>
+                </label>
+            </div>
+            <div class="choose">
+                <span class="t_name">服务体验：</span>
+                <!--<label class="checkbox_label">
+                        <input type="radio" value="0" name="A"/>
+                        <span class="active1">全部</span>
+                </label>-->
+                <label class="checkbox_label">
+                    <input type="radio" value="1" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>1])?>">高性价比</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="2" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>2])?>">高体验度</a></span>
+                </label>
+                <label class="checkbox_label">
+                    <input type="radio" value="3" name="A"/>
+                    <span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>3])?>">高端定制</a></span>
+                </label>
+            </div>
     		<div class="choose">
     			<span class="t_name">国&ensp;&ensp;&ensp;&ensp;家：</span>
     			<!--<label class="checkbox_label">
@@ -258,7 +331,7 @@
   		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','B'=>8])?>">生多胞胎</a></span>
     			</label>
     		</div>
-    		<div class="choose">
+    		<div class="choose" style="border: 0;">
     			<span class="t_name">年龄：</span>
     			<!--<label class="checkbox_label">
   		  			<input type="radio" value="0" name="A"/>
@@ -285,79 +358,7 @@
   		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','C'=>5])?>">43以上</a></span>
     			</label>
     		</div>
-    		<div class="choose">
-    			<span class="t_name">预算区间：</span>
-    			<!--<label class="checkbox_label">
-  		  			<input type="radio" value="0" name="A"/>
-  		  			<span class="active1">全部</span>
-    			</label>-->
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>1])?>">1万-5万</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>2])?>">6万-10万</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>3])?>">11万-20万</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="4" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>4])?>">21万-30万</a></span>
-    			</label>
-                <label class="checkbox_label">
-  		  			<input type="radio" value="4" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>5])?>">31万-50万</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="6" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>6])?>">50万-100万</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="7" name="D"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','D'=>7])?>">100万以上</a></span>
-    			</label>
-    		</div>
-    		<div class="choose">
-    			<span class="t_name">技术要求：</span>
-    			<!--<label class="checkbox_label">
-  		  			<input type="radio" value="0" name="A"/>
-  		  			<span class="active1">全部</span>
-    			</label>-->
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>1])?>">第一代</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>2])?>">第二代ICSI</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','tube_skill'=>3])?>">第三代PGS/PGD</a></span>
-    			</label>
-    		</div>
-    		<div class="choose" style="border: 0;">
-    			<span class="t_name">服务体验：</span>
-    			<!--<label class="checkbox_label">
-  		  			<input type="radio" value="0" name="A"/>
-  		  			<span class="active1">全部</span>
-    			</label>-->
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="1" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>1])?>">高性价比</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="2" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>2])?>">高体验度</a></span>
-    			</label>
-    			<label class="checkbox_label">
-  		  			<input type="radio" value="3" name="A"/>
-  		  			<span><a href="<?=\yii\helpers\Url::to(['index/search','experience'=>3])?>">高端定制</a></span>
-    			</label>
-    		</div>
+
     	</form>
 
     </div>
@@ -396,6 +397,7 @@
     			<div class="info_left">
                     <?php
                     $hos = \frontend\models\MemberHospital::find()->where(['hid'=>$p->hospital_id])->one();
+                    $hospital=\frontend\models\HospitalDetails::findOne(['hospital_id'=>$p->hospital_id]);
                     ?>
     				<div>
     					<img src="<?=$hos->logo?>" width="290" height="203"/>
@@ -406,17 +408,17 @@
     					<div class="hos_info">
 
     						<div>
-    							<span>所在地区：<?=$hos->city?></span>
-    							<span>区域排名：<?=$hos->area_rank?></span>
+    							<span>所在地区：<?= $hospital->city?></span>
+    							<span>区域排名：<?=$hospital->area_rank?></span>
                                 <?php
                                     $type = \frontend\models\HospitalProperty::find()->where(['id'=>$hos->type])->one();
                                 ?>
     							<span>医院性质：<?=$type->hospital_property?></span>
     						</div>
     						<div>
-    							<span>成立时间：<?=$hos->create_time?></span>
-    							<span>成功率/治愈率：<?=$hos->success_rate?></span>
-    							<span>好评率：<?=$hos->success_rate?></span>
+    							<span>成立时间：<?=$hospital->create_time?></span>
+    							<span>成功率/治愈率：<?=$hospital->success_rate?></span>
+    							<span>好评率：<?=$hospital->success_rate?></span>
     						</div>
     					</div>
     					<div class="hos_doc">
