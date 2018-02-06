@@ -831,6 +831,9 @@
     /*float: left;*/
     /*margin-right: 14px;*/
 }
+.info_right .service img{
+    float: left;
+}
 .store-crumb a{
     color:#0caad4;
 }
