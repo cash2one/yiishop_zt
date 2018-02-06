@@ -90,7 +90,7 @@ class IndexController extends Controller{
         $hospital_check = MemberHospital::find()->orderBy('hid desc')->limit(4)->offset(4)->all();
         $hospital_birth = MemberHospital::find()->orderBy('hid desc')->limit(4)->offset(8)->all();
         //>>底部医院
-        $hospital_footer = MemberHospital::find()->orderBy('hid desc')->limit(9)->offset(0)->all();
+        $hospital_footer = MemberHospital::find()->orderBy('hid desc')->limit(8)->offset(0)->all();
         //>>底部服务商图
         $service_footer1 = MemberService::find()->limit(10)->offset(0)->all();
         $service_footer2 = MemberService::find()->limit(10)->offset(10)->all();
