@@ -51,7 +51,7 @@
 			<div class="menu-box">
 				<div class="top-menu">
 					<hgroup class="logo-site">
-						<a href="#">
+						<a href="<?=\yii\helpers\Url::to(['index/index'])?>">
 							<img src="/upload/5a795433db032.png" alt="" title="">
 							<h1>网站名称</h1>
 						</a>

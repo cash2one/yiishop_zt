@@ -54,7 +54,7 @@
     <div class="menu-box">
         <div class="top-menu">
             <hgroup class="logo-site">
-                <a href="#">
+                <a href="<?=\yii\helpers\Url::to(['index/index'])?>">
                     <img src="/upload/5a795433db032.png"  alt="" title="">
                     <h1>网站名称</h1>
                 </a>
@@ -345,7 +345,7 @@
         			<span>专家详情</span>
         			<img src="<?=$doctor->logo?>"/>
         			<div class="info_name">
-        				<p>Bruce&nbsp;Shapiro</p><br>
+        				<p><?=$doctor->e_name?></p><br>
         				<p><?=$doctor->name?><span><?=$doctor->department?></span></p><br>
         				<p><span><?=$doctor->position?></span></p>
         			</div>
@@ -416,7 +416,7 @@
                 <div class="package_type">
                     <?php foreach ($packages as $k=>$package):?>
                         <span class="type_num <?=$k==0?'active1':''?>">
-						<i class="iconfont icon-icon-test<?=$package->level==1?'3':''?><?=$package->level==2?'4':''?><?=$package->level==3?'6':''?>"></i>
+						<i class="iconfont icon-icon-test<?=$package->level==1?'1':''?><?=$package->level==2?'2':''?><?=$package->level==3?'3':''?>"></i>
 						<span><?=$package->name?></span>
 					</span>
                     <?php endforeach;?>

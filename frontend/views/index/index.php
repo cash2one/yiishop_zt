@@ -204,7 +204,7 @@
                         <li>
                             <div class="accordion-item <?=$k==0?'active':''?>" style="background-image: url('<?=$hot_article_left->thumb?>');background-size: 590px 350px">
                                 <div class="cover_bg">
-                                    <a href="/"><?=$hot_article_left->title?></a>
+                                    <a href="<?=\yii\helpers\Url::to(['index/tube-detail','id'=>$hot_article_left->id])?>"><?=$hot_article_left->title?></a>
                                 </div>
                             </div>
                         </li>
@@ -221,7 +221,7 @@
                     <div class="news-li">
                         <ul>
                             <?php foreach ($hot_article_rights as $hot_article_right):?>
-                            <li><span><a href="" title=""><?=$hot_article_right->title?></a></span></li>
+                            <li><span><a href="<?=\yii\helpers\Url::to(['index/tube-detail','id'=>$hot_article_right->id])?>" title=""><?=$hot_article_right->title?></a></span></li>
                             <?php endforeach;?>
                         </ul>
                     </div>
