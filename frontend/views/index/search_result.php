@@ -384,7 +384,11 @@
 
                 </p>
     			<p class="title_num">
-    				<span>方案推荐指数：<?=$p->commend?> &nbsp;</span>
+    				<span>方案推荐指数：<?php
+                        for($i=0;$i<$p->commend;++$i){
+                            echo '<i class="iconfont icon-buoumaotubiao44"></i>';
+                        }
+                        ?></span>
     				<span>预定量：<em><?=$p->reserve_num?></em> &nbsp;</span>
     				<span>好评率：<em><?=$p->good_opinion?></em> &nbsp;</span>
     				<span>热度：<em><?=$p->hot?></em> &nbsp;</span>
