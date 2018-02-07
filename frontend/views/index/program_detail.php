@@ -10,7 +10,7 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/project.css">
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_xh05yht4sd1jor.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_1af7oe2wprgrpb9.css"/>
 
     <link rel="stylesheet" type="text/css" href="/css/shopcar.css"/>
 
@@ -121,7 +121,7 @@
                 </div>
                 <div class="choose">
                     <div class="single-info">
-                        <h3 class="single-title"><?=$program->programe_name?>&emsp;<img width="75px" height="20px" src="/upload/5a795482e316e.png"/> </h3>
+                        <h3 class="single-title"><?=$program->programe_name?> <i class="iconfont icon-zheng" style="color: #2db4df;"></i><i class="iconfont icon-baozhang" style="color: #f66d80;"></i><i class="iconfont icon-xinyong" style="color: #6dc180; font-size:23px "></i></h3>
                         <span class="score-value-no interval">方案综合指数：<em class="star-<?=$program->commend?>"></em></span>
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
@@ -750,7 +750,7 @@
                 <li id="car_icon">
                     <i class="iconfont icon-ERP_gouwuche"></i>
                     <p>购物车</p>
-                    <span>8</span>
+                   <!-- <span>8</span>-->
                 </li>
                 <li id="to_top">
                     <i class="iconfont icon-fanhuidingbu36px"></i>

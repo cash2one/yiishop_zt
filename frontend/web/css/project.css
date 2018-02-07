@@ -125,23 +125,11 @@ a{color:#3cbce5;}
 	font-weight: 200;
 	
 }
-.single-title em{
-	display: inline-block;
-	width: 22px;
-	height: 22px;
-	background: url("../images/server-ico.png") no-repeat;
-    vertical-align: sub;
-    background-size: 22px;
+.single-title i{
+	font-size: 26px;
 }
-.single-title .mark-1{
-	background-position: 0 0;
-}
-.single-title .mark-2{
-	background-position: 0 -22px;
-}
-.single-title .mark-1{
-	background-position: 0 -44px;
-}
+
+
 .kbxq-top-box .choose .single-info .score-value-no em{
     display: inline-block;
     width: 88px;
@@ -714,7 +702,7 @@ a{color:#3cbce5;}
 }
 .type_num i{
 	font-size: 60px;
-	margin-left: 25px;
+	margin-left: 14px;
 }
 .info_prize{
 	margin-top: 22px;

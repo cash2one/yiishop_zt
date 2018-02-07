@@ -8,7 +8,7 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <script src="/js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_r96qcro3b7rv0a4i.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_553222_1af7oe2wprgrpb9.css"/>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/member.css">
@@ -78,7 +78,7 @@
                 <span class="top-menu-seach"><i></i></span>
             </nav>
         </div>
-        <div class="site-nav-part">
+       <!-- <div class="site-nav-part">
             <ul class="sub-menu"></ul>
             <ul class="sub-menu">
                 <li class="sub-list"><img src="/images/menu-ico.png"><a href="">11111</a></li>
@@ -101,7 +101,7 @@
                 <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
                 <li class="sub-list"><img src="/images/menu-ico.png"><a href="">美国试管婴儿</a></li>
             </ul>
-        </div>
+        </div>-->
     </div>
 </header>
 <div class="banner">
@@ -380,7 +380,9 @@
     		
     		<div class="solution_title">
     			<p class="title_text"><a href="<?=\yii\helpers\Url::to(['index/program-detail','id'=>$p->id])?>"><?=$p->programe_name?></a>
-                &emsp;<img width="75px" height="20px" src="/upload/5a795482e316e.png"/></p>
+                &emsp;<h3 class="single-title"><?=$program->programe_name?> <i class="iconfont icon-zheng" style="color: #2db4df;"></i><i class="iconfont icon-baozhang" style="color: #f66d80;"></i><i class="iconfont icon-xinyong" style="color: #6dc180; font-size:23px "></i></h3>
+
+                </p>
     			<p class="title_num">
     				<span>方案推荐指数：<?=$p->commend?> &nbsp;</span>
     				<span>预定量：<em><?=$p->reserve_num?></em> &nbsp;</span>

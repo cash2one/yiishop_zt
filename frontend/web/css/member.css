@@ -880,8 +880,11 @@ a{
 	height: 83px;
 	padding: 0 20px;
 }
-.title_text{
+.title_text {
 	margin-bottom: 16px;
+}
+.title_text i{
+    font-size: 26px;
 }
 .title_num{
 	font-size: 15px;
