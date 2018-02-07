@@ -885,6 +885,7 @@ a{
 }
 .title_text i{
     font-size: 26px;
+    margin: 0!important;
 }
 .title_num{
 	font-size: 15px;
