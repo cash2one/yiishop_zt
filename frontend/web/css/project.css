@@ -606,11 +606,19 @@ a{color:#3cbce5;}
 	margin: 10px 0 12px;
 }
 .info_about{
-	
+	font-size: 12px;
 }
 .info_about span{
 	padding-right: 8px;
 	border-right: 1px solid #ddd;
+}
+.info_about>span>i{
+	font-size: 14px;
+	color: #fba121;
+}
+
+.info_about span:last-child{
+	border-right: 0;
 }
 .info_about span em{
 	color: #2DB4DF;

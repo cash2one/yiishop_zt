@@ -125,7 +125,7 @@
                         <span class="score-value-no interval">方案综合指数：<em class="star-<?=$program->commend?>"></em></span>
                         <span class="interval">预定量：<i><?=$program->reserve_num?></i></span>
                         <span class="interval">好评率：<i><?=$program->good_opinion?></i></span>
-                        <span class="interval">热度：<i><?=$program->hot?></i></span>
+                        <span>热度：<i><?=$program->hot?></i></span>
                     </div>
                     <div class="buy_choose">
 	                    <div class="row">
@@ -308,7 +308,11 @@
         			<h2><?=$hospital->short_name?></h2>
         			<h3><?=$hospital_detail->English_name?></h3>
         			<div class="info_about">
-        				<span>推荐指数：<i><?=$hospital_detail->recomend_index?></i></span>
+        				<span>推荐指数：<?php
+                            for($i=0;$i<$hospital_detail->recomend_index;++$i){
+                                echo '<i class="iconfont icon-buoumaotubiao44"></i>';
+                            }
+                            ?></span>
         				<span>预定量：<em><?=$hospital_detail->reserve_num?></em></span>
         				<span>好评率：<em><?=$hospital_detail->parise_rate?></em></span>
         				<span>热度：<em><?=$hospital_detail->hot?></em></span>
@@ -373,7 +377,11 @@
         			<h2><?=$facilitator->property_name?></h2>
         			<h3><?=$facilitator->e_name?></h3>
         			<div class="info_about">
-        				<span>推荐指数：<i><?=$facilitator->recommend_num?></i></span>
+        				<span>推荐指数：<?php
+                            for($i=0;$i<$facilitator->recommend_num;++$i){
+                                echo '<i class="iconfont icon-buoumaotubiao44"></i>';
+                            }
+                            ?></span>
         				<span>预定量：<em><?=$facilitator->reserve_num?>万</em></span>
         				<span>好评率：<em><?=$facilitator->good_opinion_rate?></em></span>
         				<span>热度：<em><?=$facilitator->hot_rate?>万</em></span>
@@ -415,7 +423,8 @@
                 </div>
             </div>
             <!--套餐内容-->
-            <div class="type_content">
+
+            <!--<div class="type_content">
                 <div class="type_img">
                     <img src="/images/project/f1.png"/>
                     <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
@@ -449,152 +458,41 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="type_content" style="display: none;">
-                <div class="type_img">
-                    <img src="/images/project/f1.png"/>
-                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
-                </div>
-                <div class="type_text">
-                    <p>2套餐包含项目有:</p>
-                    <div class="all_text">
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+            </div>-->
+            <?php foreach ($packages as $k=>$package):?>
+                <div class="type_content" style="display: <?=$k==0?'block':'none'?>;">
+                    <div class="type_img">
+                        <img src="/images/project/f1.png"/>
+                        <span class="type_price"><?=$package->name?><span>￥</span><em><?=$package->total_price?></em></span>
+                    </div>
+                    <div class="type_text">
+                        <p><?=$package->name?>包含项目有:</p>
+                        <?php
+                        $ids=unserialize($package->hospital_service);
+                        $life_services1=\frontend\models\HospitalProvice::find()->where(['in','id',$ids])->limit(4)->offset(0)->all();
+                        $life_services2=\frontend\models\HospitalProvice::find()->where(['in','id',$ids])->limit(4)->offset(4)->all();
+                        $life_services3=\frontend\models\HospitalProvice::find()->where(['in','id',$ids])->limit(4)->offset(0)->all();
+                        ?>
+                        <div class="all_text">
+                            <div>
+                                <?php foreach ($life_services1 as $life_service):?>
+                                    <span><i class="iconfont icon-gou"></i><?=$life_service->name?></span>
+                                <?php endforeach;?>
+                            </div>
+                            <div>
+                                <?php foreach ($life_services2 as $life_service):?>
+                                    <span><i class="iconfont icon-gou"></i><?=$life_service->name?></span>
+                                <?php endforeach;?>
+                            </div>
+                            <div>
+                                <?php foreach ($life_services3 as $life_service):?>
+                                    <span><i class="iconfont icon-gou"></i><?=$life_service->name?></span>
+                                <?php endforeach;?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="type_content" style="display: none;">
-                <div class="type_img">
-                    <img src="/images/project/f1.png"/>
-                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
-                </div>
-                <div class="type_text">
-                    <p>3套餐包含项目有:</p>
-                    <div class="all_text">
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_content" style="display: none;">
-                <div class="type_img">
-                    <img src="/images/project/f1.png"/>
-                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
-                </div>
-                <div class="type_text">
-                    <p>4套餐包含项目有:</p>
-                    <div class="all_text">
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_content" style="display: none;">
-                <div class="type_img">
-                    <img src="/images/project/f1.png"/>
-                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
-                </div>
-                <div class="type_text">
-                    <p>5套餐包含项目有:</p>
-                    <div class="all_text">
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                        <div>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach;?>
         </div>
 		
 		<div class="process model_common">
@@ -835,9 +733,7 @@
 			   </div>
 			</div>
             <?php endforeach;?>
-			<p class="user_bottom">
-				<button type="button" class="btn btn-info next_btn">下一页</button>
-			</p>
+
     	</div>
 	</div>
     <div class="help_nav">
@@ -931,62 +827,102 @@
 
         </div>
     </div>
-<footer class="footer">
-    <div class="server">
-        <img src="/upload/5a790c53324b1.png" alt="">
-    </div>
-    <div class="bottom">
-    	<div class="bottom_nav bottom_nav2">
-    		<div><img src="/upload/5a795433db032.png"/></div>
-    		<div>
-    			<p>服务项目</p>
-    			<a href="#">试管婴儿</a>
-    			<a href="#">海外医疗</a>
-    			<a href="#">出国体检</a>
-    			<a href="#">出国看病</a>
-    		</div>
-    		<div>
-    			<p>论坛</p>
-    			<a href="#">试管婴儿</a>
-    			<a href="#">海外医疗</a>
-    			<a href="#">出国体检</a>
-    			<a href="#">出国看病</a>
-    		</div>
-    		<div style="border: 0;">
-    			<p>商务合作</p>
-    			<a href="#">QQ：1972129891</a>
-    			<a href="#">电话：028-65473811</a>
-    			<a href="#">邮箱：1972129891@qq.com</a>
-    			<a href="#">服务商入驻</a>
-    			<a href="#">医院入驻</a>
-    		</div>
-    		<div class="bottom_code" style="border: 0;">
+    <footer class="footer">
+        <div class="server">
+            <!--<ul class="server-list">
+                <li class="server-item">
+                    <i></i><div>平台权威认证</div>
+                </li>
+                <li class="server-item">
+                    <i></i><div>第三方服务保障</div>
+                </li>
+                <li class="server-item">
+                    <i></i><div>14天退款保证</div>
+                </li>
+                <li class="server-item">
+                    <i></i><div>平台先行赔付</div>
+                </li>
+                <li class="server-item">
+                    <i></i><div>机构信用评价体系</div>
+                </li>
+                <li class="server-item">
+                    <i></i><div>平安保险合作</div>
+                </li>
+            </ul>-->
+            <img src="/upload/5a790c53324b1.png"/>
+        </div>
+        <div class="bottom">
+            <div class="bottom_nav">
+                <div><img src="/upload/5a795433db032.png"/></div>
+                <div>
+                    <p>使用指南</p>
+                    <a href="#">用户注册</a>
+                    <a href="#">会员认证</a>
+                    <a href="#">充值提现</a>
+                    <a href="#">购物流程</a>
+                </div>
+                <div>
+                    <p>售后服务</p>
+                    <a href="#">售后政策</a>
+                    <a href="#">退款说明</a>
+                    <a href="#">订单状态</a>
+                    <a href="#">取消订单</a>
+                    <a href="#">平台保障</a>
+                    <a href="#">发票规则</a>
+                    <a href="#">佩服规则</a>
+                </div>
+                <div>
+                    <p>用户条款</p>
+                    <a href="#">隐私条款</a>
+                    <a href="#">用户协议</a>
+                    <a href="#">免责条款</a>
+                    <a href="#">服务说明</a>
+                </div>
+                <div>
+                    <p>业务合作</p>
+                    <a href="#">广告业务</a>
+                    <a href="#">入驻条款</a>
+                    <a href="#">服务商入驻</a>
+                    <a href="#">医院入驻</a>
+                </div>
+                <div>
+                    <p>关于我们</p>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">加入我们</a>
+                    <a href="#">投诉建议</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">联系客服</a>
+                </div>
+                <div class="bottom_code" style="border: 0;">
     			<span>
     				<img src="/images/mcode.png"/>
+    				<p>扫描下载手机版</p>
     			</span>
-    			<span>
+                    <span>
     				<img src="/images/mcode.png" style="margin-left: 20px;"/>
+    				<p style="text-indent: 20px;">扫描下载手机版</p>
     			</span>
-    		</div>
-    	</div>
-    	<div class="bottom_info">
-    		<p>
-    			友情链接：
-    			<span>美国试管婴儿</span>
-    			<span>泰国试管婴儿</span>
-    			<span>宁德妇产医院</span>
-    			<span>出国看病</span>
-    			<span>青岛最好的整形医院</span>
-    			<span>家政服务联盟</span>
-    			<span>广州不孕不育医院</span>
-    			<span>香港验血</span>
-    			<span>厦门代驾价格</span>
-    			<span>美国试管婴儿费用</span>
-    		</p>
-    		<p>四川瑞可优医疗管理有限公司 蜀ICP 备 15005296 号 网站地图</p>
-    	</div>
-    </div>
-</footer>
+                </div>
+            </div>
+            <div class="bottom_info">
+                <p>
+                    友情链接：
+                    <span>美国试管婴儿</span>
+                    <span>泰国试管婴儿</span>
+                    <span>宁德妇产医院</span>
+                    <span>出国看病</span>
+                    <span>青岛最好的整形医院</span>
+                    <span>家政服务联盟</span>
+                    <span>广州不孕不育医院</span>
+                    <span>香港验血</span>
+                    <span>厦门代驾价格</span>
+                    <span>美国试管婴儿费用</span>
+                </p>
+                <p>四川瑞可优医疗管理有限公司 蜀ICP 备 15005296 号 网站地图</p>
+            </div>
+        </div>
+    </footer>
     <script src="/js/shopcar.js"></script>
     <script src="/js/tab.js"></script>
 </body>
