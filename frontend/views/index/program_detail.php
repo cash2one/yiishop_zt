@@ -416,7 +416,7 @@
                 <div class="package_type">
                     <?php foreach ($packages as $k=>$package):?>
                         <span class="type_num <?=$k==0?'active1':''?>">
-						<i class="iconfont icon-icon-test<?=$package->level==1?'1':''?><?=$package->level==2?'2':''?><?=$package->level==3?'3':''?>"></i>
+						<i class="iconfont icon-test<?=$package->level?>"></i>
 						<span><?=$package->name?></span>
 					</span>
                     <?php endforeach;?>

@@ -852,7 +852,7 @@
                         <?php foreach($hospital_footer as $footer):?>
                         <div class="swiper-slide">
                             <div class="hospital-list2">
-                                <a href="" alt="">
+                                <a href="#" alt="">
                                     <img width="288px" height="193px" class="hospital-list2-img1" src="<?=$footer->description_img?>" title="<?=$footer->short_name?>">
                                 </a>
                                 <span class="hospital-list2-span1"><a href=""><?=$footer->short_name?></a></span>
@@ -886,7 +886,7 @@
                         <div class="swiper-slide company-border">
                             <ul>
                                 <?php foreach($service_footer1 as $service):?>
-                                <li><a href="1"><img src="<?=$service->images?>"></a></li>
+                                <li><a href="#"><img src="<?=$service->images?>"></a></li>
                                 <?php endforeach;?>
                             </ul>
                         </div>

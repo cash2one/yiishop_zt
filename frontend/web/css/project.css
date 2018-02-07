@@ -763,6 +763,7 @@ a{color:#3cbce5;}
 .type_num span{
 	display: block;
 	text-align: center;
+	margin-top: 7px;
 }
 .active{
 	color: #2DB4DF;
