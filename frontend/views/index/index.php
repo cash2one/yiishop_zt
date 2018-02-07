@@ -392,7 +392,7 @@
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($tube_article_r as $v):?>
-                                    <li><span><a href="" title=""><?=strlen($v->title)>=48?substr($v->title,'0',48).'...':$v->title?></a></span></li>
+                                    <li><span><a href="" title=""><?=mb_substr($v->title,0,15).'...'?></a></span></li>
                                     <?php endforeach;?>
                                 </ul>
                             </div>
@@ -555,7 +555,7 @@
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($article_oversea_r as $oversea):?>
-                                    <li><span><a href="" title=""><?=strlen($oversea->title)>48?substr($oversea->title,'0',48).'...':$oversea->title?></a></span></li>
+                                    <li><span><a href="" title=""><?=mb_substr($oversea->title,0,15).'...'?></a></span></li>
                                     <?php endforeach;?>
                                 </ul>
                             </div>
@@ -690,7 +690,7 @@
                             <div class="case-li">
                                 <ul>
                                     <?php foreach ($article_check_r as $check):?>
-                                    <li><span><a href="" title=""><?=strlen($check->title)>48?substr($check->title,'0',48).'...':$check->title?></a></span></li>
+                                    <li><span><a href="" title=""><?=mb_substr($check->title,0,15).'...'?></a></span></li>
                                    <?php endforeach;?>
                                 </ul>
                             </div>
@@ -824,7 +824,7 @@
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($article_birth_r as $birth):?>
-                                    <li><span><a href="" title=""><?=strlen($birth->title)>48?substr($birth->title,'0',48).'...':$birth->title?></a></span></li>
+                                    <li><span><a href="" title=""><?=mb_substr($birth->title,0,15).'...'?></a></span></li>
                                     <?php endforeach;?>
                                 </ul>
                             </div>
