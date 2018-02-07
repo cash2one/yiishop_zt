@@ -499,6 +499,7 @@
 }
 .baby-box .container-list .site-case .case-title ul{
     width: 100%;
+    font-size: 16px;
 }
 .baby-box .container-list .site-case .case-title li{
     width: 49%;
@@ -779,6 +780,7 @@
 }
 .patient-box .container-list .site-case .case-title ul{
     width: 100%;
+    font-size: 16px;
 }
 .patient-box .container-list .site-case .case-title li{
     width: 49%;
@@ -1065,6 +1067,7 @@
 }
 .inspect-box .container-list .site-case .case-title ul{
     width: 100%;
+    font-size: 16px;
 }
 .inspect-box .container-list .site-case .case-title li{
     width: 49%;
@@ -1346,6 +1349,7 @@
 }
 .birth-box .container-list .site-case .case-title ul{
     width: 100%;
+    font-size: 16px;
 }
 .birth-box .container-list .site-case .case-title li{
     width: 49%;
@@ -1701,7 +1705,7 @@
 	flex-wrap: wrap;
 }
 #search div{
-	margin-top: ;
+	margin-top:0 ;
 	text-align: right;
 }
 #search div select{

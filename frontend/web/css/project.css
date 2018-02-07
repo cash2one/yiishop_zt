@@ -701,7 +701,13 @@ a{color:#3cbce5;}
 	color: #666;
 	font-size: 14px;
 }
-
+.active1{
+	color: #2DB4DF;
+}
+.type_num i{
+	font-size: 60px;
+	margin-left: 25px;
+}
 .info_prize{
 	margin-top: 22px;
 }
@@ -747,7 +753,7 @@ a{color:#3cbce5;}
 }
 
 .package_type{
-	margin: 18px 0 20px;
+	margin: 25px 0 20px;
 	display: flex;
 	justify-content: flex-start;
 }

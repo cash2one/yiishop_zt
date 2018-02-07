@@ -399,49 +399,203 @@
         		</div>
 			</div>
 		</div>
-		
-		<div class="package model_common">
-			<div class="title">套餐详情
-				<span class="title_right"><i class="iconfont icon-zaixianduibijihuo"></i>套餐对比</span>
-			</div>
-			<div>
-				<div class="package_type">
-                    <?php foreach($packages as $package):?>
-					<span class="type_num">
-						<img src="/images/project/<?=$package->level?>.png"/>
-						<span class="active"><?=$package->name?></span>
+
+        <div class="package model_common">
+            <div class="title">套餐详情
+                <span class="title_right"><i class="iconfont icon-zaixianduibijihuo"></i>套餐对比</span>
+            </div>
+            <div>
+                <div class="package_type">
+                    <?php foreach ($packages as $k=>$package):?>
+                        <span class="type_num <?=$k==0?'active1':''?>">
+						<i class="iconfont icon-icon-test<?=$package->level==1?'3':''?><?=$package->level==2?'4':''?><?=$package->level==3?'6':''?>"></i>
+						<span><?=$package->name?></span>
 					</span>
                     <?php endforeach;?>
-				</div>
-			</div>
-			<div class="type_img">
-				<img src="/images/project/f1.png"/>
-				<span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
-			</div>
-			<div class="type_text">
-				<p>套餐包含项目有:</p>
-				<div class="all_text">
-					<div>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-					</div>
-					<div>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-					</div>
-					<div>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-						<span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
-					</div>
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+            <!--套餐内容-->
+            <div class="type_content">
+                <div class="type_img">
+                    <img src="/images/project/f1.png"/>
+                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
+                </div>
+                <div class="type_text">
+                    <p>1套餐包含项目有:</p>
+                    <div class="all_text">
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="type_content" style="display: none;">
+                <div class="type_img">
+                    <img src="/images/project/f1.png"/>
+                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
+                </div>
+                <div class="type_text">
+                    <p>2套餐包含项目有:</p>
+                    <div class="all_text">
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="type_content" style="display: none;">
+                <div class="type_img">
+                    <img src="/images/project/f1.png"/>
+                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
+                </div>
+                <div class="type_text">
+                    <p>3套餐包含项目有:</p>
+                    <div class="all_text">
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="type_content" style="display: none;">
+                <div class="type_img">
+                    <img src="/images/project/f1.png"/>
+                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
+                </div>
+                <div class="type_text">
+                    <p>4套餐包含项目有:</p>
+                    <div class="all_text">
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="type_content" style="display: none;">
+                <div class="type_img">
+                    <img src="/images/project/f1.png"/>
+                    <span class="type_price">经济实惠自助套餐<span>￥</span><em>10000</em></span>
+                </div>
+                <div class="type_text">
+                    <p>5套餐包含项目有:</p>
+                    <div class="all_text">
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                        <div>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                            <span><i class="iconfont icon-gou"></i>早起肺癌检测</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 		
 		<div class="process model_common">
 			<div class="title">方案流程
@@ -834,5 +988,6 @@
     </div>
 </footer>
     <script src="/js/shopcar.js"></script>
+    <script src="/js/tab.js"></script>
 </body>
 </html>
