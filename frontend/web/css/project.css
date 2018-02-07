@@ -65,7 +65,7 @@ a{color:#3cbce5;}
     background: #f4f4f4;
 }
 .white-common{
-    padding: 25px 20px 0 20px;
+    padding: 25px 35px 0 35px;
     background: #fff;
     margin-top: 20px;
     display: inline-block;
@@ -492,7 +492,7 @@ a{color:#3cbce5;}
 	width: 270px;
 	position: absolute;
 	right: -4px;
-	top: 0;
+	top: 0%;
 }
 .order_box{
 	background-color: #fff;
@@ -633,7 +633,7 @@ a{color:#3cbce5;}
 
 .doctor_list{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	position: relative;
 }
 .doc_left{
@@ -671,6 +671,7 @@ a{color:#3cbce5;}
 	background-color: #f4f4f4;
 	overflow: hidden;
 	position: relative;
+	margin-right: 10px;
 }
 .doctor_info>span{
 	background-color: #2DB4DF;

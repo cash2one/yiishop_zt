@@ -382,7 +382,7 @@
                             <div class="case-li">
                                 <ul>
                                     <?php foreach($tubeArticles as $tubeArticle):?>
-                                    <li><span><a href="<?=\yii\helpers\Url::to(['index/tube-detail','id'=>$tubeArticle->id])?>" title=""><?=strlen($tubeArticle->title)>48?substr($tubeArticle->title,'0',48).'...':$tubeArticle->title?></a></span></li>
+                                    <li><span><a href="<?=\yii\helpers\Url::to(['index/tube-detail','id'=>$tubeArticle->id])?>" title=""><?=mb_substr($tubeArticle->title,'0','15').'...'?></a></span></li>
                                     <?php endforeach;?>
                                 </ul>
                             </div>
