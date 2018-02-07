@@ -380,7 +380,7 @@
     		
     		<div class="solution_title">
     			<p class="title_text"><a href="<?=\yii\helpers\Url::to(['index/program-detail','id'=>$p->id])?>"><?=$p->programe_name?></a>
-                &emsp;<h3 class="single-title"><?=$program->programe_name?> <i class="iconfont icon-zheng" style="color: #2db4df;"></i><i class="iconfont icon-baozhang" style="color: #f66d80;"></i><i class="iconfont icon-xinyong" style="color: #6dc180; font-size:23px "></i></h3>
+                <i class="iconfont icon-zheng" style="color: #2db4df;"></i><i class="iconfont icon-baozhang" style="color: #f66d80;"></i><i class="iconfont icon-xinyong" style="color: #6dc180; font-size:23px "></i>
 
                 </p>
     			<p class="title_num">
