@@ -1027,7 +1027,7 @@
 			</div>
 			<div class="bottom">
 				<div class="bottom_nav bottom_nav2">
-					<!--<div><img src="/upload/5a790c53324b1.png" /></div>-->
+					<div><img src="/upload/5a795433db032.png" /></div>
 					<div>
 						<p>服务项目</p>
 						<a href="#">试管婴儿</a>

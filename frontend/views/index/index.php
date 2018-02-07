@@ -939,7 +939,7 @@
     </div>
     <div class="bottom">
         <div class="bottom_nav">
-            <div><img src="/images/bottomlogo.png"/></div>
+            <div><img src="/upload/5a795433db032.png"/></div>
             <div>
                 <p>使用指南</p>
                 <a href="#">用户注册</a>
