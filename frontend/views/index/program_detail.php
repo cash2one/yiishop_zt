@@ -109,7 +109,7 @@
                 			<div><span>试管次数：</span><?=$crowd->A1?>　<?=$crowd->A2?>　<?=$crowd->A3?>　<?=$crowd->A4?>　<?=$crowd->A5?></div>
                 			<div><span>试管原因：</span><?=$crowd->B1?>&emsp;<?=$crowd->B2?>&emsp;<?=$crowd->B3?>&emsp;<?=$crowd->B4?>&emsp;<?=$crowd->B5?>&emsp;<?=$crowd->B6?>&emsp;<?=$crowd->B7?>&emsp;<?=$crowd->B8?>&emsp;<?=$crowd->B9?>&emsp;<?=$crowd->B10?>&emsp;</div>
                 			<div><span>适合年龄：</span><?=$crowd->C1?>&emsp;<?=$crowd->C2?>&emsp;<?=$crowd->C3?>&emsp;<?=$crowd->C4?>&emsp;<?=$crowd->C5?>&emsp;</div>
-                			<div><span>价格要求：</span><?=$crowd->D3?>&emsp;<?=$crowd->D4?>&emsp;<?=$crowd->D5?>&emsp;<?=$crowd->D6?>&emsp;<?=$crowd->D7?>&emsp;</div>
+                			<div><span>价格要求：</span><?=$crowd->D4?>&emsp;<?=$crowd->D5?>&emsp;<?=$crowd->D6?>&emsp;<?=$crowd->D7?>&emsp;</div>
                 			<div><span>服务体验：</span><?=$crowd->service_experice?></div>
                 			<div><span>技术要求：</span><?=$crowd->tech_require?></div>
                 		</div>
