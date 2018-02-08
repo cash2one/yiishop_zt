@@ -853,7 +853,7 @@
                         <div class="swiper-slide">
                             <div class="hospital-list2">
                                 <a href="#" alt="">
-                                    <img width="288px" height="193px" class="hospital-list2-img1" src="<?=$footer->description_img?>" title="<?=$footer->short_name?>">
+                                    <img style="height: 203px;width: 288px" class="hospital-list2-img1" src="<?=$footer->description_img?>" title="<?=$footer->short_name?>">
                                 </a>
                                 <span class="hospital-list2-span1"><a href=""><?=$footer->short_name?></a></span>
                                 <p class="hospital-list2-p1"><?=strlen($footer->description)>90?mb_substr($footer->description,'0',40).'...':$footer->description?></p>
