@@ -266,18 +266,18 @@
 	        	<div class="order_content">
 	        		<div class="order_details">
 	        			<span>医疗机构</span>----------------
-	        			<span>￥100000</span>
+	        			<span></span>
 	        		</div>
 	        		
 	        		<div class="order_details">
 	        			<span>服务商套餐</span>--------------
-	        			<span>￥10000</span>
+	        			<span></span>
 	        		</div>
 	        	</div>
 	        	<div class="order_bottom">
 	        		<div class="order_details">
 	        			<span>合计费用</span>
-	        			<span>￥110000</span>
+	        			<span>￥<?=$program->total_price?></span>
 	        		</div>
 	        		
 	        		<div class="order_money">
