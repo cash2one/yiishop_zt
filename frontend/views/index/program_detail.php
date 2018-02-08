@@ -196,7 +196,7 @@
                     <div class="ensure">
                         <p><i class="iconfont icon-zheng"></i><span>平台权威认证</span></p>
                         <p><i class="iconfont icon-bao"></i><span>第三方服务保证</span></p>
-                        <p><i class="iconfont icon-icon-test1" style="font-size: 22.5px;"></i><span>7天退款保证</span></p>
+                        <p><i class="iconfont icon-icon-test7" style="font-size: 22.5px;"></i><span>7天退款保证</span></p>
                         <p><i class="iconfont icon-pei"></i><span>平台先行赔付</span></p>
                     </div>
                 	<div class="consult">

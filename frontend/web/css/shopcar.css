@@ -46,6 +46,7 @@
 	width: 297px;
 	height: 1080px;
 	background-color: #eceaea;
+	display: none;
 	float: left;
 	overflow: scroll;
 	border-left: 6px solid #48c5e4;
