@@ -346,7 +346,7 @@
         			<img src="<?=$doctor->logo?>"/>
         			<div class="info_name">
         				<p><?=$doctor->e_name?></p><br>
-        				<p><?=$doctor->name?><span><?=$doctor->department?></span></p><br>
+        				<p><?=$doctor->name?>&ensp;<span><?=$doctor->department?></span></p><br>
         				<p><span><?=$doctor->position?></span></p>
         			</div>
         			<div class="info_prize">

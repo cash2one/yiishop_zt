@@ -74,7 +74,7 @@
                         </ul>
                     </div>
                     <div class="comments">
-                        <div class="comments-tit">我有话说<span>共<i></i>条500评论</span></div>
+                        <div class="comments-tit">我有话说<span>共<i>500</i>条评论</span></div>
                         <div class="input-comment"></div>
                         <div class="comment-li">
                             <ul>
