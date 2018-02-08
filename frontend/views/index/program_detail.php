@@ -265,13 +265,13 @@
 	        	</div>
 	        	<div class="order_content">
 	        		<div class="order_details">
-	        			<span>医疗机构</span>----------------
-	        			<span></span>
+	        			<span>医疗机构费用</span>----------------
+	        			<!--<span></span>-->
 	        		</div>
 	        		
 	        		<div class="order_details">
 	        			<span>服务商套餐</span>--------------
-	        			<span></span>
+	        			<!--<span></span>-->
 	        		</div>
 	        	</div>
 	        	<div class="order_bottom">
