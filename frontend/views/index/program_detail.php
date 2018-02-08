@@ -240,7 +240,7 @@
             </div>
         </div>-->
         <div class="process_pic">
-        	<img src="/images/project/htlc.png"/>
+        	<img src="/upload/5a7bb8c91a340.png"/>
         </div>
 
         <div style="position: relative">
