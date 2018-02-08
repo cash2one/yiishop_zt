@@ -50,6 +50,22 @@
 	float: left;
 	overflow: scroll;
 	border-left: 6px solid #48c5e4;
+	position: relative;
+}
+.btn_bottom{
+	width: 100%;
+	height: 50px;
+	background-color: #f2f2f2;
+	position: absolute;
+	bottom: 123px;
+}
+.btn_bottom div:first-child{
+	float: left;
+	font-size: 12px;
+	margin: 0 25px;
+}
+.btn_bottom div:first-child p em{
+	color: #F65E73;
 }
 .shopcar_head{
 	padding: 0 5px;

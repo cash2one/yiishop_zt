@@ -773,6 +773,16 @@
 				<i id='cancel' class="iconfont icon-chahao"></i>
 			</span>
             </p>
+            <div class="btn_bottom">
+                <div>
+                    <p><em>6</em>款方案</p>
+                    <p>共计：<em>￥48400</em></p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-info">对比</button>
+                    <button type="button" class="btn btn-info">去结算</button>
+                </div>
+            </div>
             <?php foreach ($cart_programs as $cart_program):?>
             <div class="shop_list">
                <!-- <div class="list_coupon">
