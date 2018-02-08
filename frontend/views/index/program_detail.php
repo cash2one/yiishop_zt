@@ -774,9 +774,17 @@
 			</span>
             </p>
             <div class="btn_bottom">
-                <div>
-                    <p><em>6</em>款方案</p>
-                    <p>共计：<em>￥48400</em></p>
+                <?php
+                //统计购物车总价格
+                $total=0;
+                $count=count($cart_programs);
+                foreach ($cart_programs as $cart_program){
+                    $total+=($cart_program->num*$cart_program->total_price);
+                }
+                ?>
+            <div>
+                    <p><em><?=$count?></em>款方案</p>
+                    <p>共计：<em>￥<?=$total?></em></p>
                 </div>
                 <div>
                     <button type="button" class="btn btn-info">对比</button>
