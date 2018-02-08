@@ -770,7 +770,7 @@
 				<span>购物车</span>
 			</span>
                 <span class="head_right">
-				<i class="iconfont icon-chahao"></i>
+				<i id='cancel' class="iconfont icon-chahao"></i>
 			</span>
             </p>
             <?php foreach ($cart_programs as $cart_program):?>

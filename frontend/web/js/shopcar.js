@@ -4,7 +4,11 @@ $(function(){
 	})
 })
 
-$(function(){  
+$(function(){
+    $("#cancel").click(function(){
+        $('.shopcar').hide(500)
+    })
+
     $('#car_icon').click(function(){ 
         if($('.shopcar').is(':hidden')){
         $('.shopcar').show(500);
@@ -12,4 +16,4 @@ $(function(){
         $('.shopcar').hide(500);
         }  
     })  
-})  
+})
