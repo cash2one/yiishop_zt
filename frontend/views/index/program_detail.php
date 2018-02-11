@@ -537,7 +537,7 @@
                                 <span class="demand_color"><?php
                                     $id = unserialize($foreignStep->package_id);
                                     $a='（';
-                                    $end = '套餐自费）';
+                                    $end = '此套餐费用自理费）';
                                     if($id){
                                         foreach ($id as $p){
                                             $a.='套餐'.$p.',';
@@ -561,7 +561,7 @@
                                     <span class="demand_color"><?php
                                         $id = unserialize($backStep->package_id);
                                         $a='（';
-                                        $end = '套餐自费）';
+                                        $end = '此套餐费用自理费）';
                                         if($id){
                                             foreach ($id as $p){
                                                 $a.='套餐'.$p.',';
