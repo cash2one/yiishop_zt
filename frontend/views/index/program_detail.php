@@ -513,7 +513,7 @@
                                 <span class="demand_color"><?php
                                     $id = unserialize($d->package_id);
                                     $a='（';
-                                    $end = '套餐自费）';
+                                    $end = '此套餐费用自理）';
                                     if($id){
                                         foreach ($id as $p){
                                             $a.='套餐'.$p.',';
